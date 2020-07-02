@@ -1,0 +1,222 @@
+# this is an auto generated file. This will be overwritten
+mutation DeleteDiscourse($discourse_id: Int!) {
+  deleteDiscourse(discourse_id: $discourse_id) {
+    discourse_id
+    content
+    source_id
+    region
+    created_time
+    imported_time
+    secondary_content
+    isPost
+    post_id
+    ori_id
+    country_code
+    url
+  }
+}
+mutation CreateDiscourse($createDiscourseInput: CreateDiscourseInput!) {
+  createDiscourse(createDiscourseInput: $createDiscourseInput) {
+    discourse_id
+    content
+    source_id
+    region
+    created_time
+    imported_time
+    secondary_content
+    isPost
+    post_id
+    ori_id
+    country_code
+    url
+  }
+}
+mutation UpdateDiscourse($updateDiscourseInput: UpdateDiscourseInput!) {
+  updateDiscourse(updateDiscourseInput: $updateDiscourseInput) {
+    discourse_id
+    content
+    source_id
+    region
+    created_time
+    imported_time
+    secondary_content
+    isPost
+    post_id
+    ori_id
+    country_code
+    url
+  }
+}
+mutation DeleteImpactArea($impact_area_id: Int!) {
+  deleteImpactArea(impact_area_id: $impact_area_id) {
+    impact_area_id
+    tag
+    source_parent_id
+    impact_parent_id
+    source_ontology
+  }
+}
+mutation CreateImpactArea($createImpactAreaInput: CreateImpactAreaInput!) {
+  createImpactArea(createImpactAreaInput: $createImpactAreaInput) {
+    impact_area_id
+    tag
+    source_parent_id
+    impact_parent_id
+    source_ontology
+  }
+}
+mutation UpdateImpactArea($updateImpactAreaInput: UpdateImpactAreaInput!) {
+  updateImpactArea(updateImpactAreaInput: $updateImpactAreaInput) {
+    impact_area_id
+    tag
+    source_parent_id
+    impact_parent_id
+    source_ontology
+  }
+}
+mutation DeleteModelVersion($model_id: Int!) {
+  deleteModelVersion(model_id: $model_id) {
+    model_id
+    model_task
+    created_time
+  }
+}
+mutation CreateModelVersion(
+  $createModelVersionInput: CreateModelVersionInput!
+) {
+  createModelVersion(createModelVersionInput: $createModelVersionInput) {
+    model_id
+    model_task
+    created_time
+  }
+}
+mutation UpdateModelVersion(
+  $updateModelVersionInput: UpdateModelVersionInput!
+) {
+  updateModelVersion(updateModelVersionInput: $updateModelVersionInput) {
+    model_id
+    model_task
+    created_time
+  }
+}
+mutation DeletePlatform($platform_id: Int!) {
+  deletePlatform(platform_id: $platform_id) {
+    platform_id
+    platform_desc
+    platform_type
+  }
+}
+mutation CreatePlatform($createPlatformInput: CreatePlatformInput!) {
+  createPlatform(createPlatformInput: $createPlatformInput) {
+    platform_id
+    platform_desc
+    platform_type
+  }
+}
+mutation UpdatePlatform($updatePlatformInput: UpdatePlatformInput!) {
+  updatePlatform(updatePlatformInput: $updatePlatformInput) {
+    platform_id
+    platform_desc
+    platform_type
+  }
+}
+mutation DeleteSource($source_id: Int!) {
+  deleteSource(source_id: $source_id) {
+    source_id
+    platform_id
+    source_desc
+    is_survey
+    region
+  }
+}
+mutation CreateSource($createSourceInput: CreateSourceInput!) {
+  createSource(createSourceInput: $createSourceInput) {
+    source_id
+    platform_id
+    source_desc
+    is_survey
+    region
+  }
+}
+mutation UpdateSource($updateSourceInput: UpdateSourceInput!) {
+  updateSource(updateSourceInput: $updateSourceInput) {
+    source_id
+    platform_id
+    source_desc
+    is_survey
+    region
+  }
+}
+mutation DeleteTrendingTopics($topic: String!) {
+  deleteTrendingTopics(topic: $topic) {
+    topic
+    counts
+    n_gram
+    created_time
+  }
+}
+mutation CreateTrendingTopics(
+  $createTrendingTopicsInput: CreateTrendingTopicsInput!
+) {
+  createTrendingTopics(createTrendingTopicsInput: $createTrendingTopicsInput) {
+    topic
+    counts
+    n_gram
+    created_time
+  }
+}
+mutation UpdateTrendingTopics(
+  $updateTrendingTopicsInput: UpdateTrendingTopicsInput!
+) {
+  updateTrendingTopics(updateTrendingTopicsInput: $updateTrendingTopicsInput) {
+    topic
+    counts
+    n_gram
+    created_time
+  }
+}
+mutation DeleteRegions($region: String!) {
+  deleteRegions(region: $region) {
+    region
+  }
+}
+mutation CreateRegions($createRegionsInput: CreateRegionsInput!) {
+  createRegions(createRegionsInput: $createRegionsInput) {
+    region
+  }
+}
+mutation UpdateRegions($updateRegionsInput: UpdateRegionsInput!) {
+  updateRegions(updateRegionsInput: $updateRegionsInput) {
+    region
+  }
+}
+mutation CreateTodo(
+  $input: CreateTodoInput!
+  $condition: ModelTodoConditionInput
+) {
+  createTodo(input: $input, condition: $condition) {
+    id
+    name
+    description
+  }
+}
+mutation UpdateTodo(
+  $input: UpdateTodoInput!
+  $condition: ModelTodoConditionInput
+) {
+  updateTodo(input: $input, condition: $condition) {
+    id
+    name
+    description
+  }
+}
+mutation DeleteTodo(
+  $input: DeleteTodoInput!
+  $condition: ModelTodoConditionInput
+) {
+  deleteTodo(input: $input, condition: $condition) {
+    id
+    name
+    description
+  }
+}

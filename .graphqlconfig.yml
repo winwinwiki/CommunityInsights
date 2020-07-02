@@ -1,0 +1,15 @@
+projects:
+  newImpact-newbucket:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: angular
+        generatedFileName: API.service.ts
+        docsFilePath: src/graphql
+        region: us-west-2
+        apiId: saj4edhbsvckxk64pk3cqlybwu
+        maxDepth: 3

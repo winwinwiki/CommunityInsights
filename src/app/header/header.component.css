@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+}
+
+#top-nav {
+  background-color: #2098d1;
+  position: fixed;
+  padding: 14px 0px 7px 0px;
+  z-index: 1000;
+}
+.navbar {
+  overflow: hidden;
+  width: 100%;
+  background-color: #414243;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 100;
+  padding: 0px 80px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.wrapper {
+  margin-top: 60px;
+}
+
+.nav.nav-tabs {
+    position: relative;
+}
+
+.nav-item a{
+    padding-left: 0px;
+}
+
+/*DateTimePopup Css Starts*/
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+
+  .custom-day.focused {
+    background-color: #e6e6e6;
+  }
+
+  .custom-day.range, .custom-day:hover {
+    background-color: rgb(2, 117, 216);
+    color: white;
+  }
+
+  .custom-day.faded {
+    background-color: rgba(2, 117, 216, 0.5);
+  }
+
+/*DateTimePopup CSS ends*/
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 90%;
+  }
+}
+
+img.logo {
+  width: 28em;
+}
+
+@media (max-width: 768px) {
+  img.logo {
+    width: 20em;
+  }
+}
+
+.tabIcons {
+  width: 26px;
+  height: 22px;
+  margin: auto;
+  display: block;
+  position: relative!important;
+  background-size: cover;
+  margin-bottom: 3px;
+  background-image: url("/assets/dark_icons.png");
+  background-repeat: no-repeat;
+}
+
+.trending-icon {
+  background-position: -53px 0px;
+}
+.verbatim-icon {
+  background-position: -22px 0px;
+}
+.about-icon {
+  background-position: 6px 0px;
+}
+

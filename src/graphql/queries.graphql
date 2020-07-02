@@ -1,0 +1,334 @@
+# this is an auto generated file. This will be overwritten
+query GetDiscourse($discourse_id: Int!) {
+  getDiscourse(discourse_id: $discourse_id) {
+    discourse_id
+    content
+    source_id
+    region
+    created_time
+    imported_time
+    secondary_content
+    isPost
+    post_id
+    ori_id
+    country_code
+    url
+  }
+}
+query ListDiscourses {
+  listDiscourses {
+    discourse_id
+    content
+    source_id
+    region
+    created_time
+    imported_time
+    secondary_content
+    isPost
+    post_id
+    ori_id
+    country_code
+    url
+  }
+}
+query GetImpactArea($impact_area_id: Int!) {
+  getImpactArea(impact_area_id: $impact_area_id) {
+    impact_area_id
+    tag
+    source_parent_id
+    impact_parent_id
+    source_ontology
+  }
+}
+query ListImpactAreas {
+  listImpactAreas {
+    impact_area_id
+    tag
+    source_parent_id
+    impact_parent_id
+    source_ontology
+  }
+}
+query GetModelVersion($model_id: Int!) {
+  getModelVersion(model_id: $model_id) {
+    model_id
+    model_task
+    created_time
+  }
+}
+query ListModelVersions {
+  listModelVersions {
+    model_id
+    model_task
+    created_time
+  }
+}
+query GetPlatform($platform_id: Int!) {
+  getPlatform(platform_id: $platform_id) {
+    platform_id
+    platform_desc
+    platform_type
+  }
+}
+query ListPlatforms {
+  listPlatforms {
+    platform_id
+    platform_desc
+    platform_type
+  }
+}
+query GetSource($source_id: Int!) {
+  getSource(source_id: $source_id) {
+    source_id
+    platform_id
+    source_desc
+    is_survey
+    region
+  }
+}
+query GetTrendingTopics($topic: String!) {
+  getTrendingTopics(topic: $topic) {
+    topic
+    counts
+    n_gram
+    created_time
+  }
+}
+query ListTrendingTopics {
+  listTrendingTopics {
+    topic
+    counts
+    n_gram
+    created_time
+  }
+}
+query ListTrendingTopicss {
+  listTrendingTopicss {
+    topic
+    counts
+    n_gram
+    created_time
+  }
+}
+query ListImpactTree(
+  $start: String!
+  $end: String!
+  $region: String!
+  $parent: String!
+) {
+  listImpactTree(start: $start, end: $end, region: $region, parent: $parent) {
+    discourse_id
+    region
+    date
+    tag
+    level2
+    level1
+    level0
+    source_ontology
+    value
+    color
+  }
+}
+query GetRegions($region: String!) {
+  getRegions(region: $region) {
+    region
+  }
+}
+query ListRegionss {
+  listRegionss {
+    region
+  }
+}
+query GetTodo($id: ID!) {
+  getTodo(id: $id) {
+    id
+    name
+    description
+  }
+}
+query ListTodos(
+  $filter: ModelTodoFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      description
+    }
+    nextToken
+  }
+}
+query ListSources {
+  listSources {
+    source_id
+    platform_id
+    source_desc
+    is_survey
+    region
+  }
+}
+query ListDiscourseHashtags {
+  listDiscourseHashtags {
+    counts
+    hashtag
+  }
+}
+query ListTrendingHashtags(
+  $start: String!
+  $end: String!
+  $region: String!
+  $parent: String!
+) {
+  listTrendingHashtags(
+    start: $start
+    end: $end
+    region: $region
+    parent: $parent
+  ) {
+    counts
+    hashtag
+    sentiment
+    negative
+    neutral
+    positive
+    start_date
+  }
+}
+query ListTrendingTopicsMaster(
+  $start: String!
+  $end: String!
+  $region: String!
+  $parent: String!
+) {
+  listTrendingTopicsMaster(
+    start: $start
+    end: $end
+    region: $region
+    parent: $parent
+  ) {
+    counts
+    topic
+    sentiment
+    negative
+    neutral
+    positive
+  }
+}
+query DiscourseTrendingTopics(
+  $start: String!
+  $end: String!
+  $region: String!
+  $topic: String!
+  $parent: String!
+) {
+  discourseTrendingTopics(
+    start: $start
+    end: $end
+    region: $region
+    topic: $topic
+    parent: $parent
+  ) {
+    counts
+    sentiment
+    topic
+    date
+  }
+}
+query HashtagMaster(
+  $start: String!
+  $end: String!
+  $region: String!
+  $topic: String!
+  $parent: String!
+) {
+  hashtagMaster(
+    start: $start
+    end: $end
+    region: $region
+    topic: $topic
+    parent: $parent
+  ) {
+    counts
+    sentiment
+    topic
+    date
+  }
+}
+query ListDiscourseData(
+  $start: String!
+  $end: String!
+  $region: String!
+  $parent: String
+) {
+  listDiscourseData(
+    start: $start
+    end: $end
+    region: $region
+    parent: $parent
+  ) {
+    discourse_id
+    sentiment
+    topics
+    comment
+    platform_name
+    created_time
+    isPost
+    post_id
+    region
+    source_ontology
+  }
+}
+query GetTopicsComment($discourse_id: Int) {
+  getTopicsComment(discourse_id: $discourse_id) {
+    topic
+  }
+}
+query ListImpactSpi(
+  $start: String!
+  $end: String!
+  $region: String!
+  $parent: String
+) {
+  listImpactSPI(start: $start, end: $end, region: $region, parent: $parent) {
+    level2
+    level1
+    level0
+    value
+    color
+  }
+}
+query ListImpactTsf(
+  $start: String!
+  $end: String!
+  $region: String!
+  $parent: String
+) {
+  listImpactTSF(start: $start, end: $end, region: $region, parent: $parent) {
+    level2
+    level1
+    level0
+    value
+    color
+  }
+}
+query ListImpactSgd(
+  $start: String!
+  $end: String!
+  $region: String!
+  $parent: String
+) {
+  listImpactSGD(start: $start, end: $end, region: $region, parent: $parent) {
+    level2
+    level1
+    level0
+    value
+    color
+  }
+}
+query Location {
+  location {
+    location
+  }
+}

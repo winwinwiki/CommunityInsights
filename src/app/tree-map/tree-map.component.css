@@ -1,0 +1,10 @@
+#container {
+    position: relative;
+    height: 350px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#treemap {
+    margin-bottom: 0px;
+}

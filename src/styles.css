@@ -1,0 +1,489 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: latoBold;
+  src: url('/assets/Lato-Bold.woff');
+}
+@font-face {
+  font-family: latoBoldItalic;
+  src: url('/assets/Lato-BoldItalic.woff');
+}
+@font-face {
+  font-family: latoItalic;
+  src: url('/assets/Lato-Italic.woff');
+}
+@font-face {
+  font-family: lato;
+  src: url('/assets/Lato-Regular.woff');
+}
+
+body {
+    margin: 0px;
+    background-color: #fafafa;
+    font-family: Arial, Helvetica, sans-serif, lato;
+  }
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #dedbdb;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+  }
+  
+    ::-webkit-scrollbar-thumb:window-inactive {
+      background: #d0d2d4;
+    }
+  
+  .pull-right {
+      float: right;
+  }
+  
+  .nav.nav-tabs {
+    position: relative;
+  }
+  
+  .nav-tabs {
+    background-color: #d0d2d4;
+    box-shadow: 0 0 10px #cccccc;
+    padding: 15px 10px 10px 10px;
+    padding: 0px 75px;
+    position: relative !important;
+    width: 100%;
+    padding: 63px 0px 0px 80px
+  }
+  .nav-tabs > li:last-of-type > a {
+    margin-right: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #fff !important;
+    background-color: #4477aa !important;
+    border: none !important;
+  }
+  
+  .tab-pane.active {
+    padding: 1.5rem;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+    border-radius: .25rem;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+    position: relative;
+    padding: 20px 80px;
+  }
+
+  .nav-tabs .nav-item {
+    text-align: center;
+  }
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active .tab-title {
+    color: #fff!important;
+}
+  
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active .trending-icon {
+  background-image: url("/assets/white_icons.png") !important;
+  background-repeat: no-repeat;
+  background-position: -53px 0px;;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active .verbatim-icon {
+  background-image: url("/assets/white_icons.png") !important;
+  background-repeat: no-repeat;
+  background-position: -22px 0px;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active .about-icon {
+  background-image: url("/assets/white_icons.png") !important;
+  background-repeat: no-repeat;
+  background-position: 6px 0px;
+} 
+.p-right-80 {
+    padding: 0px 80px;
+}
+  @media (max-width: 1024px) {
+   .p-mobile-0 {
+       padding: 0px 20px !important;
+   }
+    .tab-pane.active{
+        padding: 20px;
+    }
+    .dateinput{
+      width: 180px;
+    }
+    .nav-tabs {
+      padding: 63px 0px 0px 0px !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .nav-tabs {
+    padding: 100px 0px 0px 0px !important;
+    }
+    .locationData {
+      width: 200px;
+    }
+}
+@media (max-width: 454px) {
+    .nav-tabs {
+    padding: 123px 0px 0px 0px !important;
+  }
+}
+  
+  /*Tag Cloud CSS Starts*/
+  /* fonts */
+  
+  div.jqcloud {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 10px;
+    line-height: normal;
+    width: 100%;
+  }
+  
+    div.jqcloud a {
+      font-size: inherit;
+      text-decoration: none;
+    }
+
+    div.jqcloud span.w20 {
+      font-size: 600%;
+    }
+
+    div.jqcloud span.w19 {
+      font-size: 600%;
+    }
+
+    div.jqcloud span.w18 {
+      font-size: 600%;
+    }
+
+    div.jqcloud span.w17 {
+      font-size: 575%;
+    }
+  
+    div.jqcloud span.w16 {
+      font-size: 575%;
+    }
+
+    div.jqcloud span.w15 {
+      font-size: 575%;
+    }
+
+    div.jqcloud span.w14 {
+      font-size: 550%;
+    }
+
+    div.jqcloud span.w13 {
+      font-size: 525%;
+    }
+
+    div.jqcloud span.w12 {
+      font-size: 500%;
+    }
+
+    div.jqcloud span.w11 {
+      font-size: 475%;
+    }
+
+    div.jqcloud span.w10 {
+      font-size: 450%;
+    }
+
+    div.jqcloud span.w9 {
+      font-size: 425%;
+    }
+  
+    div.jqcloud span.w8 {
+      font-size: 400%;
+    }
+  
+    div.jqcloud span.w7 {
+      font-size: 375%;
+    }
+  
+    div.jqcloud span.w6 {
+      font-size: 350%;
+    }
+  
+    div.jqcloud span.w5 {
+      font-size: 325%;
+    }
+  
+    div.jqcloud span.w4 {
+      font-size: 300%;
+    }
+  
+    div.jqcloud span.w3 {
+      font-size: 200%;
+    }
+  
+    div.jqcloud span.w2 {
+      font-size: 150%;
+    }
+  
+    div.jqcloud span.w1 {
+      font-size: 100%;
+    }
+  
+  /* colors */
+  div.jqcloud {
+    color: #2aa7d7 ;
+  }
+  
+    div.jqcloud a {
+      color: inherit;
+    }
+  
+      div.jqcloud a:hover {
+        color:#99ccee;
+      }
+  
+      div.jqcloud a:hover {
+        color: #0cf;
+      }
+  
+    div.jqcloud span.w10 {
+      color: #2aa7d7 ;
+    }
+  
+    div.jqcloud span.w9 {
+      color: #2aa7d7 ;
+    }
+  
+    div.jqcloud span.w8 {
+      color: #2194c0 ;
+    }
+  
+    div.jqcloud span.w7 {
+      color: #2194c0 ;
+    }
+  
+    div.jqcloud span.w6 {
+      color: #2194c0 ;
+    }
+  
+    div.jqcloud span.w5 {
+      color: #2194c0;
+    }
+  
+    div.jqcloud span.w4 {
+      color: #126e97 ;
+    }
+  
+    div.jqcloud span.w3 {
+      color:#126e97 ;
+    }
+  
+    div.jqcloud span.w2 {
+      color:#00376c ;
+    }
+  
+    div.jqcloud span.w1 {
+      color:#474a4e ;
+    }
+  
+  
+  /* layout */
+  
+  div.jqcloud {
+    overflow: hidden;
+    position: relative;
+  }
+  
+    div.jqcloud span {
+      padding: 0;
+    }
+  /*Tag Cloud CSS Ends*/
+  
+  .ng2-tag-input__text-input {
+    padding: 0 .5rem !important;
+    height: 30px !important;
+    font-size: 14px !important;
+    border-radius: 3px;
+  }
+  
+  .ng2-tag-input {
+      border-bottom: none !important;
+  }
+  
+  tag:not(:focus):not(.tag--editing):not(:active):not(.readonly):hover {
+      box-shadow: none!important;
+  }
+  
+  tag {
+    font-size: 14px !important;
+    color: #444;
+    border-radius: 7px !important;
+    transition: .3s;
+    margin: .1rem .3rem .1rem 0;
+    padding: .08rem .45rem;
+    height: 26px !important;
+    line-height: 25px !important;
+  }
+  
+  delete-icon svg {
+    vertical-align: bottom!important;
+    height: 25px!important;
+  }
+  
+  .custom-day {
+    text-align: center;
+    padding: 0.185rem 0.25rem;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+  }
+  
+    .custom-day.range {
+      background-color: rgb(2, 117, 216);
+      color: white;
+    }
+  
+  .btn:focus, .btn:active:focus, .btn.active:focus, .btn.active {
+    outline: none !important;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+  }
+  
+  div#ngb-tab-1-panel{
+      padding: 0px;
+  }
+  
+  ngb-accordion.accordion .card {
+    background:#31353d   !important;
+    color: #818896!important;
+    border: none;
+    border-radius: 0px;
+  }
+  
+  ngb-accordion.accordion .card-header {
+    padding: 0px!important;
+    border: 0!important;
+    background-color: transparent!important;
+  }
+  
+  ngb-accordion.accordion .btn {
+    color: #818896 !important;
+    width: 100%;
+    text-align: left;
+    border-radius: 0px;
+  }
+  
+  ngb-accordion.accordion .btn:hover, ngb-accordion.accordion .btn:focus, ngb-accordion.accordion .btn:active {
+    background-color: transparent;
+    box-shadow: none;
+    color: #b8bfce!important;
+  }
+  
+  ngb-accordion.accordion .card-header button:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-style: normal;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background: 0 0;
+    position: absolute;
+    right: 15px;
+    top: 9px;
+  }
+
+  .loader img {
+    width: 30px;
+    height: auto;
+  }
+
+  
+.hide-page-numbers /deep/ .ngx-pagination li:not(.pagination-previous):not(.pagination-next) {
+  display: none !important;
+}
+  
+.ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before {
+  content: "\003C" !important;
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-weight: 900;
+}
+
+.ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after {
+    content: "\003E" !important;
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-weight: 900;
+}
+
+.header-title {
+  font-size: 1rem;
+  margin: 0 0 7px 0;
+}
+
+.card-box {
+  background-color: #fff;
+  padding: 1.5rem;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+  margin-bottom: 24px;
+  border-radius: .25rem;
+  transition: 0.3s linear;
+  position: relative;
+  overflow: auto;
+}
+
+.line-chart {
+  padding: 1em;
+}
+
+.h-350 {
+  height: 350px;
+}
+  .z-index-1 {
+    z-index: 1;
+  }
+
+
+  @media (max-width: 1024px) {
+    .ngb-dp-months {
+      display: flex !important;
+      overflow-x: scroll !important;
+      width: 245px !important;
+    }  
+}
+  
+ 
+g#d3plus-textBox-0 text {
+  font-size: 15px!important;
+}
+
+#top-nav button#dropdownMenuButton {
+    color: #444;
+    background: #e2e2e2;
+    margin: .1rem .3rem .1rem 0;
+    padding: .1rem .45rem;
+    height: 28px !important;
+    line-height: 24px !important;
+    border-color: transparent!important;
+    font-size: 14px;
+}
+
+#top-nav .dropdown-menu.show {
+  font-size: 14px;
+  padding: 0.1em 0.1em;
+}
+
+#top-nav button.dropdown-item {
+  padding: 0.5rem 0.70rem;
+}

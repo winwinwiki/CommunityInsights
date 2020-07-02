@@ -1,0 +1,16 @@
+
+<div class="card-box sweep-to-right line-chart">
+    
+    <h4 class="header-title d-inline-block">Topic sentiment for {{start}} - {{end}}: {{searchValue}}</h4>
+    <p class="m-0 p-0 text-muted mb-3 small"><em>Select topic by clicking on a topic in the Sentiment Breakdown chart</em></p>
+    
+    <div *ngIf="empty">
+        <div class="text-center mt-5 mx-auto p-4">
+            <img class="mb-4 text-center pb-2 " src="/assets/zero_page_icon.svg">
+            <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> Click on topics/hashtag to see the trends.</p>
+        </div>
+    </div>
+    <div class="row h-350">
+        <div id="chart"></div>
+    </div>
+</div>

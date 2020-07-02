@@ -1,0 +1,83 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateDiscourse {
+  onCreateDiscourse {
+    discourse_id
+    content
+    source_id
+    region
+    created_time
+    imported_time
+    secondary_content
+    isPost
+    post_id
+    ori_id
+    country_code
+    url
+  }
+}
+subscription OnCreateImpactArea {
+  onCreateImpactArea {
+    impact_area_id
+    tag
+    source_parent_id
+    impact_parent_id
+    source_ontology
+  }
+}
+subscription OnCreateModelVersion {
+  onCreateModelVersion {
+    model_id
+    model_task
+    created_time
+  }
+}
+subscription OnCreatePlatform {
+  onCreatePlatform {
+    platform_id
+    platform_desc
+    platform_type
+  }
+}
+subscription OnCreateSource {
+  onCreateSource {
+    source_id
+    platform_id
+    source_desc
+    is_survey
+    region
+  }
+}
+subscription OnCreateTrendingTopics {
+  onCreateTrendingTopics {
+    topic
+    counts
+    n_gram
+    created_time
+  }
+}
+subscription OnCreateRegions {
+  onCreateRegions {
+    region
+  }
+}
+subscription OnCreateTodo {
+  onCreateTodo {
+    id
+    name
+    description
+  }
+}
+subscription OnUpdateTodo {
+  onUpdateTodo {
+    id
+    name
+    description
+  }
+}
+subscription OnDeleteTodo {
+  onDeleteTodo {
+    id
+    name
+    description
+  }
+}

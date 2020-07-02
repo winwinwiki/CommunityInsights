@@ -1,0 +1,34 @@
+<ng-container *ngIf="load && !empty">
+  <div class="text-center mt-5 mx-auto px-4 loader">
+    <img src="/assets/loader.gif">
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!load && !empty">
+  <div class="card-box sweep-to-right">
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="header-title d-inline-block">Tree Map</h4>
+      <div>
+        <label for="frameworkOptions">Select Framework:&nbsp;</label>
+        <select (change)="filterImpactArea($event.target.value)">
+          <option *ngFor="let types of impactTypes" [value]="types">{{types}}</option>
+        </select>
+      </div>
+
+    </div>
+    <br/>
+    <div id="container">
+      <div id="treemap">
+      </div>
+      <div class="controls">
+        <select [(ngModel)]="depthOption" (change)="filterChanged($event.target.value)">
+          <option *ngFor="let type of filterTypes" [selected]="type.value" [value]="type.value">{{type.value}}</option>
+        </select>
+      </div>
+    </div>
+      
+  </div>
+</ng-container>
+
+ 
+

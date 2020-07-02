@@ -1,0 +1,123 @@
+<div *ngIf="loading">
+  Loading...
+</div>
+
+<div id="top-nav" class="w-100 text-white">
+  <div class="navbar p-mobile-0">
+    <a href="http://www.newimpact.care" class="p-0 m-0">
+      <img class="logo" src="/assets/logo.png">
+    </a>
+  </div>
+  <div class="p-right-80 p-mobile-0">
+  <div id="d-block">
+    <div class="row">
+      <div class="col d-md-flex place-date-choice">
+        <div class="inner-wrapper mt-1">
+          <span>See what people are saying in </span>
+          
+            <tag-input name="getloc" class="d-inline-block locationData" #getloc="ngModel" [ngModel]="locText" (onAdd)="onSelectedLocation($event)"
+                     [placeholder]="'Select Place'"
+                     [onTextChangeDebounce]="0"
+                     [maxItems]="1"
+                     [secondaryPlaceholder]="'Select Place'"
+                     [onlyFromAutocomplete]="true">
+            <tag-input-dropdown [showDropdownIfEmpty]="true" [autocompleteItems]="loc" displayBy="location"
+            identifyBy="location" zIndex="10000">
+            </tag-input-dropdown>
+          </tag-input>
+          <span class="pr-2">during</span>
+          <form class="form-inline d-inline-block dateinput" >
+            <div class="form-group my-1">
+              <div class="input-group">
+                <input #myRangeInput myRangeInput="myRangeInput"
+                       class="form-control form-control-sm"
+                       placeholder="yyyy-mm-dd to yyyy-mm-dd "
+                       (click)="d.toggle()"
+                       name="dp"
+                       [(value)]="text"
+                       [footerTemplate]="footerTemplate"
+                       ngbDatepicker
+                       [dayTemplate]="t"
+                       [displayMonths]="2"
+                       [maxDate]="maxDate"
+                       [minDate]="minDate"
+                       [outsideDays]="outsideDays"
+                       [autoClose]="false"
+                       #d="ngbDatepicker">
+  
+                <ng-template #t let-date="date" let-focused="focused">
+                  <span class="custom-day"
+                        [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+                        [class.faded]="isHovered(date) || isInside(date)"
+                        (click)="onDateSelection(date)"
+                        (mouseenter)="hoveredDate = date"
+                        (mouseleave)="hoveredDate = null">
+                    {{ date.day }}
+                  </span>
+                </ng-template>
+                <ng-template #footerTemplate>
+                  <hr class="my-0">
+                  <button class="btn btn-primary btn-sm m-2 float-left" (click)="getToday(today, '')">Today</button>
+                  <button class="btn btn-secondary btn-sm m-2" (click)="getWeek(today);">Past 7 days</button>
+                  <button class="btn btn-secondary btn-sm m-2 float-right" (click)="d.close()">Cancel</button>
+                  <button class="btn btn-primary btn-sm m-2 float-right" (click)="updateText(myRangeInput.value); updateLocation(getloc.value); d.close()">Search</button>
+                  
+                </ng-template>
+                <div class="input-group-append">
+                  <button class="btn btn-sm btn-outline-light" (click)="d.toggle();  $event.stopPropagation();" type="button">
+                    <i class="far fa-calendar-alt"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <span>about this impact area </span>
+         
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownMenuButton" ngbDropdownToggle>{{displayFramework}}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+              <div *ngFor="let option of frameworkOptions" >
+                <button ngbDropdownItem (click)="changeMessage(option)">{{option}}</button>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-sm ml-4 bg-light" (click)="updateText(myRangeInput.value); updateLocation(getloc.value)"><i class="fas fa-search text-dark"></i></button>
+          <!--    <hr /><pre>From: {{ fromDate | json }}</pre><pre>To: {{ toDate | json }}</pre>-->
+
+        </div>
+       <!-- <div class="inner-wrapper mt-1">
+        
+       </div> -->
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="wrapper">
+  <div class="main-tabs">
+    <ngb-tabset [destroyOnHide]="false">
+      <ngb-tab>
+        <ng-template ngbTabTitle><span class="tabIcons trending-icon"></span><span class="tab-title text-dark" (click)="updateText(myRangeInput.value); updateLocation(locations)">Trending</span></ng-template>
+        <ng-template ngbTabContent>
+          <app-trending></app-trending>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle><span class="tabIcons verbatim-icon"></span><span class="tab-title text-dark" (click)="updateText(myRangeInput.value); updateLocation(locations)">Verbatim</span></ng-template>
+        <ng-template ngbTabContent>
+          <app-verbatim></app-verbatim>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle><span class="tabIcons about-icon"></span><span class="tab-title text-dark">About This Tool</span></ng-template>
+        <ng-template ngbTabContent>
+          <app-about-page></app-about-page>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+
+  </div>
+</div>

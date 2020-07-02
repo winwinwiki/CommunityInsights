@@ -1,0 +1,119 @@
+
+<ng-container *ngIf="!empty && !loading">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card-box sweep-to-right" id="cloud">
+        <h4 class="header-title mb-3 d-inline-block">Trending Topics</h4>
+      
+        <div class="d-inline-block pull-right">
+          <button type="button" class="btn-sm btn rounded-0 m-0 switchView" (click)= "getTrendingTopics(); loading=true" [ngClass]="[selectedTopics ? 'selected' : 'notSelected']">Topics</button>
+          <button type="button" class="btn-sm btn rounded-0 m-0 switchView" (click)= "getHashtags();  loading=true" [ngClass]="[selectedTopics ? 'notSelected' : 'selected']">Hashtags</button>
+        </div>
+        <div class="btn-group btn-group-vertical zoom-btn" bis_skin_checked="1">
+          <button type="button" class="btn zoomIn zoom p-2 m-0 border rounded-top z-index-1" [disabled]="hideZoomIn" (click)="zoom('in')"><i class="fas fa-search-plus text-muted"></i></button>
+          <button type="button" class="btn zoomOut zoom p-2 m-0 border rounded-bottom z-index-1" [disabled]= "hideZoomOut" (click)="zoom('out')"><i class="fas fa-search-minus text-muted"></i></button>
+        </div>
+        <div id="trending-topics" class="h-350 d-flex align-items-center">
+          <div *ngIf="loading" class="loader mx-auto">
+            <img src="/assets/loader.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <div class="col-xl-7">
+      <div class="card-box sweep-to-right" style="padding-bottom: 15px;">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="header-title mb-3 d-inline-block">Topic Sentiment Breakdown</h4>
+          
+          <pagination-controls class="hide-page-numbers d-inline-block" directionLinks="true" (pageChange)="p = $event"></pagination-controls>
+        </div>
+        <div class="row">
+          <div class="col-xl-12">
+            <table class="table table-hover m-0 table-centered nowrap w-100 sentiment-table" role="grid">
+              <thead>
+                <tr role="row">
+                  <th class="sorting_asc col-3 w-25" tabindex="0">Count</th>
+                  <th class="sorting col-3 w-25" tabindex="0">Topic Name</th>
+                  <th class="sorting col-6 w-50" tabindex="0">Sentiment</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <ng-container *ngIf ="selectedTopics">
+                  <tr role="row" class="odd" *ngFor = "let i = index ; let sentimentData of listTrendingTopics | paginate: { itemsPerPage: 8, currentPage: p }" (click)="updateClicked(sentimentData.topic + ' topic'); setClickedRow(i)"  [class.active]="i == selectedRow" style="cursor: pointer;">
+                    <td tabindex="0" class="d-flex">
+                      <!-- <i class="fas icon-sm pr-2 my-auto {{sentimentData.sentiment == -1 ? 'fa-arrow-circle-down' : sentimentData.sentiment == 0 ? 'fa-minus-circle' : 'fa-arrow-circle-up' }}"></i> -->
+                      <b>{{sentimentData.counts}}</b>
+                    </td>
+                    <td>
+                      {{sentimentData.topic}}
+                    </td>
+                    <td>
+                      <div class="progress">
+                        <div class="progress-bar bg-negative" role="progressbar" ngbTooltip="{{((sentimentData.negative / sentimentData.counts) *100).toFixed(2)}}" [style.width.%]="(sentimentData.negative / sentimentData.counts) *100" aria-valuenow="sentiment.negative" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-neutral" role="progressbar" ngbTooltip="{{((sentimentData.neutral / sentimentData.counts) *100).toFixed(2)}}" [style.width.%]=" (sentimentData.neutral / sentimentData.counts) * 100" aria-valuenow="sentiment.neutral" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-positive" role="progressbar" ngbTooltip="{{((sentimentData.positive / sentimentData.counts) *100).toFixed(2)}}" [style.width.%]="(sentimentData.positive / sentimentData.counts) * 100" aria-valuenow="sentiment.positive" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+    
+                  </tr>
+                </ng-container>
+                <ng-container *ngIf="!selectedTopics">
+                  <tr role="row" class="odd" *ngFor = "let sentimentData of listHashtags | paginate: { itemsPerPage: 9, currentPage: p }" (click)="updateClicked(sentimentData.hashtag + ' hashtag')" style="cursor: pointer;">
+                    <td tabindex="0" class="d-flex">
+                      <!-- <i class="fas icon-sm pr-2 my-auto {{sentimentData.sentiment == -1 ? 'fa-arrow-circle-down' : sentimentData.sentiment == 0 ? 'fa-minus-circle' : 'fa-arrow-circle-up' }}"></i> -->
+                      <b>{{sentimentData.counts}}</b>
+                    </td>
+                    <td>
+                      {{sentimentData.hashtag}}
+                    </td>
+                    <td>
+                      <div class="progress">
+                        <div class="progress-bar bg-negative" role="progressbar" ngbTooltip="{{((sentimentData.negative / sentimentData.counts) *100).toFixed(2)}}" [style.width.%]="(sentimentData.negative/sentimentData.counts)*100" aria-valuenow="sentiment.negative" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-neutral" role="progressbar" ngbTooltip="{{((sentimentData.neutral / sentimentData.counts) *100).toFixed(2)}}" [style.width.%]=" (sentimentData.neutral / sentimentData.counts) * 100" aria-valuenow="sentiment.neutral" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-positive" role="progressbar" ngbTooltip="{{((sentimentData.positive / sentimentData.counts) *100).toFixed(2)}}" [style.width.%]="(sentimentData.positive / sentimentData.counts) * 100" aria-valuenow="sentiment.positive" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+    
+                  </tr>
+                </ng-container>
+                
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-center align-items-center small">
+              <div class="box bg-negative mx-2"></div><span class="mr-2">Negative</span>
+              <div class="box bg-neutral mx-2"> </div><span class="mr-2">Neutral</span>
+              <div class="box bg-positive mx-2"> </div><span class="mr-2">Positive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-5">
+      <app-chart></app-chart>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-12" >
+      <app-tree-map></app-tree-map>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="empty && !loading">
+  <div class="text-center mt-5 mx-auto p-4">
+    <img class="mb-4 text-center pb-2 " src="/assets/zero_page_icon.svg">
+    <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> No Data Found. Please Refine your Search</p>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="loading">
+  <div class="text-center mt-5 mx-auto px-4 loader">
+    <img src="/assets/loader.gif">
+  </div>
+</ng-container>

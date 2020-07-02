@@ -1,0 +1,260 @@
+<ng-container *ngIf="empty && !loading">
+  <div class="text-center mt-5 mx-auto p-4">
+    <img class="mb-4 text-center pb-2 " src="/assets/zero_page_icon.svg">
+    <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> No Data Found. Please Refine your Search</p>
+  </div>
+</ng-container>
+<ng-container *ngIf="empty && loading">
+  <div class="text-center mt-5 mx-auto px-4 loader">
+    <img src="/assets/loader.gif">
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="!empty">
+  <div class="page-wrapper chiller-theme verbatim-tab" [ngClass]="[isOn === true ? 'toggled' : 'toggle']">
+    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+      <i class="fas fa-bars" (click)="isOn ? isOn = false : isOn = true"></i>
+    </a>
+    <nav id="sidebar" class="sidebar-wrapper">
+      <div class="sidebar-content">
+        <div class="sidebar-brand">
+          <a href="#">Filter Data</a>
+          <div id="close-sidebar" (click)="isOn=false">
+            <i class="far fa-times-circle"></i>
+          </div>
+        </div>
+        <!-- sidebar-header  -->
+        <div class="sidebar-search">
+          <div>
+            <div class="input-group">
+              <input type="text" class="form-control search-menu" placeholder="Search Filter Criteria">
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- sidebar-search  -->
+        <div class="sidebar-menu">
+          <ul>
+            <ngb-accordion>
+              <ngb-panel title="Impact" class="sidebar-dropdown">
+                <ng-template ngbPanelContent>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <input type="checkbox" id="impact-1" name="impact-1" value="Impact Area Name 1">
+                    <label for="impact-1" class="my-0 px-2"> Impact Area Name 1</label><br>
+                    <span class="badge badge-pill badge-warning">1</span>
+                  </div>
+  
+                  <div class="d-flex align-items-center justify-content-between">
+                    <input type="checkbox" id="impact-2" name="impact-2" value="Impact Area Name 2">
+                    <label for="impact-2" class="my-0 px-2"> Impact Area Name 2</label><br>
+                    <span class="badge badge-pill badge-warning">20</span>
+                  </div>
+  
+                  <div class="d-flex align-items-center justify-content-between">
+                    <input type="checkbox" id="impact-3" name="impact-3" value="Impact Area Name 3">
+                    <label for="impact-3" class="my-0 px-2"> Impact Area Name 3</label><br>
+                    <span class="badge badge-pill badge-warning">100</span>
+                  </div>
+                  <!--use loop here to populate impact areas as checkboxes, note: here each checkbox will have a different id-->
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel title="Source" class="sidebar-dropdown">
+                <span _ngcontent-pbe-c111="" class="badge badge-pill badge-warning">New</span>
+                <ng-template ngbPanelContent>
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+                  aute.
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel title="Type" class="sidebar-dropdown">
+                
+                <ng-template ngbPanelContent>
+                  <span _ngcontent-pbe-c111="" class="badge badge-pill badge-warning">New</span>
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+                  aute.
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel title="Sentiment" class="sidebar-dropdown">
+                <ng-template ngbPanelContent>
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+                  aute.
+                </ng-template>
+              </ngb-panel>
+            </ngb-accordion>
+          </ul>
+        </div>
+        <!-- sidebar-menu  -->
+      </div>
+      <!-- sidebar-content  -->
+    </nav>
+    <!-- sidebar-wrapper  -->
+    <main class="page-content">
+      
+      <div class="container-fluid">
+        <div class="d-flex py-2 justify-content-end">
+          <button type="button" class="btn btn-sm viewType py-1 rounded-0 border" (click)= "flatView = true" [ngClass]="[flatView ? 'selected' : 'notSelected']"><i class="fas fa-list pr-2"></i>List</button>
+          <button type="button" class="btn btn-sm viewType py-1 rounded-0 border" (click)="flatView = flase" [ngClass]="[!flatView ? 'selected' : 'notSelected']"><i class="fas fa-indent pr-2"></i>Hierarchy</button>
+        </div>
+        <div class="d-flex justify-content-end">
+          <div>
+            <pagination-controls class="hide-page-numbers d-inline-block" directionLinks="true" (pageChange)="p = $event"></pagination-controls>
+          </div>
+        </div>
+        <ng-container *ngIf="!flatView">
+          <div *ngFor="let key of keys">
+            <div class="card sub-details">
+              <div class="p-3">
+                <div class="row">
+                  <span class="col-sm-12 location col-md-2">
+                    {{items.get(key).region}}  {{items.get(key).post_id}}
+                  </span>
+                  <span class="col-sm-4 col-md-3 date">
+                    {{items.get(key).created_time}}
+                  </span>
+                  <span class="col-md-4 col-sm-4 sources">
+                    From  {{items.get(key).platform_name}}
+                  </span>
+                  <span class="col-sm-4 col-md-3 metadata text-right">
+                    {{items.get(key).topics}}
+                  </span>
+                </div>
+                <div class="row d-flex align-items-center px-0 mx-0">
+                  <span class="mr-2 smiley text-center">
+                    <i class="far {{items.get(key).sentiment == -1 ? 'fa-frown' : items.get(key).sentiment == 0 ? 'fa-meh' : 'fa-smile' }}"></i>
+        
+                  </span>
+                  <span class="mx-2 icon-comment text-center">
+                    <i class="far fa-file-alt"></i>
+                  </span>
+                  <div class="col-10 inline-block" ngbTooltip="{{items.get(key).content}}">
+                   <span>{{((items.get(key).contentLength >=250))  ? items.get(key).content.substr(0, 250) : items.get(key).content}}</span> <span *ngIf="(items.get(key).contentLength >=250) && !show">...</span><span class="closed">{{items.get(key).content.substr(250)}}</span>
+                   <button *ngIf="items.get(key).contentLength >=250" class="bg-transparent border-0 text-primary text-center align-items-end" (click)="showText($event)">Show More</button>
+                  </div>
+ 
+                </div>
+                <!-- <div class="row topics col-12 d-flex justify-content-center mt-3">
+                    <span class="pink">
+                      {{discourse.level0}}
+                    </span>
+                    <span class="blue">
+                      {{discourse.level1}}
+                    </span>
+                    <span class="red">
+                      {{discourse.level2}}
+                    </span>
+                  
+                </div> -->
+              </div>
+            </div>
+
+
+            <ng-container *ngIf="items.get(key).comments.length > 0">
+              <div *ngFor ="let comment of items.get(key).comments" class="card sub-details threaded">
+                <div class="p-3">
+                  <div class="row">
+                    <span class="col-sm-12 location col-md-2">
+                      {{comment.region}}
+                    </span>
+                    <span class="col-sm-4 col-md-3 date">
+                      {{comment.created_time}}
+                    </span>
+                    <span class="col-md-4 col-sm-4 sources">
+                      From  {{comment.platform_name}}
+                    </span>
+                    <span class="col-sm-4 col-md-3 metadata text-right">
+                      {{comment.topics}}
+                    </span>
+                  </div>
+                  <div class="row d-flex align-items-center px-0 mx-0">
+                    <span class="mr-2 smiley text-center">
+                      <i class="far {{comment.sentiment == -1 ? 'fa-frown' : comment.sentiment == 0 ? 'fa-meh' : 'fa-smile' }}"></i>
+          
+                    </span>
+                    <span class="mx-2 icon-comment text-center">
+                      <i class="far fa-file-alt"></i>
+                    </span>
+
+                    <div class="col-10 inline-block" ngbTooltip="{{comment.content}}">
+                      <span>{{((comment.contentLength >=250))  ? comment.content.substr(0, 250) : comment.content}}</span> <span *ngIf="(comment.contentLength >=250) && !show">...</span><span class="closed">{{comment.content.substr(250)}}</span>
+                      <button *ngIf="comment.contentLength >=250" class="bg-transparent border-0 text-primary text-center align-items-end" (click)="showText($event)">Show More</button>
+                     </div>
+                  </div>
+                  <!-- <div class="row topics col-12 d-flex justify-content-center mt-3">
+                      <span class="pink">
+                        {{discourse.level0}}
+                      </span>
+                      <span class="blue">
+                        {{discourse.level1}}
+                      </span>
+                      <span class="red">
+                        {{discourse.level2}}
+                      </span>
+                    
+                  </div> -->
+                </div>
+              </div>
+
+            </ng-container>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="flatView">
+          <div *ngFor = "let discourse of discourseDetails | paginate: { itemsPerPage: 8, currentPage: p }">
+            <div class="card sub-details">
+              <div class="p-3">
+                <div class="row">
+                  <span class="col-sm-12 location col-md-2">
+                    {{discourse.region}}
+                  </span>
+                  <span class="col-sm-4 col-md-3 date">
+                    {{discourse.created_time}}
+                  </span>
+                  <span class="col-md-4 col-sm-4 sources">
+                    From {{discourse.platform_desc}}
+                  </span>
+                  <span class="col-sm-4 col-md-3 metadata text-right">
+                    Traffic (What text?)
+                  </span>
+                </div>
+                <div class="row d-flex align-items-center px-0 mx-0">
+                  <span class="mr-2 smiley text-center">
+                    <i class="far {{discourse.sentiment == -1 ? 'fa-frown' : discourse.sentiment == 0 ? 'fa-meh' : 'fa-smile' }}"></i>
+        
+                  </span>
+                  <span class="mx-2 icon-comment text-center">
+                    <i class="far fa-comment-dots {{isPost == 1 ? 'fa-file-alt' : 'fa-comment-dots' }}"></i>
+                  </span>
+            
+                  <div class="col-10 inline-block" ngbTooltip="{{discourse.comment}}">
+                    <span>{{((discourse.comment.length >=250))  ? discourse.comment.substr(0, 250) : discourse.comment}}</span> <span *ngIf="(discourse.comment.length >=250) && !show">...</span><span class="closed">{{discourse.comment.substr(250)}}</span>
+                    <button *ngIf="discourse.comment.length >=250" class="bg-transparent border-0 text-primary text-center align-items-end" (click)="showText($event)">Show More</button>
+                   </div>
+                </div>
+                <div class="row topics col-12 d-flex justify-content-center mt-3">
+                    <span class="pink">
+                      {{discourse.level0}}
+                    </span>
+                    <span class="blue">
+                      {{discourse.level1}}
+                    </span>
+                    <span class="red">
+                      {{discourse.level2}}
+                    </span>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+   
+      </div>
+  
+    </main>
+    <!-- page-content" -->
+  </div>
+</ng-container>
+
