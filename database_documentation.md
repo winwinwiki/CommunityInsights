@@ -317,7 +317,7 @@ These are the SQL queries used with GraphQL to pull data from the database. Plac
  ` "statements":   ["SELECT * FROM Discourse WHERE discourse_id=$ctx.args.discourse_id"]`
 }
 
-*Used to pull specific discourses one at a time *
+*Used to pull specific discourses one at a time*
 <br>
 
 ### listDiscourses
@@ -326,7 +326,7 @@ These are the SQL queries used with GraphQL to pull data from the database. Plac
   `"statements":   ["SELECT * FROM Discourse"]`
 }
 
-* Used to get all of the data from the discourse table *
+*Used to get all of the data from the discourse table*
 <br>
 
 ### getImpactArea
@@ -475,7 +475,7 @@ These are the SQL queries used with GraphQL to pull data from the database. Plac
         "select distinct d.discourse_id, d.region as region, d.content as comment, dtt.sentiment, GROUP_CONCAT(dtt.topic) as Topics, so.platform_name, d.created_time, i.source_ontology, d.isPost, d.post_id from Discourse d join Source so on d.source_id = so.source_id left join DiscourseImpactArea di on d.discourse_id = di.discourse_id left join ImpactArea i on di.impact_area_id = i.impact_area_id left join DiscourseTrendingTopics dtt on d.discourse_id = dtt.discourse_id where d.created_time between '$ctx.args.start' and '$ctx.args.end' and d.region='$ctx.args.region' group by d.discourse_id, i.source_ontology limit 500"]`
 }
 
-*This query pulls a list of most of the available data on each discourse, pulling all of the data for a set of discourses (within a specific date range and in a specific region) in the Discourse table, along with a list of topics that these discourses are associated with, the type of sentiment it demonstrates, and the impact areas they relate to. *
+*This query pulls a list of most of the available data on each discourse, pulling all of the data for a set of discourses (within a specific date range and in a specific region) in the Discourse table, along with a list of topics that these discourses are associated with, the type of sentiment it demonstrates, and the impact areas they relate to.*
 <br>
 
 ### getTopicsComment
