@@ -66,6 +66,9 @@ export class ChartComponent implements OnInit, OnDestroy {
   new d3plus2.LinePlot()
   .config({
     data: chartData,
+    xSort: function(a, b) {
+      return Date.parse(a["date"]) - Date.parse(b["date"]);
+    },
     groupBy: "sentiment",
     x: "date",
     y: "counts",
@@ -92,7 +95,7 @@ export class ChartComponent implements OnInit, OnDestroy {
      // labels: []
     },
     yConfig: {
-      title: "Count",
+      title: "Count",      
     },
     legendTooltip:{
       tbody: []
