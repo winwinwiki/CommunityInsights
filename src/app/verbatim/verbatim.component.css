@@ -139,7 +139,8 @@ position:relative;
 }
 
 .page-wrapper.toggled #show-sidebar {
-  left: 20%;
+  position: absolute;
+  left: 260px;
   top: 0%;
 }
 /*----------------sidebar-wrapper----------------*/
@@ -503,4 +504,8 @@ position:relative;
   font-weight: lato;
   font-weight: bold;
   box-shadow: inset 0px -1px 1px 0px rgba(0,0,0,0.125);
+}
+
+.popover {
+  background-color: #28A5D5;
 }

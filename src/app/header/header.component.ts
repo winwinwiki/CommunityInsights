@@ -146,6 +146,7 @@ export class HeaderComponent implements OnInit, AfterContentInit {
 
   onSelectedLocation(locChoice){
     this.locText = [locChoice.location];
+    this.updateLocation(this.locText)
   }
 
   updateText(text) {
@@ -173,18 +174,28 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     let currentTime = currentDate.getDay() ? currentDate.getDay() - 2 : 6;
 
     let fromDate = new Date(currentDate.getTime() - 5 * 24 * 60 * 60 * 1000);
+    // this.fromDate = new NgbDate(
+    //   fromDate.getFullYear(),
+    //   fromDate.getMonth() + 1,
+    //   fromDate.getDate()
+    // );
     this.fromDate = new NgbDate(
-      fromDate.getFullYear(),
-      fromDate.getMonth() + 1,
-      fromDate.getDate()
+      2020,
+      5,
+      5
     );
 
     let toDate = new Date(fromDate.getTime() + 5 * 24 * 60 * 60 * 1000);
+    // this.toDate = new NgbDate(
+    //   toDate.getFullYear(),
+    //   toDate.getMonth() + 1,
+    //   toDate.getDate()
+    // ); 
     this.toDate = new NgbDate(
-      toDate.getFullYear(),
-      toDate.getMonth() + 1,
-      toDate.getDate()
-    ); 
+      2020,
+      6,
+      21
+    );
     if(initialData != ''){
       parsed += this._parserFormatter.format(this.fromDate) + ' to ' + this._parserFormatter.format(this.toDate);
       this.initialDate = parsed;

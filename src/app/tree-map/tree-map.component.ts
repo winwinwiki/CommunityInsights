@@ -113,7 +113,7 @@ export class TreeMapComponent implements OnInit {
       this.dates = text.split(' to ');
       this.start = this.dates[0];
       this.end = this.dates[1];
-      this.regiondata = location[0].split(' - ');
+      this.regiondata = (location[0]+"").split(' - ');
         this.region = this.regiondata[0];
         this.parent_region = this.regiondata[1];
         this.buildTreemap();
