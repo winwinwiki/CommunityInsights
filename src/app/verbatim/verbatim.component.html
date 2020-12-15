@@ -13,90 +13,233 @@
 
 <ng-container *ngIf="!empty">
   <div class="page-wrapper chiller-theme verbatim-tab" [ngClass]="[isOn === true ? 'toggled' : 'toggle']">
-    <a (click)="isOn = !isOn" id="show-sidebar" placement="right" [ngbTooltip]="isOn?'Close Filter':'Open Filter'" class="btn btn-sm btn-dark" href="#">
-      <i class="fas fa-filter" ></i>
+    <a (click)="isOn = !isOn" id="show-sidebar" placement="right" [ngbTooltip]="isOn?'Close Filter':'Open Filter'"
+      class="btn btn-sm btn-dark" href="#">
+      <i class="fas fa-filter"></i>
     </a>
-    <nav id="sidebar" class="sidebar-wrapper">
-      <div class="sidebar-content">
-        <div class="sidebar-brand">
-          <a href="#">Filter Data</a>
-          <!-- <div id="close-sidebar" (click)="isOn=false">
-            <i class="far fa-times-circle"></i>
-          </div> -->
-        </div>
-        <!-- sidebar-header  -->
-        <div class="sidebar-search">
-          <div>
-            <div class="input-group">
-              <input type="text" class="form-control search-menu" placeholder="Search Filter Criteria">
-              <div class="input-group-append">
-                <span class="input-group-text">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </span>
+    <form [formGroup]="filterForm">
+      <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+          <div class="sidebar-brand">
+            <span>Filter Data</span>
+          </div>
+          <!-- sidebar-header  -->
+          <div class="sidebar-search">
+            <div>
+              <div class="input-group">
+                <input type="text" class="form-control search-menu" placeholder="Search Text">
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
+          <!-- sidebar-search  -->
+          <div class="sidebar-menu">
+            <mat-accordion multi>
+              <mat-expansion-panel class="mat-elevation-z0" formArrayName="impact_child">
+                <mat-expansion-panel-header>
+                  Impact Area
+                </mat-expansion-panel-header>
+                <mat-expansion-panel class="mat-elevation-z0">
+                  <mat-expansion-panel-header>
+                    SDG
+                  </mat-expansion-panel-header>
+                  <ul>
+                    <li *ngFor="let group of checkboxes.impact.SDG | tree">
+                      <mat-expansion-panel class="mat-elevation-z0">
+                        <mat-expansion-panel-header>
+                          <p>{{group.name}}</p>
+                        </mat-expansion-panel-header>
+                        <ul>
+                          <li>
+                            <mat-checkbox (change)="CheckAllOptions1(group.children)">
+                              All
+                            </mat-checkbox>
+                          </li>
+                          <li *ngFor="let child of group.children">
+                            <mat-checkbox [formControlName]="(child.value-1)">
+                              {{child.label}}
+                            </mat-checkbox>
+                          </li>
+
+                        </ul>
+                      </mat-expansion-panel>
+                    </li>
+                  </ul>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="mat-elevation-z0">
+                  <mat-expansion-panel-header>
+                    SPI
+                  </mat-expansion-panel-header>
+                  <ul>
+                    <li *ngFor="let group of checkboxes.impact.SPI | tree">
+                      <mat-expansion-panel class="mat-elevation-z0">
+                        <mat-expansion-panel-header>
+                          <p>{{group.name}}</p>
+                        </mat-expansion-panel-header>
+                        <ul>
+                          <li>
+                            <mat-checkbox (change)="CheckAllOptions1(group.children)">
+                              All
+                            </mat-checkbox>
+                          </li>
+                          <li *ngFor="let child of group.children">
+                            <mat-checkbox [formControlName]="(child.value-1)">
+                              {{child.label}}
+                            </mat-checkbox>
+                          </li>
+
+                        </ul>
+                      </mat-expansion-panel>
+                    </li>
+                  </ul>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="mat-elevation-z0">
+                  <mat-expansion-panel-header>
+                    TSF
+                  </mat-expansion-panel-header>
+                  <ul>
+                    <li *ngFor="let group of checkboxes.impact.TSF | tree">
+                      <mat-expansion-panel class="mat-elevation-z0">
+                        <mat-expansion-panel-header>
+                          <p>{{group.name}}</p>
+                        </mat-expansion-panel-header>
+                        <ul>
+                          <li>
+                            <mat-checkbox (change)="CheckAllOptions1(group.children)">
+                              All
+                            </mat-checkbox>
+                          </li>
+                          <li *ngFor="let child of group.children">
+                            <mat-checkbox [formControlName]="child.value-1">
+                              {{child.label}}
+                            </mat-checkbox>
+                          </li>
+
+                        </ul>
+                      </mat-expansion-panel>
+                    </li>
+                  </ul>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="mat-elevation-z0">
+                  <mat-expansion-panel-header>
+                    NewImpact
+                  </mat-expansion-panel-header>
+
+                  <ul>
+                    <li *ngFor="let group of checkboxes.impact.NewImpact | tree">
+                      <mat-expansion-panel class="mat-elevation-z0">
+                        <mat-expansion-panel-header>
+                          <p>{{group.name}}</p>
+                        </mat-expansion-panel-header>
+                        <ul>
+                          <li *ngFor="let subgroup of group.children | tree:'parent'">
+                            <mat-expansion-panel class="mat-elevation-z0">
+                              <mat-expansion-panel-header>
+                                <p>{{subgroup.name}}</p>
+                              </mat-expansion-panel-header>
+                              <ul>
+                                <li>
+                                  <mat-checkbox (change)="CheckAllOptions1(subgroup.children)">
+                                    All
+                                  </mat-checkbox>
+                                </li>
+                                <li *ngFor="let child of subgroup.children">
+                                  <mat-checkbox [formControlName]="child.value-1">
+                                    {{child.label}}
+                                  </mat-checkbox>
+                                </li>
+                              </ul>
+                            </mat-expansion-panel>
+                          </li>
+
+                        </ul>
+                      </mat-expansion-panel>
+                    </li>
+                  </ul>
+
+                </mat-expansion-panel>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel class="mat-elevation-z0">
+                <mat-expansion-panel-header>
+                  Source
+                </mat-expansion-panel-header>
+                <ul>
+                  <li>
+                    <mat-checkbox (change)="CheckAllOptions(checkboxes.source,'source')">
+                      All
+                    </mat-checkbox>
+                  </li>
+                  <li *ngFor="let item of checkboxes.source">
+                    <mat-checkbox [value]="item.value" [checked]="item.checked"
+                      (change)="updateFilterForm('source',item.value,$event)">
+                      {{item.label}}
+                    </mat-checkbox>
+                  </li>
+                </ul>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel class="mat-elevation-z0">
+                <mat-expansion-panel-header>
+                  Type
+                </mat-expansion-panel-header>
+                <ul>
+                  <li>
+                    <mat-checkbox (change)="CheckAllOptions(checkboxes.type,'type')">
+                      All
+                    </mat-checkbox>
+                  </li>
+                  <li *ngFor="let item of checkboxes.type">
+                    <mat-checkbox [value]="item.value" [checked]="item.checked"
+                      (change)="updateFilterForm('type',item.value,$event)">
+                      {{item.label}}
+                    </mat-checkbox>
+                  </li>
+                </ul>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel class="mat-elevation-z0">
+                <mat-expansion-panel-header>
+                  Sentiment
+                </mat-expansion-panel-header>
+                <ul>
+                  <li>
+                    <mat-checkbox (change)="CheckAllOptions(checkboxes.sentiment,'sentiment')">
+                      All
+                    </mat-checkbox>
+                  </li>
+                  <li *ngFor="let item of checkboxes.sentiment">
+                    <mat-checkbox [value]="item.value" [checked]="item.checked"
+                      (change)="updateFilterForm('sentiment',item.value,$event);">
+                      {{item.label}}
+                    </mat-checkbox>
+                  </li>
+                </ul>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <button class="btn btn-md" (click)="applyFilter()">Apply</button>
+              <span style="margin:5px;"></span>
+              <button class="btn btn-secondary btn-md" (click)="cancel()">Cancel</button>
+            </div>
+          </div>
+          <!-- sidebar-menu  -->
         </div>
-        <!-- sidebar-search  -->
-        <div class="sidebar-menu">
-          <ul>
-            <ngb-accordion>
-              <ngb-panel title="Impact" class="sidebar-dropdown">
-                <ng-template ngbPanelContent>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <input type="checkbox" id="impact-1" name="impact-1" value="Impact Area Name 1">
-                    <label for="impact-1" class="my-0 px-2"> Impact Area Name 1</label><br>
-                    <span class="badge badge-pill badge-warning">1</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                    <input type="checkbox" id="impact-2" name="impact-2" value="Impact Area Name 2">
-                    <label for="impact-2" class="my-0 px-2"> Impact Area Name 2</label><br>
-                    <span class="badge badge-pill badge-warning">20</span>
-                  </div>
-
-                  <div class="d-flex align-items-center justify-content-between">
-                    <input type="checkbox" id="impact-3" name="impact-3" value="Impact Area Name 3">
-                    <label for="impact-3" class="my-0 px-2"> Impact Area Name 3</label><br>
-                    <span class="badge badge-pill badge-warning">100</span>
-                  </div>
-                  <!--use loop here to populate impact areas as checkboxes, note: here each checkbox will have a different id-->
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel title="Source" class="sidebar-dropdown">
-                <span _ngcontent-pbe-c111="" class="badge badge-pill badge-warning">New</span>
-                <ng-template ngbPanelContent>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                  moon officia
-                  aute.
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel title="Type" class="sidebar-dropdown">
-
-                <ng-template ngbPanelContent>
-                  <span _ngcontent-pbe-c111="" class="badge badge-pill badge-warning">New</span>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                  moon officia
-                  aute.
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel title="Sentiment" class="sidebar-dropdown">
-                <ng-template ngbPanelContent>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                  moon officia
-                  aute.
-                </ng-template>
-              </ngb-panel>
-            </ngb-accordion>
-          </ul>
-        </div>
-        <!-- sidebar-menu  -->
-      </div>
-      <!-- sidebar-content  -->
-    </nav>
+        <!-- sidebar-content  -->
+      </nav>
+    </form>
     <!-- sidebar-wrapper  -->
     <main class="page-content">
-
+      <!-- <code>{{ impact_child.value | json }}</code> -->
+      <!-- <div *ngFor="let control of filterForm.get('impact_child').controls;let i = index "> 
+        <div *ngIf="control.value"><button>{{tags[i].tag}}</button></div>
+      </div> -->
       <div class="container-fluid">
         <div class="d-flex py-2 justify-content-end">
           <button type="button" class="btn btn-sm viewType py-1 rounded-0 border" (click)="flatView = true"
@@ -138,7 +281,8 @@
                     <i class="far fa-file-alt"></i>
                   </span>
                   <div class="col-10 inline-block" ngbTooltip="{{items.get(key).content}}">
-                    <span>{{((items.get(key).contentLength >=250))  ? items.get(key).content.substr(0, 250) : items.get(key).content}}</span>
+                    <span>{{((items.get(key).contentLength >=250)) ? items.get(key).content.substr(0, 250) :
+                      items.get(key).content}}</span>
                     <span *ngIf="(items.get(key).contentLength >=250) && !show">...</span><span
                       class="closed">{{items.get(key).content.substr(250)}}</span>
                     <button *ngIf="items.get(key).contentLength >=250"
@@ -191,7 +335,8 @@
                     </span>
 
                     <div class="col-10 inline-block" ngbTooltip="{{comment.content}}">
-                      <span>{{((comment.contentLength >=250))  ? comment.content.substr(0, 250) : comment.content}}</span>
+                      <span>{{((comment.contentLength >=250)) ? comment.content.substr(0, 250) :
+                        comment.content}}</span>
                       <span *ngIf="(comment.contentLength >=250) && !show">...</span><span
                         class="closed">{{comment.content.substr(250)}}</span>
                       <button *ngIf="comment.contentLength >=250"
@@ -220,7 +365,7 @@
 
         <ng-container *ngIf="flatView">
           <div *ngFor="let discourse of discourseDetails | paginate: { itemsPerPage: 8, currentPage: p }">
-            <div class="card sub-details" >
+            <div class="card sub-details">
               <div class="p-3">
                 <div class="row">
                   <span class="col-sm-12 location col-md-2">
@@ -243,11 +388,12 @@
 
                   </span>
                   <span class="mx-2 icon-comment text-center">
-                    <i class="far fa-comment-dots {{isPost == 1 ? 'fa-file-alt' : 'fa-comment-dots' }}"></i>
+                    <i class="far fa-comment-dots {{discourse.isPost == 1 ? 'fa-file-alt' : 'fa-comment-dots' }}"></i>
                   </span>
 
                   <div class="col-10 inline-block" ngbTooltip="{{discourse.comment}}">
-                    <span>{{((discourse.comment.length >=250))  ? discourse.comment.substr(0, 250) : discourse.comment}}</span>
+                    <span>{{((discourse.comment.length >=250)) ? discourse.comment.substr(0, 250) :
+                      discourse.comment}}</span>
                     <span *ngIf="(discourse.comment.length >=250) && !show">...</span><span
                       class="closed">{{discourse.comment.substr(250)}}</span>
                     <button *ngIf="discourse.comment.length >=250"
@@ -278,4 +424,3 @@
     <!-- page-content" -->
   </div>
 </ng-container>
-

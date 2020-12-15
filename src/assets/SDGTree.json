@@ -1,0 +1,1016 @@
+[
+	{
+		"label" : "1.1 End Extreme Poverty",
+		"value" : 1,
+		"group" : "1 End Poverty",
+		"checked" : 0
+	},
+	{
+		"label" : "1.2 Reduce Poverty",
+		"value" : 2,
+		"group" : "1 End Poverty",
+		"checked" : 0
+	},
+	{
+		"label" : "1.3 Social Protection",
+		"value" : 3,
+		"group" : "1 End Poverty",
+		"checked" : 0
+	},
+	{
+		"label" : "1.4 Equal Access to Goods & Services",
+		"value" : 4,
+		"group" : "1 End Poverty",
+		"checked" : 0
+	},
+	{
+		"label" : "1.5 Build Resilience",
+		"value" : 5,
+		"group" : "1 End Poverty",
+		"checked" : 0
+	},
+	{
+		"label" : "1.a Secure Resources for Programs",
+		"value" : 6,
+		"group" : "1 End Poverty",
+		"checked" : 0
+	},
+	{
+		"label" : "1.b Scalable Policy Frameworks",
+		"value" : 7,
+		"group" : "1 End Poverty",
+		"checked" : 0
+	},
+	{
+		"label" : "2.1 End Hunger",
+		"value" : 8,
+		"group" : "2 End Hunger",
+		"checked" : 0
+	},
+	{
+		"label" : "2.2 End Malnutrition",
+		"value" : 9,
+		"group" : "2 End Hunger",
+		"checked" : 0
+	},
+	{
+		"label" : "2.3 Increase Agricultural Activity & Income",
+		"value" : 10,
+		"group" : "2 End Hunger",
+		"checked" : 0
+	},
+	{
+		"label" : "2.4 Sustainable Food Systems",
+		"value" : 11,
+		"group" : "2 End Hunger",
+		"checked" : 0
+	},
+	{
+		"label" : "2.5 Seed Genetic Diversity",
+		"value" : 12,
+		"group" : "2 End Hunger",
+		"checked" : 0
+	},
+	{
+		"label" : "2.a Investment in Agriculture",
+		"value" : 13,
+		"group" : "2 End Hunger",
+		"checked" : 0
+	},
+	{
+		"label" : "2.b Reduce Trade Restrictions",
+		"value" : 14,
+		"group" : "2 End Hunger",
+		"checked" : 0
+	},
+	{
+		"label" : "2.c Food Market Systems",
+		"value" : 15,
+		"group" : "2 End Hunger",
+		"checked" : 0
+	},
+	{
+		"label" : "3.1 Reduce Maternal Mortality",
+		"value" : 16,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.2 End Child Mortality",
+		"value" : 17,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.3 End Disease Epidemics",
+		"value" : 18,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.4 Reduce Mortality from Treatable Disease",
+		"value" : 19,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.5 Treat & Prevent Substance Abuse",
+		"value" : 20,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.6 Traffic Safety",
+		"value" : 21,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.7 Reproductive Healthcare & Education",
+		"value" : 22,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.8 Universal Healthcare",
+		"value" : 23,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.9 Reduce Illness from Contamination",
+		"value" : 24,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.a Reduce Tobacco Supply & Demand",
+		"value" : 25,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.b Research Disease Prevention & Treatment",
+		"value" : 26,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.c Health Financing",
+		"value" : 27,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "3.d Risk Management",
+		"value" : 28,
+		"group" : "3 Good Health",
+		"checked" : 0
+	},
+	{
+		"label" : "4.1 Complete Childhood Education",
+		"value" : 29,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "4.2 Early Childhood Development",
+		"value" : 30,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "4.3 Equal Access to Higher Education",
+		"value" : 31,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "4.4 Employable Skills Development",
+		"value" : 32,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "4.5 Educational Gender Equity",
+		"value" : 33,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "4.6 100% Literacy & Numeracy",
+		"value" : 34,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "4.7 Sustainability Education",
+		"value" : 35,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "4.a Quality Education Facilities",
+		"value" : 36,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "4.b Scholarship Availability",
+		"value" : 37,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "4.c Qualified Teacher Training",
+		"value" : 38,
+		"group" : "4 Quality Education",
+		"checked" : 0
+	},
+	{
+		"label" : "5.1 End Female Discrimination",
+		"value" : 39,
+		"group" : "5 Gender Equality",
+		"checked" : 0
+	},
+	{
+		"label" : "5.2 End Female-Targeted Violence",
+		"value" : 40,
+		"group" : "5 Gender Equality",
+		"checked" : 0
+	},
+	{
+		"label" : "5.3 End Harmful Female Practices",
+		"value" : 41,
+		"group" : "5 Gender Equality",
+		"checked" : 0
+	},
+	{
+		"label" : "5.4 Services for Unpaid Females",
+		"value" : 42,
+		"group" : "5 Gender Equality",
+		"checked" : 0
+	},
+	{
+		"label" : "5.5 Gender Equity in Leadership",
+		"value" : 43,
+		"group" : "5 Gender Equality",
+		"checked" : 0
+	},
+	{
+		"label" : "5.6 Reproductive Rights and Health Care",
+		"value" : 44,
+		"group" : "5 Gender Equality",
+		"checked" : 0
+	},
+	{
+		"label" : "5.a Female Access to Economic Resources",
+		"value" : 45,
+		"group" : "5 Gender Equality",
+		"checked" : 0
+	},
+	{
+		"label" : "5.b Female Empowerment Through Technology",
+		"value" : 46,
+		"group" : "5 Gender Equality",
+		"checked" : 0
+	},
+	{
+		"label" : "5.c Gender Equity Policies",
+		"value" : 47,
+		"group" : "5 Gender Equality",
+		"checked" : 0
+	},
+	{
+		"label" : "6.1 Access to Drinking Water",
+		"value" : 48,
+		"group" : "6 Clean Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "6.2 Access to Sanitation and Hygiene",
+		"value" : 49,
+		"group" : "6 Clean Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "6.3 Water Quality",
+		"value" : 50,
+		"group" : "6 Clean Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "6.4 Efficient Use of Water",
+		"value" : 51,
+		"group" : "6 Clean Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "6.5 Water Resource Management",
+		"value" : 52,
+		"group" : "6 Clean Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "6.6 Protect & Restore Water Resources",
+		"value" : 53,
+		"group" : "6 Clean Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "6.a International Support",
+		"value" : 54,
+		"group" : "6 Clean Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "6.b Local Support",
+		"value" : 55,
+		"group" : "6 Clean Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "7.1 Universal Energy Access",
+		"value" : 56,
+		"group" : "7 Renewable Energy",
+		"checked" : 0
+	},
+	{
+		"label" : "7.2 Increase Renewable Energy",
+		"value" : 57,
+		"group" : "7 Renewable Energy",
+		"checked" : 0
+	},
+	{
+		"label" : "7.3 Increase Energy Efficiency",
+		"value" : 58,
+		"group" : "7 Renewable Energy",
+		"checked" : 0
+	},
+	{
+		"label" : "7.a Increase International Participation",
+		"value" : 59,
+		"group" : "7 Renewable Energy",
+		"checked" : 0
+	},
+	{
+		"label" : "7.b Improve Renewable Energy Infrastructure",
+		"value" : 60,
+		"group" : "7 Renewable Energy",
+		"checked" : 0
+	},
+	{
+		"label" : "8.1 Economic Growth",
+		"value" : 61,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.2 Economic Productivity",
+		"value" : 62,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.3 Economic Development Policies",
+		"value" : 63,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.4 Resource Efficiency",
+		"value" : 64,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.5 Full Employment",
+		"value" : 65,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.6 Increase Youth Employment",
+		"value" : 66,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.7 End Forced Labor",
+		"value" : 67,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.8 Protect Labor Rights",
+		"value" : 68,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.9 Grow Sustainable Tourism Industry",
+		"value" : 69,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.10 Access to Financial Services",
+		"value" : 70,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.a Support Trade",
+		"value" : 71,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "8.b Global Employment Strategies",
+		"value" : 72,
+		"group" : "8 Good Jobs and Econ Growth",
+		"checked" : 0
+	},
+	{
+		"label" : "9.1 Equity & Affordability Infrastructure",
+		"value" : 73,
+		"group" : "9 Innovation and Infrastructure",
+		"checked" : 0
+	},
+	{
+		"label" : "9.2 Sustainable Industrialization",
+		"value" : 74,
+		"group" : "9 Innovation and Infrastructure",
+		"checked" : 0
+	},
+	{
+		"label" : "9.3 Financial Services for Small Businesses",
+		"value" : 75,
+		"group" : "9 Innovation and Infrastructure",
+		"checked" : 0
+	},
+	{
+		"label" : "9.4 Existing Infrastructure Upgrades",
+		"value" : 76,
+		"group" : "9 Innovation and Infrastructure",
+		"checked" : 0
+	},
+	{
+		"label" : "9.5 Scientific Research",
+		"value" : 77,
+		"group" : "9 Innovation and Infrastructure",
+		"checked" : 0
+	},
+	{
+		"label" : "9.a Financial & Technical Support",
+		"value" : 78,
+		"group" : "9 Innovation and Infrastructure",
+		"checked" : 0
+	},
+	{
+		"label" : "9.b Domestic Technology Development",
+		"value" : 79,
+		"group" : "9 Innovation and Infrastructure",
+		"checked" : 0
+	},
+	{
+		"label" : "9.c Access to Information & Communication",
+		"value" : 80,
+		"group" : "9 Innovation and Infrastructure",
+		"checked" : 0
+	},
+	{
+		"label" : "10.1 Sustainable Income Growth",
+		"value" : 81,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "10.2 Social, Economic, & Political Inclusion",
+		"value" : 82,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "10.3 Equal Opportunity",
+		"value" : 83,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "10.4 Policies for Equality",
+		"value" : 84,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "10.5 Market Regulation",
+		"value" : 85,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "10.6 Political Representation",
+		"value" : 86,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "10.7 Safe & Orderly Migration",
+		"value" : 87,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "10.a Elevate Developing Countries",
+		"value" : 88,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "10.b Foreign Development Assistance",
+		"value" : 89,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "10.c Remittance Cost Reduction",
+		"value" : 90,
+		"group" : "10 Reduced Inequalities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.1 Access to Housing",
+		"value" : 91,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.2 Access to Transportation Systems",
+		"value" : 92,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.3 Sustainable & Inclusive  Urbanization",
+		"value" : 93,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.4 Culture & Heritage Protection",
+		"value" : 94,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.5 Resistance to Disaster",
+		"value" : 95,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.6 Reduce Environmental Impact",
+		"value" : 96,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.7 Access to Public & Green Space",
+		"value" : 97,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.a Connectivity Between Regions",
+		"value" : 98,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.b Policies for Sustainability & Inclusion",
+		"value" : 99,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "11.c Sustainable and Resilient Buildings",
+		"value" : 100,
+		"group" : "11 Sustainable Cities and Communities",
+		"checked" : 0
+	},
+	{
+		"label" : "12.1 Global Action Framework",
+		"value" : 101,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.2 Sustainable Resource Management",
+		"value" : 102,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.3 Reduce Food Waste",
+		"value" : 103,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.4 Waste Management",
+		"value" : 104,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.5 Waste Prevention & Reduction",
+		"value" : 105,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.6 Corporate Sustainability",
+		"value" : 106,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.7 Sustainable Procurement",
+		"value" : 107,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.8 Sustainable Lifestyle Education",
+		"value" : 108,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.a Sustainability Support for Developing Countries",
+		"value" : 109,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.b Impact Measurement",
+		"value" : 110,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "12.c Reduce Fossil Fuel Subsidies",
+		"value" : 111,
+		"group" : "12 Sustainable Comsumption and Production",
+		"checked" : 0
+	},
+	{
+		"label" : "13.1 Climate Resilience",
+		"value" : 112,
+		"group" : "13 Climate Action",
+		"checked" : 0
+	},
+	{
+		"label" : "13.2 Policies & Planning for Climate Change",
+		"value" : 113,
+		"group" : "13 Climate Action",
+		"checked" : 0
+	},
+	{
+		"label" : "13.3 Climate Change Education",
+		"value" : 114,
+		"group" : "13 Climate Action",
+		"checked" : 0
+	},
+	{
+		"label" : "13.a Implement UN Climate Change framework",
+		"value" : 115,
+		"group" : "13 Climate Action",
+		"checked" : 0
+	},
+	{
+		"label" : "13.b Climate Change Management Capacity",
+		"value" : 116,
+		"group" : "13 Climate Action",
+		"checked" : 0
+	},
+	{
+		"label" : "14.1 Marine Pollution Prevention & Reduction",
+		"value" : 117,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "14.2 Coastal Ecosystem Management & Protection",
+		"value" : 118,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "14.3 Minimize Ocean Acidification",
+		"value" : 119,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "14.4 End Overfishing",
+		"value" : 120,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "14.5 Coastal & Marine Conservation",
+		"value" : 121,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "14.6 Eliminate Overfishing Subsidies",
+		"value" : 122,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "14.7 Economic Benefits for Sustainable Marine Practices",
+		"value" : 123,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "14.a Marine Research",
+		"value" : 124,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "14.b Access to Marine Resources & Markets",
+		"value" : 125,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "14.c Ocean Conservation",
+		"value" : 126,
+		"group" : "14 Life Below Water",
+		"checked" : 0
+	},
+	{
+		"label" : "15.1 Freshwater Ecosystem Conservation & Restoration",
+		"value" : 127,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.2 Sustainable Forest Management",
+		"value" : 128,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.3 Land Degredation Neutrality",
+		"value" : 129,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.4 Moutain Ecosystem Conservation",
+		"value" : 130,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.5 Reduce Loss of Biodiversity & Habitat",
+		"value" : 131,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.6 Genetic Resource Sharing",
+		"value" : 132,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.7 End Species Poaching & Trafficking",
+		"value" : 133,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.8 Species Evasion Prevention & Reduction",
+		"value" : 134,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.9 Ecosystem & Biodiversity Planning",
+		"value" : 135,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.a Financial Resources for Conservation",
+		"value" : 136,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.b Resources for Sustainable Forest Management",
+		"value" : 137,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "15.c Global Support Species Protection",
+		"value" : 138,
+		"group" : "15 Life on Land",
+		"checked" : 0
+	},
+	{
+		"label" : "16.1 Reduce Violence",
+		"value" : 139,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.2 End Child Abuse, Exploitation, Trafficking, and Violence",
+		"value" : 140,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.3 Justice Equality",
+		"value" : 141,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.4 Reduce Organized Crime",
+		"value" : 142,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.5 Reduce Corruption & Bribery",
+		"value" : 143,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.6 Institutional Accountability & Transparency",
+		"value" : 144,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.7 Participatory & Inclusive Governance",
+		"value" : 145,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.8 Developing Countries Governmental Participation",
+		"value" : 146,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.9 Legal Identities for All",
+		"value" : 147,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.10 Equal Access to Information & Freedoms",
+		"value" : 148,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.a Stronger Institutions for Violence Prevention",
+		"value" : 149,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "16.b Non-Discriminatory Laws & Policies",
+		"value" : 150,
+		"group" : "16 Peace and Justice",
+		"checked" : 0
+	},
+	{
+		"label" : "17.1 Domestic Resource Mobilization",
+		"value" : 151,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.2 Assitance to Developing Countries",
+		"value" : 152,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.3 Financial Resources for Developing Countries",
+		"value" : 153,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.4 Long-Term Debt Sustainability",
+		"value" : 154,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.5 Investment Promotion Regimes",
+		"value" : 155,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.6 Global Cooperation and Innovation",
+		"value" : 156,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.7 Sustainable Technology Development",
+		"value" : 157,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.8 Innovation Capacity Building",
+		"value" : 158,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.9 International Capacity Building",
+		"value" : 159,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.10 Universal Open Trade",
+		"value" : 160,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.11 Exports from Developing Countries",
+		"value" : 161,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.12 Duty-Free Market Access",
+		"value" : 162,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.13 Global Macroeconomic Stability",
+		"value" : 163,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.14 Coherent Sustainable Development Policies",
+		"value" : 164,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.15 Respectful Policy Implementation",
+		"value" : 165,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.16 Global & Multi-Stakeholder Partnerships",
+		"value" : 166,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.17 Effective Multi-Sector Partnerships",
+		"value" : 167,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.18 Accessibility to Reliable Data",
+		"value" : 168,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	},
+	{
+		"label" : "17.19 Measure Progress",
+		"value" : 169,
+		"group" : "17 Partnerships for the Goals",
+		"checked" : 0
+	}
+]

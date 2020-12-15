@@ -1,0 +1,164 @@
+[
+	{
+		"label" : "Change in small business employment",
+		"value" : 294,
+		"group" : "Business Vitality",
+		"checked" : 0
+	},
+	{
+		"label" : "New private sector establishments",
+		"value" : 295,
+		"group" : "Business Vitality",
+		"checked" : 0
+	},
+	{
+		"label" : "Change in loans to businesses <$1M in revenue",
+		"value" : 296,
+		"group" : "Business Vitality",
+		"checked" : 0
+	},
+	{
+		"label" : "Change in GDP growth",
+		"value" : 297,
+		"group" : "Economy",
+		"checked" : 0
+	},
+	{
+		"label" : "Change in employment",
+		"value" : 298,
+		"group" : "Economy",
+		"checked" : 0
+	},
+	{
+		"label" : "Median household income",
+		"value" : 299,
+		"group" : "Economy",
+		"checked" : 0
+	},
+	{
+		"label" : "Postsecondary completion rate",
+		"value" : 300,
+		"group" : "Talent",
+		"checked" : 0
+	},
+	{
+		"label" : "# of people moving to King County",
+		"value" : 301,
+		"group" : "Talent",
+		"checked" : 0
+	},
+	{
+		"label" : "Jobs that pay a family-sustaining wage",
+		"value" : 302,
+		"group" : "Affordability",
+		"checked" : 0
+	},
+	{
+		"label" : "Food insecurity rate",
+		"value" : 303,
+		"group" : "Affordability",
+		"checked" : 0
+	},
+	{
+		"label" : "Cost-burdened households",
+		"value" : 304,
+		"group" : "Affordability",
+		"checked" : 0
+	},
+	{
+		"label" : "Neighbor participation rate",
+		"value" : 305,
+		"group" : "Social Inclusion",
+		"checked" : 0
+	},
+	{
+		"label" : "Group participation rate",
+		"value" : 306,
+		"group" : "Social Inclusion",
+		"checked" : 0
+	},
+	{
+		"label" : "Change in incarceration rate",
+		"value" : 307,
+		"group" : "Social Inclusion",
+		"checked" : 0
+	},
+	{
+		"label" : "Contacted public official",
+		"value" : 308,
+		"group" : "Civics",
+		"checked" : 0
+	},
+	{
+		"label" : "Voter participation rate",
+		"value" : 309,
+		"group" : "Civics",
+		"checked" : 0
+	},
+	{
+		"label" : "On-time high school graduation rate",
+		"value" : 310,
+		"group" : "Education",
+		"checked" : 0
+	},
+	{
+		"label" : "Index ratio of teachers of color to students of color",
+		"value" : 311,
+		"group" : "Education",
+		"checked" : 0
+	},
+	{
+		"label" : "Change in CO2 emissions",
+		"value" : 312,
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"label" : "Change in unhealthy air quality days",
+		"value" : 313,
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"label" : "Adults with health concerns",
+		"value" : 314,
+		"group" : "Health",
+		"checked" : 0
+	},
+	{
+		"label" : "Poor physical health",
+		"value" : 315,
+		"group" : "Health",
+		"checked" : 0
+	},
+	{
+		"label" : "Poor mental health",
+		"value" : 316,
+		"group" : "Health",
+		"checked" : 0
+	},
+	{
+		"label" : "Change in average rental price",
+		"value" : 317,
+		"group" : "Housing",
+		"checked" : 0
+	},
+	{
+		"label" : "Homeownership rate",
+		"value" : 318,
+		"group" : "Housing",
+		"checked" : 0
+	},
+	{
+		"label" : "Change in weekday traffic delay",
+		"value" : 319,
+		"group" : "Transportation",
+		"checked" : 0
+	},
+	{
+		"label" : "Public transportation accessibility",
+		"value" : 320,
+		"group" : "Transportation",
+		"checked" : 0
+	}
+]

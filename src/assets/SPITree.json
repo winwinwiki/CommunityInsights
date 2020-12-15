@@ -1,0 +1,746 @@
+[
+	{
+		"label" : "Access to piped water",
+		"value" : 170,
+		"group" : "Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "Access to electricity",
+		"value" : 171,
+		"group" : "Shelter",
+		"checked" : 0
+	},
+	{
+		"label" : "Quality of electricity supply",
+		"value" : 172,
+		"group" : "Shelter",
+		"checked" : 0
+	},
+	{
+		"label" : "Clothing",
+		"value" : 173,
+		"group" : "Shelter",
+		"checked" : 0
+	},
+	{
+		"label" : "Political terror",
+		"value" : 174,
+		"group" : "Personal Safety",
+		"checked" : 0
+	},
+	{
+		"label" : "Traffic deaths",
+		"value" : 175,
+		"group" : "Personal Safety",
+		"checked" : 0
+	},
+	{
+		"label" : "Emergency response",
+		"value" : 176,
+		"group" : "Personal Safety",
+		"checked" : 0
+	},
+	{
+		"label" : "Adult literacy rate",
+		"value" : 177,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Primary school enrollment",
+		"value" : 178,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Transparency",
+		"value" : 179,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Homicide rate",
+		"value" : 180,
+		"group" : "Personal Safety",
+		"checked" : 0
+	},
+	{
+		"label" : "Gender parity in secondary enrollment",
+		"value" : 181,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Mobile telephone subscriptions",
+		"value" : 182,
+		"group" : "Access to Information and Communications",
+		"checked" : 0
+	},
+	{
+		"label" : "Life expectancy",
+		"value" : 183,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Suicide rate",
+		"value" : 184,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Care for the aging",
+		"value" : 185,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Access to mental health resources",
+		"value" : 186,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Political rights",
+		"value" : 187,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Freedom of assembly/association",
+		"value" : 188,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Freedom of movement",
+		"value" : 189,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Private property rights",
+		"value" : 190,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Freedom over life choices",
+		"value" : 191,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Renewable energy consumption",
+		"value" : 192,
+		"group" : "Environmental Quality",
+		"checked" : 0
+	},
+	{
+		"label" : "Access to at least basic sanitation facilities",
+		"value" : 193,
+		"group" : "Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "Freedom of religion",
+		"value" : 194,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Early marriage",
+		"value" : 195,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Satisfied demand for contraception",
+		"value" : 196,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Transportation",
+		"value" : 197,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Employment opportunity",
+		"value" : 198,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Innovation and Creativity Support",
+		"value" : 199,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Tolerance for immigrants",
+		"value" : 200,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Discrimination and violence against minorities",
+		"value" : 201,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Community safety net",
+		"value" : 202,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Arts and Culture Access",
+		"value" : 203,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Years of tertiary schooling",
+		"value" : 204,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	},
+	{
+		"label" : "Globally ranked universities",
+		"value" : 205,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	},
+	{
+		"label" : "Wildfire vulnerability",
+		"value" : 206,
+		"group" : "Environmental Quality",
+		"checked" : 0
+	},
+	{
+		"label" : "Food insecurity",
+		"value" : 207,
+		"group" : "Nutrition and Basic Human Care",
+		"checked" : 0
+	},
+	{
+		"label" : "Pesticide exposure",
+		"value" : 208,
+		"group" : "Environmental Quality",
+		"checked" : 0
+	},
+	{
+		"label" : "Infant mortality rate",
+		"value" : 209,
+		"group" : "Nutrition and Basic Human Care",
+		"checked" : 0
+	},
+	{
+		"label" : "Carbon footprint",
+		"value" : 210,
+		"group" : "Environmental Quality",
+		"checked" : 0
+	},
+	{
+		"label" : "Vulnerable employment",
+		"value" : 211,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Access to quality healthcare",
+		"value" : 212,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Premature Deaths",
+		"value" : 213,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Violent crime rate",
+		"value" : 214,
+		"group" : "Personal Safety",
+		"checked" : 0
+	},
+	{
+		"label" : "Access to independent media",
+		"value" : 215,
+		"group" : "Access to Information and Communications",
+		"checked" : 0
+	},
+	{
+		"label" : "Access to exercise opportunities",
+		"value" : 216,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Access to justice",
+		"value" : 217,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Air pollution",
+		"value" : 218,
+		"group" : "Environmental Quality",
+		"checked" : 0
+	},
+	{
+		"label" : "Drug overdose deaths",
+		"value" : 219,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Employment discrimination",
+		"value" : 220,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Equality of political power by social group",
+		"value" : 221,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Homelessness",
+		"value" : 222,
+		"group" : "Shelter",
+		"checked" : 0
+	},
+	{
+		"label" : "Residential segregation",
+		"value" : 223,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Urban access to broadband",
+		"value" : 224,
+		"group" : "Access to Information and Communications",
+		"checked" : 0
+	},
+	{
+		"label" : "Youth mortality rate",
+		"value" : 225,
+		"group" : "Nutrition and Basic Human Care",
+		"checked" : 0
+	},
+	{
+		"label" : "Linguistic Isolation",
+		"value" : 226,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Bachelor's degree holders",
+		"value" : 227,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	},
+	{
+		"label" : "Disconnected youth",
+		"value" : 228,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Access to quality education",
+		"value" : 229,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Child care deserts",
+		"value" : 230,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Child stunting",
+		"value" : 231,
+		"group" : "Nutrition and Basic Human Care",
+		"checked" : 0
+	},
+	{
+		"label" : "Cost burden of treatment",
+		"value" : 232,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Property crime rate",
+		"value" : 233,
+		"group" : "Personal Safety",
+		"checked" : 0
+	},
+	{
+		"label" : "Public library use",
+		"value" : 234,
+		"group" : "Access to Information and Communications",
+		"checked" : 0
+	},
+	{
+		"label" : "Rural access to broadband",
+		"value" : 235,
+		"group" : "Access to Information and Communications",
+		"checked" : 0
+	},
+	{
+		"label" : "Solid waste sites",
+		"value" : 236,
+		"group" : "Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "Supermarket access",
+		"value" : 237,
+		"group" : "Nutrition and Basic Human Care",
+		"checked" : 0
+	},
+	{
+		"label" : "Youth preventative dental",
+		"value" : 238,
+		"group" : "Nutrition and Basic Human Care",
+		"checked" : 0
+	},
+	{
+		"label" : "Access to disability services",
+		"value" : 239,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Advanced degree holders",
+		"value" : 240,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	},
+	{
+		"label" : "Associate's degree holders",
+		"value" : 241,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	},
+	{
+		"label" : "Groundwater pollutants",
+		"value" : 242,
+		"group" : "Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "Income parity in broadband",
+		"value" : 243,
+		"group" : "Access to Information and Communications",
+		"checked" : 0
+	},
+	{
+		"label" : "Perceived safety",
+		"value" : 244,
+		"group" : "Personal Safety",
+		"checked" : 0
+	},
+	{
+		"label" : "College retention rate",
+		"value" : 245,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	},
+	{
+		"label" : "Citizen complaints against peace officers",
+		"value" : 246,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Clean and safe water",
+		"value" : 247,
+		"group" : "Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "College or graduate school enrollment",
+		"value" : 248,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	},
+	{
+		"label" : "Diabetes prevalence",
+		"value" : 249,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Equality of political power by gender",
+		"value" : 250,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Equality of political power by socioeconomic position",
+		"value" : 251,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Financial literacy",
+		"value" : 252,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Freedom of expression",
+		"value" : 253,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Gender pay gap",
+		"value" : 254,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Hate crime rate",
+		"value" : 255,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Household air pollution attributable deaths",
+		"value" : 256,
+		"group" : "Shelter",
+		"checked" : 0
+	},
+	{
+		"label" : "Housing cost burden (Owners)",
+		"value" : 257,
+		"group" : "Shelter",
+		"checked" : 0
+	},
+	{
+		"label" : "Housing cost burden (Renters)",
+		"value" : 258,
+		"group" : "Shelter",
+		"checked" : 0
+	},
+	{
+		"label" : "Housing overcrowding",
+		"value" : 259,
+		"group" : "Shelter",
+		"checked" : 0
+	},
+	{
+		"label" : "Lead exposure",
+		"value" : 260,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Less than 9th grade education",
+		"value" : 261,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Math proficiency",
+		"value" : 262,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Outstanding regional housing needs allocation",
+		"value" : 263,
+		"group" : "Shelter",
+		"checked" : 0
+	},
+	{
+		"label" : "Ozone concentration",
+		"value" : 264,
+		"group" : "Environmental Quality",
+		"checked" : 0
+	},
+	{
+		"label" : "Participation in online governance",
+		"value" : 265,
+		"group" : "Access to Information and Communications",
+		"checked" : 0
+	},
+	{
+		"label" : "Percent of tertiary students enrolled in globally ranked universities",
+		"value" : 266,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	},
+	{
+		"label" : "Preschool enrollment",
+		"value" : 267,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Prevalence of overweight youth",
+		"value" : 268,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Property rights for women",
+		"value" : 269,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Quality of public transportation",
+		"value" : 270,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Reading proficiency",
+		"value" : 271,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Robust election process",
+		"value" : 272,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Salmonellosis prevalence",
+		"value" : 273,
+		"group" : "Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "School bullying",
+		"value" : 274,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Secondary school enrollment",
+		"value" : 275,
+		"group" : "Access to Basic Knowledge",
+		"checked" : 0
+	},
+	{
+		"label" : "Traffic density",
+		"value" : 276,
+		"group" : "Environmental Quality",
+		"checked" : 0
+	},
+	{
+		"label" : "Voter registration",
+		"value" : 277,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Voter turnout",
+		"value" : 278,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Wastewater treatment",
+		"value" : 279,
+		"group" : "Environmental Quality",
+		"checked" : 0
+	},
+	{
+		"label" : "Teenage birth rate",
+		"value" : 280,
+		"group" : "Personal Freedom and Choice",
+		"checked" : 0
+	},
+	{
+		"label" : "Water consumption",
+		"value" : 281,
+		"group" : "Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "Water fluoridation",
+		"value" : 282,
+		"group" : "Water and Sanitation",
+		"checked" : 0
+	},
+	{
+		"label" : "Youth preventative medical",
+		"value" : 283,
+		"group" : "Nutrition and Basic Human Care",
+		"checked" : 0
+	},
+	{
+		"label" : "Maternal mortality rate",
+		"value" : 284,
+		"group" : "Nutrition and Basic Human Care",
+		"checked" : 0
+	},
+	{
+		"label" : "Corruption",
+		"value" : 285,
+		"group" : "Personal Rights",
+		"checked" : 0
+	},
+	{
+		"label" : "Adult obesity rate",
+		"value" : 286,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Infectious and vaccine-preventable diseases",
+		"value" : 287,
+		"group" : "Nutrition and Basic Human Care",
+		"checked" : 0
+	},
+	{
+		"label" : "Social isolation and loneliness",
+		"value" : 288,
+		"group" : "Health and Wellness",
+		"checked" : 0
+	},
+	{
+		"label" : "Sex Crimes",
+		"value" : 289,
+		"group" : "Personal Safety",
+		"checked" : 0
+	},
+	{
+		"label" : "Wildlife Conservation",
+		"value" : 290,
+		"group" : "Environmental Quality",
+		"checked" : 0
+	},
+	{
+		"label" : "LGBTQ Inclusion",
+		"value" : 291,
+		"group" : "Inclusiveness",
+		"checked" : 0
+	},
+	{
+		"label" : "Women's average years in school",
+		"value" : 292,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	},
+	{
+		"label" : "Water withdrawals as a percent of resources",
+		"value" : 293,
+		"group" : "Access to Advanced Education and Training",
+		"checked" : 0
+	}
+]
