@@ -9,8 +9,6 @@ import {
 } from "@angular/core";
 import { NgModel } from "@angular/forms";
 
-import { NgxPaginationModule } from "ngx-pagination";
-
 import { map, mergeMap } from "rxjs/operators";
 import { DataTransferService } from ".././data-transfer.service";
 import { Observable, forkJoin, combineLatest, Subscription } from "rxjs";
@@ -40,7 +38,6 @@ export class TrendingComponent implements OnInit, OnDestroy {
   topics = [];
   selectedTopics: boolean = true;
   selectedRow = 0;
-  setClickedRow: Function;
   changedObjtext = "";
   changedObjLocation = "";
   start = String;
@@ -55,7 +52,7 @@ export class TrendingComponent implements OnInit, OnDestroy {
   currentZoom = 3;
   hideZoomOut = false;
   hideZoomIn = false;
-  p: number = 1;
+  page: number = 1;
 
   empty: boolean = false;
   //Variables for assigning weight to tag cloud:
@@ -76,11 +73,12 @@ export class TrendingComponent implements OnInit, OnDestroy {
     private renderer: Renderer2,
     private apollo: Apollo
   ) {
-    this.setClickedRow = function(index) {
-      this.selectedRow = index;
-    };
+    
   }
 
+  setClickedRow(index){
+    this.selectedRow = index;
+  }
   functionGetTrendingData(topicHashtag) {
     let finalTrending = [];
 
@@ -122,6 +120,7 @@ export class TrendingComponent implements OnInit, OnDestroy {
 
   getTrendingTopics() {
     this.loading = true;
+    this.page = 1;
     $("#trending-topics")
       .find("span")
       .remove();
@@ -184,6 +183,7 @@ export class TrendingComponent implements OnInit, OnDestroy {
 
   getHashtags() {
     this.loading = true;
+    this.page = 1;
     $("#trending-topics")
       .find("span")
       .remove();
@@ -266,6 +266,7 @@ export class TrendingComponent implements OnInit, OnDestroy {
       }
     });
   }
+ 
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
