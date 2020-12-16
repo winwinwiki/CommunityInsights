@@ -26,6 +26,7 @@ import {
   ElementRef
 } from "@angular/core";
 // import json data from assets
+import {FilterDiscoursePipe} from "./filter-discourse.pipe";
 import * as SDGTree from "../../assets/SDGTree.json";
 import * as SPITree from "../../assets/SPITree.json";
 import * as TSFTree from "../../assets/TSFTree.json";
@@ -34,7 +35,8 @@ import * as tags from "../../assets/impact_tags.json";
 @Component({
   selector: "app-verbatim",
   templateUrl: "./verbatim.component.html",
-  styleUrls: ["./verbatim.component.css"]
+  styleUrls: ["./verbatim.component.css"],
+  providers:[FilterDiscoursePipe]
 })
 export class VerbatimComponent implements OnInit {
   // get json data from import
@@ -81,11 +83,13 @@ export class VerbatimComponent implements OnInit {
 
   isOn: boolean = false;
 
+  filteredDiscourses = [];
+
   constructor(
     private data: DataTransferService,
     private apollo: Apollo,
     private fb: FormBuilder,
-    private CFR: ComponentFactoryResolver
+    private pipe:FilterDiscoursePipe
   ) {}
   ngOnInit(): void {
     this.initFilterFormControlGroup();
@@ -134,6 +138,7 @@ export class VerbatimComponent implements OnInit {
     return this.impactTreeData;
   }
 
+  
   createVerbatimView() {
     this.loading = true;
     this.discourseDetails = [];
@@ -167,6 +172,7 @@ export class VerbatimComponent implements OnInit {
       .subscribe(
         ({ data, loading }) => {
           this.discourseDetails = data && data.listDiscourseData;
+          this.filteredDiscourses = this.discourseDetails
           this.items = new Map<number, post>();
           this.fetchPostFromResponse(this.discourseDetails);
           this.populateComments(this.discourseDetails);
@@ -335,12 +341,21 @@ export class VerbatimComponent implements OnInit {
     }
   }
 
+
   applyFilter() {
-    console.log(this.filterForm.value);
+    var filterArgs = {}
+    filterArgs['impact_area_id']=this.filterForm.value.impact_child.flatMap((bool, index) => bool ? index+1 : [])
+    filterArgs['sentiment']=this.filterForm.value.sentiment;
+    filterArgs['source'] = this.filterForm.value.source;
+    filterArgs['type'] = this.filterForm.value.type;
+    this.filteredDiscourses = this.pipe.transform(this.discourseDetails,filterArgs)
+    this.isOn = false;
   }
-  cancel() {
+  reset() {
     this.initCheckboxes();
     this.initFilterFormControlGroup();
+    this.filteredDiscourses = this.discourseDetails;
+    this.isOn = false;
   }
 
   initCheckboxes() {

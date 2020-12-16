@@ -121,6 +121,7 @@ body {
   left: 0px;
   top: auto;
   position: absolute;
+  /* border-radius: 4px; */
 }
 
 @media screen and (min-width: 768px) {
@@ -147,12 +148,13 @@ body {
 
 .sidebar-wrapper {
   width: 450px;
-  height: 100%;
-  max-height: 100%;
+  height: fit-content;
+  /* max-height: 100%; */
   position: fixed;
   top: 0;
   left: -550px;
   z-index: 999;
+  padding-bottom: 30px;
 }
 
 .sidebar-wrapper ul {

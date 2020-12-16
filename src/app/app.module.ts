@@ -31,6 +31,7 @@ import { AboutPageComponent } from "./about-page/about-page.component";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatRadioModule } from "@angular/material/radio";
 import { TreePipe } from "./verbatim/tree.pipe";
+import {FilterDiscoursePipe} from "./verbatim/filter-discourse.pipe";
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TreePipe } from "./verbatim/tree.pipe";
     TreeMapComponent,
     AboutPageComponent,
     TreePipe,
+    FilterDiscoursePipe
   ],
   imports: [
     BrowserModule,
