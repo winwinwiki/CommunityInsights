@@ -441,6 +441,10 @@ body {
   margin: 20px 0px;
 }
 
+.sub-details span{
+  font-size:0.9rem;
+}
+
 .topics span {
   display: inline-block;
   padding: 4px 4px;
@@ -536,3 +540,21 @@ mat-accordion mat-expansion-panel {
 }
 
 
+.icon-positive{
+  color:green
+}
+.icon-negative{
+  color:red
+}
+.icon-neutral{
+  color:orange
+}
+.icon-grey{
+  color:gray
+}
+.date{
+  position:absolute;
+  top:0;
+  right:0;
+  font-size:medium;
+}

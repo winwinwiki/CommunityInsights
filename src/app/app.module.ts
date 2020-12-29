@@ -33,6 +33,9 @@ import { MatRadioModule } from "@angular/material/radio";
 import { TreePipe } from "./verbatim/tree.pipe";
 import {FilterDiscoursePipe} from "./verbatim/filter-discourse.pipe";
 
+import {MatChipsModule} from '@angular/material/chips'
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +65,9 @@ import {FilterDiscoursePipe} from "./verbatim/filter-discourse.pipe";
     ]),
     MatExpansionModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatChipsModule,
+    MatCardModule
   ],
   entryComponents: [
   ],

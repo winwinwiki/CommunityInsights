@@ -160,6 +160,8 @@ export class VerbatimComponent implements OnInit {
               impact_area_id
               isPost
               post_id
+              url
+              type
             }
           }
         `,

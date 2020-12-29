@@ -12,7 +12,7 @@
 
 
 <ng-container *ngIf="!empty">
-  <div class="page-wrapper chiller-theme verbatim-tab"  [ngClass]="[isOn === true ? 'toggled' : 'toggle']">
+  <div class="page-wrapper chiller-theme verbatim-tab" [ngClass]="[isOn === true ? 'toggled' : 'toggle']">
     <a (click)="isOn = !isOn" id="show-sidebar" placement="right" [ngbTooltip]="isOn?'Close Filter':'Open Filter'"
       class="btn btn-sm btn-dark" href="#">
       <i class="fas fa-filter"></i>
@@ -238,7 +238,7 @@
 
 
 
-    
+
     <main class="page-content">
       <!-- <code>{{ impact_child.value | json }}</code> -->
       <!-- <div *ngFor="let control of filterForm.get('impact_child').controls;let i = index "> 
@@ -253,8 +253,8 @@
         </div>
         <div class="d-flex justify-content-end">
           <div>
-            <pagination-controls class="d-inline-block" directionLinks="true"
-              (pageChange)="p = $event"></pagination-controls>
+            <pagination-controls class="d-inline-block" directionLinks="true" (pageChange)="p = $event">
+            </pagination-controls>
           </div>
         </div>
         <ng-container *ngIf="!flatView">
@@ -284,7 +284,7 @@
                   <span class="mx-2 icon-comment text-center">
                     <i class="far fa-file-alt"></i>
                   </span>
-                  <div class="col-10 inline-block" ngbTooltip="{{items.get(key).content}}">
+                  <div class="col-10 inline-block">
                     <span>{{((items.get(key).contentLength >=250)) ? items.get(key).content.substr(0, 250) :
                       items.get(key).content}}</span>
                     <span *ngIf="(items.get(key).contentLength >=250) && !show">...</span><span
@@ -329,16 +329,15 @@
                     </span>
                   </div>
                   <div class="row d-flex align-items-center px-0 mx-0">
-                    <span class="mr-2 smiley text-center">
+                    <span class="mr-2 smiley text-center ">
                       <i
                         class="far {{comment.sentiment == -1 ? 'fa-frown' : comment.sentiment == 0 ? 'fa-meh' : 'fa-smile' }}"></i>
-
                     </span>
                     <span class="mx-2 icon-comment text-center">
                       <i class="far fa-file-alt"></i>
                     </span>
 
-                    <div class="col-10 inline-block" ngbTooltip="{{comment.content}}">
+                    <div class="col-10 inline-block">
                       <span>{{((comment.contentLength >=250)) ? comment.content.substr(0, 250) :
                         comment.content}}</span>
                       <span *ngIf="(comment.contentLength >=250) && !show">...</span><span
@@ -368,38 +367,33 @@
         </ng-container>
 
         <ng-container *ngIf="flatView">
-          <div *ngIf= "filteredDiscourses.length==0" class="text-center mt-5 mx-auto p-4">
+          <div *ngIf="filteredDiscourses.length==0" class="text-center mt-5 mx-auto p-4">
             <img class="mb-4 text-center pb-2 " src="/assets/zero_page_icon.svg">
-            <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> No Data Found. Please Refine your Search</p>
+            <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> No Data Found. Please Refine your Search
+            </p>
           </div>
           <div *ngFor="let discourse of filteredDiscourses | paginate: { itemsPerPage: 10, currentPage: p }">
-            <div class="card sub-details">
-              <div class="p-3">
-                <div class="row">
-                  <span class="col-sm-12 location col-md-2">
-                    {{discourse.region}}
-                  </span>
-                  <span class="col-sm-4 col-md-3 date">
-                    {{discourse.created_time}}
-                  </span>
-                  <span class="col-md-4 col-sm-4 sources">
-                    From {{discourse.platform_desc}}
-                  </span>
-                  <span class="col-sm-4 col-md-3 metadata text-right">
-                    Traffic (What text?)
-                  </span>
-                </div>
-                <div class="row d-flex align-items-center px-0 mx-0">
-                  <span class="mr-2 smiley text-center">
+            <mat-card class="sub-details">
+              <mat-card-header>
+                <p class="date p-3 mx-3 text-center">
+                  {{discourse.created_time}}
+                </p>
+                <mat-card-title>{{discourse.type | titlecase}}</mat-card-title>
+                <mat-card-subtitle>From {{discourse.platform_name}}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="row d-flex align-items-center p-0 mx-3">
+                  <span class="mr-2 smiley text-center"
+                    [ngbTooltip]="discourse.sentiment == -1 ?'Negative':discourse.sentiment == 0 ?'Neutral':'Positive'">
                     <i
-                      class="far {{discourse.sentiment == -1 ? 'fa-frown' : discourse.sentiment == 0 ? 'fa-meh' : 'fa-smile' }}"></i>
-
+                      class="far {{discourse.sentiment == -1 ? 'fa-frown icon-negative' : discourse.sentiment == 0 ? 'fa-meh icon-neutral' : 'fa-smile icon-positive' }} fa-lg"></i>
                   </span>
-                  <span class="mx-2 icon-comment text-center">
-                    <i class="far fa-comment-dots {{discourse.isPost == 1 ? 'fa-file-alt' : 'fa-comment-dots' }}"></i>
+                  <span class="mx-2 icon-comment text-center" [ngbTooltip]="discourse.isPost?'Post':'Comment'">
+                    <i
+                      class="far fa-comment-dots {{discourse.isPost == 1 ? 'far fa-edit' : 'fa-comment-dots' }} fa-lg icon-grey"></i>
                   </span>
 
-                  <div class="col-10 inline-block" ngbTooltip="{{discourse.comment}}">
+                  <div class="col-10 inline-block">
                     <span>{{((discourse.comment.length >=250)) ? discourse.comment.substr(0, 250) :
                       discourse.comment}}</span>
                     <span *ngIf="(discourse.comment.length >=250) && !show">...</span><span
@@ -409,20 +403,28 @@
                       (click)="showText($event)">Show More</button>
                   </div>
                 </div>
-                <div class="row topics col-12 d-flex justify-content-center mt-3">
-                  <span class="pink">
-                    {{discourse.level0}}
-                  </span>
-                  <span class="blue">
-                    {{discourse.level1}}
-                  </span>
-                  <span class="red">
-                    {{discourse.level2}}
-                  </span>
-
+                <div class="p-0 m-3">
+                  <mat-chip-list >
+                    <mat-chip style="color: #585858;background-color: #D6EAF8;"
+                      *ngFor="let tag of discourse.impact_area_id.split(',')">{{tags[+tag-1].tag}}
+                    </mat-chip>
+                  </mat-chip-list>
                 </div>
-              </div>
-            </div>
+                
+              </mat-card-content>
+              <mat-card-actions align="end" *ngIf="!discourse.url">
+                <a href="https://www.baidu.com"><u>View original post</u></a>
+                <!-- <a [href]="discourse.url">View original post</a> -->
+                <!-- <span><i class="fas fa-external-link"></i></span> -->
+                <span class="mx-2 text-center" >
+                  <i class="fas fa-external-link-alt"></i>
+                </span>
+              </mat-card-actions>
+              <!-- <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions> -->
+            </mat-card>
           </div>
         </ng-container>
 
