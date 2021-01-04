@@ -24,16 +24,29 @@
             <span>Filter Data</span>
           </div>
           <!-- sidebar-header  -->
+          
           <div class="sidebar-search">
             <div>
-              <div class="input-group">
-                <input type="text" class="form-control search-menu" placeholder="Search Topic">
-                <div class="input-group-append">
+              <!-- <div class="input-group"> -->
+                <!-- <input type="text" class="form-control search-menu" placeholder="Search Text"> -->
+                <mat-chip-list #chipList>
+                  <mat-chip *ngFor="let string of searchStrings" [selectable]="selectable"
+                           [removable]="removable" (removed)="remove(string)">
+                    {{string}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input class="form-control search-menu" placeholder="Search Text"
+                         [matChipInputFor]="chipList"
+                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         [matChipInputAddOnBlur]="addOnBlur"
+                         (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+                <!-- <div class="input-group-append">
                   <span class="input-group-text">
                     <i class="fa fa-search" aria-hidden="true"></i>
                   </span>
-                </div>
-              </div>
+                </div> -->
+              <!-- </div> -->
             </div>
           </div>
           <!-- sidebar-search  -->
@@ -412,18 +425,12 @@
                 </div>
                 
               </mat-card-content>
-              <mat-card-actions align="end" *ngIf="!discourse.url">
-                <a href="https://www.baidu.com"><u>View original post</u></a>
-                <!-- <a [href]="discourse.url">View original post</a> -->
-                <!-- <span><i class="fas fa-external-link"></i></span> -->
+              <mat-card-actions align="end" *ngIf="discourse.url">
+                <a [href]="discourse.url"><u>View original post</u></a>
                 <span class="mx-2 text-center" >
                   <i class="fas fa-external-link-alt"></i>
                 </span>
               </mat-card-actions>
-              <!-- <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
-              </mat-card-actions> -->
             </mat-card>
           </div>
         </ng-container>

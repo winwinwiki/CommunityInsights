@@ -26,12 +26,16 @@ import {
   ElementRef
 } from "@angular/core";
 // import json data from assets
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {MatChipInputEvent} from '@angular/material/chips';
 import {FilterDiscoursePipe} from "./filter-discourse.pipe";
 import * as SDGTree from "../../assets/SDGTree.json";
 import * as SPITree from "../../assets/SPITree.json";
 import * as TSFTree from "../../assets/TSFTree.json";
 import * as NewImpactTree from "../../assets/NewImpactTree.json";
 import * as tags from "../../assets/impact_tags.json";
+
+
 @Component({
   selector: "app-verbatim",
   templateUrl: "./verbatim.component.html",
@@ -84,6 +88,38 @@ export class VerbatimComponent implements OnInit {
   isOn: boolean = false;
 
   filteredDiscourses = [];
+
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  searchStrings:string[] = [
+    
+  ];
+
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    // Add our fruit
+    if ((value || '').trim()) {
+      this.searchStrings.push(value.trim());
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+  }
+
+  remove(chip: Chip): void {
+    const index = this.searchStrings.indexOf(chip);
+
+    if (index >= 0) {
+      this.searchStrings.splice(index, 1);
+    }
+  }
 
   constructor(
     private data: DataTransferService,
@@ -346,6 +382,7 @@ export class VerbatimComponent implements OnInit {
 
   applyFilter() {
     var filterArgs = {}
+    filterArgs['search_text']=this.searchStrings;
     filterArgs['impact_area_id']=this.filterForm.value.impact_child.flatMap((bool, index) => bool ? index+1 : [])
     filterArgs['sentiment']=this.filterForm.value.sentiment;
     filterArgs['source'] = this.filterForm.value.source;
@@ -356,8 +393,9 @@ export class VerbatimComponent implements OnInit {
   reset() {
     this.initCheckboxes();
     this.initFilterFormControlGroup();
+    this.searchStrings = [];
     this.filteredDiscourses = this.discourseDetails;
-    this.isOn = false;
+    // this.isOn = false;
   }
 
   initCheckboxes() {
@@ -412,4 +450,7 @@ export class VerbatimComponent implements OnInit {
       this.show = true;
     }
   }
+
+
+  
 }

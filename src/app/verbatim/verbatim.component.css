@@ -384,13 +384,15 @@ body {
 }
 
 .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
-.chiller-theme .sidebar-wrapper .sidebar-search .input-group-text,
+
 .chiller-theme .sidebar-wrapper .sidebar-brand > span,
 .chiller-theme .sidebar-wrapper .sidebar-menu ul li a {
   /* this changes the color of filter header and magnifier icon */
   color: #ffffffc1;
 }
-
+.chiller-theme .sidebar-wrapper .sidebar-search .input-group-text{
+  color: #ffffff3e;
+}
 .chiller-theme .sidebar-wrapper .sidebar-menu ul li:hover > a,
 .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a,
 .chiller-theme .sidebar-wrapper .sidebar-brand > span:hover {
@@ -557,4 +559,21 @@ mat-accordion mat-expansion-panel {
   top:0;
   right:0;
   font-size:medium;
+}
+
+/* Placeholder overrides */
+:host ::ng-deep input::-webkit-input-placeholder {
+  color: #ffffff3e !important;
+}
+
+:host ::ng-deep input:-moz-placeholder { /* Firefox 18- */
+  color: #ffffff3e !important;
+}
+
+:host ::ng-deep input::-moz-placeholder {  /* Firefox 19+ */
+  color: #ffffff3e !important;
+}
+
+:host ::ng-deep input:-ms-input-placeholder {
+  color: #ffffff3e !important;
 }

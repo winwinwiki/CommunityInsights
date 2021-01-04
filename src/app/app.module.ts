@@ -36,6 +36,8 @@ import {FilterDiscoursePipe} from "./verbatim/filter-discourse.pipe";
 import {MatChipsModule} from '@angular/material/chips'
 import {MatCardModule} from '@angular/material/card';
 
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +69,8 @@ import {MatCardModule} from '@angular/material/card';
     MatCheckboxModule,
     MatRadioModule,
     MatChipsModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   entryComponents: [
   ],
