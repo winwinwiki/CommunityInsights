@@ -4,14 +4,14 @@
     <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> No Data Found. Please Refine your Search</p>
   </div>
 </ng-container>
-<ng-container *ngIf="empty && loading">
+<ng-container *ngIf="loading">
   <div class="text-center mt-5 mx-auto px-4 loader">
     <img src="/assets/loader.gif">
   </div>
 </ng-container>
 
 
-<ng-container *ngIf="!empty">
+<ng-container *ngIf="!loading">
   <div class="page-wrapper chiller-theme verbatim-tab" [ngClass]="[isOn === true ? 'toggled' : 'toggle']">
     <a (click)="isOn = !isOn" id="show-sidebar" placement="right" [ngbTooltip]="isOn?'Close Filter':'Open Filter'"
       class="btn btn-sm btn-dark" href="#">

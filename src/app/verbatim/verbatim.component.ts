@@ -113,7 +113,7 @@ export class VerbatimComponent implements OnInit {
     }
   }
 
-  remove(chip: Chip): void {
+  remove(chip: any): void {
     const index = this.searchStrings.indexOf(chip);
 
     if (index >= 0) {
@@ -185,11 +185,13 @@ export class VerbatimComponent implements OnInit {
             $start: String!
             $end: String!
             $region: String!
+            $offset:Int!
+            $limit:Int!
           ) {
-            listDiscourseData(start: $start, end: $end, region: $region) {
+            listDiscourseData(start: $start, end: $end, region: $region, offset: $offset, limit: $limit) {
+              Topics
               discourse_id
               comment
-              region
               sentiment
               platform_name
               created_time
@@ -204,7 +206,9 @@ export class VerbatimComponent implements OnInit {
         variables: {
           start: this.start,
           end: this.end,
-          region: "King County"
+          region: "King County",
+          limit: 400,
+          offset: 0
         }
       })
       .subscribe(
@@ -224,25 +228,25 @@ export class VerbatimComponent implements OnInit {
       .add(() => {
         if (this.discourseDetails.length != 0) {
           this.empty = false;
-          var filterImpactAreas = this.mappingData(
-            this.discourseDetails,
-            this.impactIds
-          );
+          // var filterImpactAreas = this.mappingData(
+          //   this.discourseDetails,
+          //   this.impactIds
+          // );
 
-          var output = filterImpactAreas.reduce((a, b) => {
-            if (!a.some(({ tag }) => tag == b.tag)) {
-              a.push({ impactArea: b.source_ontology, tag: b.tag, count: 1 });
-            } else {
-              a.find(({ tag }) => tag == b.tag).count++;
-            }
-            return a;
-          }, []);
+          // var output = filterImpactAreas.reduce((a, b) => {
+          //   if (!a.some(({ tag }) => tag == b.tag)) {
+          //     a.push({ impactArea: b.source_ontology, tag: b.tag, count: 1 });
+          //   } else {
+          //     a.find(({ tag }) => tag == b.tag).count++;
+          //   }
+          //   return a;
+          // }, []);
 
           // console.log(">>>>>", output);
         } else {
           this.empty = true;
-          this.loading = false;
         }
+        this.loading = false;
       });
   }
 

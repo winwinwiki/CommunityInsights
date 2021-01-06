@@ -182,7 +182,7 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     this.fromDate = new NgbDate(
       2020,
       5,
-      5
+      1
     );
 
     let toDate = new Date(fromDate.getTime() + 5 * 24 * 60 * 60 * 1000);
@@ -193,8 +193,8 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     // ); 
     this.toDate = new NgbDate(
       2020,
-      6,
-      21
+      5,
+      7
     );
     if(initialData != ''){
       parsed += this._parserFormatter.format(this.fromDate) + ' to ' + this._parserFormatter.format(this.toDate);

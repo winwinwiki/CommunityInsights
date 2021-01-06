@@ -71,9 +71,9 @@ export class TrendingComponent implements OnInit, OnDestroy {
     private data: DataTransferService,
     element: ElementRef,
     private renderer: Renderer2,
-    private apollo: Apollo
+    private apollo: Apollo,
+
   ) {
-    
   }
 
   setClickedRow(index){
