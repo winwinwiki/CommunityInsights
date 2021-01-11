@@ -173,29 +173,29 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     let currentDate = new Date(date.year + "-" + date.month + "-" + date.day);
     let currentTime = currentDate.getDay() ? currentDate.getDay() - 2 : 6;
 
-    let fromDate = new Date(currentDate.getTime() - 5 * 24 * 60 * 60 * 1000);
-    // this.fromDate = new NgbDate(
-    //   fromDate.getFullYear(),
-    //   fromDate.getMonth() + 1,
-    //   fromDate.getDate()
-    // );
+    let fromDate = new Date(currentDate.getTime() - 6 * 24 * 60 * 60 * 1000);
     this.fromDate = new NgbDate(
-      2020,
-      5,
-      1
+      fromDate.getFullYear(),
+      fromDate.getMonth() + 1,
+      fromDate.getDate()
     );
+    // this.fromDate = new NgbDate(
+    //   2020,
+    //   5,
+    //   1
+    // );
 
-    let toDate = new Date(fromDate.getTime() + 5 * 24 * 60 * 60 * 1000);
-    // this.toDate = new NgbDate(
-    //   toDate.getFullYear(),
-    //   toDate.getMonth() + 1,
-    //   toDate.getDate()
-    // ); 
+    let toDate = new Date(fromDate.getTime() + 6 * 24 * 60 * 60 * 1000);
     this.toDate = new NgbDate(
-      2020,
-      5,
-      7
-    );
+      toDate.getFullYear(),
+      toDate.getMonth() + 1,
+      toDate.getDate()
+    ); 
+    // this.toDate = new NgbDate(
+    //   2020,
+    //   5,
+    //   7
+    // );
     if(initialData != ''){
       parsed += this._parserFormatter.format(this.fromDate) + ' to ' + this._parserFormatter.format(this.toDate);
       this.initialDate = parsed;

@@ -577,3 +577,8 @@ mat-accordion mat-expansion-panel {
 :host ::ng-deep input:-ms-input-placeholder {
   color: #ffffff3e !important;
 }
+
+input{
+  caret-color: white;
+  padding:5px;
+}
