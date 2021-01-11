@@ -24,24 +24,22 @@
             <span>Filter Data</span>
           </div>
           <!-- sidebar-header  -->
-          
+
           <div class="sidebar-search">
             <div>
               <!-- <div class="input-group"> -->
-                <!-- <input type="text" class="form-control search-menu" placeholder="Search Text"> -->
-                <mat-chip-list #chipList>
-                  <mat-chip *ngFor="let string of searchStrings" [selectable]="selectable"
-                           [removable]="removable" (removed)="remove(string)">
-                    {{string}}
-                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                  </mat-chip>
-                  <input class="form-control search-menu" placeholder="Search Text"
-                         [matChipInputFor]="chipList"
-                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                         [matChipInputAddOnBlur]="addOnBlur"
-                         (matChipInputTokenEnd)="add($event)">
-                </mat-chip-list>
-                <!-- <div class="input-group-append">
+              <!-- <input type="text" class="form-control search-menu" placeholder="Search Text"> -->
+              <mat-chip-list #chipList>
+                <mat-chip *ngFor="let string of searchStrings" [selectable]="selectable" [removable]="removable"
+                  (removed)="remove(string)">
+                  {{string}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input class="form-control search-menu" placeholder="Search Text" [matChipInputFor]="chipList"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                  (matChipInputTokenEnd)="add($event)">
+              </mat-chip-list>
+              <!-- <div class="input-group-append">
                   <span class="input-group-text">
                     <i class="fa fa-search" aria-hidden="true"></i>
                   </span>
@@ -266,8 +264,8 @@
         </div>
         <div class="d-flex justify-content-end">
           <div>
-            <pagination-controls class="d-inline-block" directionLinks="true" (pageChange)="p = $event">
-            </pagination-controls>
+            <mat-paginator [length]="filteredDiscourses.length" [pageIndex]="p" [pageSize]="pageSize" showFirstLastButtons = "true" (page)="onPageChange($event)" [pageSize]="10" [pageSizeOptions]="[10, 25, 50, 100]">
+            </mat-paginator>
           </div>
         </div>
         <ng-container *ngIf="!flatView">
@@ -385,7 +383,7 @@
             <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> No Data Found. Please Refine your Search
             </p>
           </div>
-          <div *ngFor="let discourse of filteredDiscourses | paginate: { itemsPerPage: 10, currentPage: p }">
+          <div *ngFor="let discourse of filteredDiscourses.slice(pageSize*p,pageSize*p+pageSize-1)">
             <mat-card class="sub-details">
               <mat-card-header>
                 <p class="date p-3 mx-3 text-center">
@@ -417,17 +415,17 @@
                   </div>
                 </div>
                 <div class="p-0 m-3">
-                  <mat-chip-list >
+                  <mat-chip-list>
                     <mat-chip style="color: #585858;background-color: #D6EAF8;"
                       *ngFor="let tag of discourse.impact_area_id.split(',')">{{tags[+tag-1].tag}}
                     </mat-chip>
                   </mat-chip-list>
                 </div>
-                
+
               </mat-card-content>
               <mat-card-actions align="end" *ngIf="discourse.url">
-                <a [href]="discourse.url"><u>View original post</u></a>
-                <span class="mx-2 text-center" >
+                <a target="_blank" rel="noopener noreferrer" [href]="discourse.url.charAt(discourse.url.indexOf('com')+3)=='/'?'https://www.'+discourse.url:'https://www.'+discourse.url.slice(0,discourse.url.indexOf('com')+3)+'/'+discourse.url.slice(discourse.url.indexOf('com')+3,discourse.url.length)"><u>View original post</u></a>
+                <span class="mx-2 text-center">
                   <i class="fas fa-external-link-alt"></i>
                 </span>
               </mat-card-actions>

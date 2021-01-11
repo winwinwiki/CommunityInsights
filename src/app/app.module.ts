@@ -37,7 +37,7 @@ import {MatChipsModule} from '@angular/material/chips'
 import {MatCardModule} from '@angular/material/card';
 
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +70,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatRadioModule,
     MatChipsModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule
   ],
   entryComponents: [
   ],

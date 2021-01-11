@@ -63,7 +63,8 @@ export class VerbatimComponent implements OnInit {
   filterImpact = [];
   getTopics = [];
   impactTreeData = [];
-  p: number = 1;
+  p: number = 0;
+  pageSize:number = 10;
   showCardBody = false;
   flatView = true;
   otherComments = [];
@@ -454,7 +455,10 @@ export class VerbatimComponent implements OnInit {
       this.show = true;
     }
   }
-
+  onPageChange(event:any){
+    this.p = event.pageIndex;
+    this.pageSize = event.pageSize;
+  }
 
   
 }
