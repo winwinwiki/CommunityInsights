@@ -341,7 +341,7 @@ export class VerbatimComponent implements OnInit {
             result.forEach(function(item, index) {
               this[offset + index] = item;
             }, this.discourseDetails);
-            console.log(this.discourseDetails);
+            // console.log(this.discourseDetails);
             this.filteredDiscourses = this.discourseDetails;
             this.items = new Map<number, post>();
             this.fetchPostFromResponse(this.discourseDetails);
@@ -452,7 +452,7 @@ export class VerbatimComponent implements OnInit {
         formArray.push(new FormControl(val.value)); // add all children to impact_child array
       });
     }
-    console.log(this.filterForm.value);
+    // console.log(this.filterForm.value);
   }
 
   CheckAllOptions1(checkboxes) {
@@ -573,7 +573,7 @@ export class VerbatimComponent implements OnInit {
   onPageChange(event: any) {
     this.p = event.pageIndex;
     this.pageSize = event.pageSize;
-    console.log(this.p, this.pageSize);
+    // console.log(this.p, this.pageSize);
     if ((this.p * this.pageSize) % 2000 != 0) {
       var offset = Math.floor((this.p * this.pageSize) / 2000) * 2000;
       this.updateDiscourseData(offset);

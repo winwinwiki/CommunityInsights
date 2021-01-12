@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-xl-12">
       <div class="card-box sweep-to-right" id="cloud">
-        <h4 class="header-title mb-3 d-inline-block">Trending Topics</h4>
+        <h4 class="header-title mb-3 d-inline-block">Trending Terms</h4>
 
         <div class="d-inline-block pull-right">
           <button type="button" class="btn-sm btn rounded-0 m-0 switchView" (click)="getTrendingTopics(); loading=true"
-            [ngClass]="[selectedTopics ? 'selected' : 'notSelected']">Topics</button>
+            [ngClass]="[selectedTopics ? 'selected' : 'notSelected']">Terms</button>
           <button type="button" class="btn-sm btn rounded-0 m-0 switchView" (click)="getHashtags();  loading=true"
             [ngClass]="[selectedTopics ? 'notSelected' : 'selected']">Hashtags</button>
         </div>
@@ -21,6 +21,12 @@
             <img src="/assets/loader.gif">
           </div>
         </div>
+        <p style="font-size: smaller;padding-top: 30px;color:#155084">
+          <i>Source data collected and curated by NewImpact. See our ‘About This Tool' page to learn more.</i>
+        </p>
+        <!-- <div>
+          
+        </div> -->
       </div>
     </div>
 
@@ -30,7 +36,7 @@
     <div class="col-xl-6">
       <div class="card-box sweep-to-right" style="padding-bottom: 15px;">
         <div class="d-flex justify-content-between align-items-center">
-          <h4 class="header-title mb-3 d-inline-block">Topic Sentiment Breakdown</h4>
+          <h4 class="header-title mb-3 d-inline-block">Term Sentiment Breakdown</h4>
               <pagination-template #p="paginationApi">
                 <button mat-button [disabled]="p.isFirstPage()" style="border: none;background:transparent;"
                   (click)="page=page-1;p.previous()">&lt; Previous</button>
@@ -44,7 +50,7 @@
               <thead>
                 <tr role="row">
                   <th class="sorting_asc col-3 w-25" tabindex="0">Count</th>
-                  <th class="sorting col-3 w-25" tabindex="0">Topic Name</th>
+                  <th class="sorting col-3 w-25" tabindex="0">Term Name</th>
                   <th class="sorting col-6 w-50" tabindex="0">Sentiment</th>
                 </tr>
               </thead>
@@ -121,6 +127,9 @@
             </div>
           </div>
         </div>
+        <p style="font-size: smaller;padding-top: 30px;color:#155084">
+          <i>Sentiment determined by AI analysis of  social media and public data collected and processed by NewImpact. Learn more on the  ‘About This Tool' page.</i>
+        </p>
       </div>
     </div>
     <div class="col-xl-6">

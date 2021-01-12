@@ -114,8 +114,7 @@ export class TrendingComponent implements OnInit, OnDestroy {
         .remove();
       document.getElementById("trending-topics").innerHTML = "";
       $("#trending-topics").jQCloud(finalTrending);
-      0;
-    });
+    },0);
   }
 
   getTrendingTopics() {
@@ -163,7 +162,7 @@ export class TrendingComponent implements OnInit, OnDestroy {
           this.listTrendingTopics.length === 0
             ? (this.empty = true)
             : (this.empty = false);
-          this.loading = false;
+          
         },
         error => {
           this.error = error;
@@ -178,6 +177,7 @@ export class TrendingComponent implements OnInit, OnDestroy {
           );
           this.functionGetTrendingData(this.listTrendingTopics);
         }
+        this.loading = false;
       });
   }
 
