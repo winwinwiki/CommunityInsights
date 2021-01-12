@@ -26,109 +26,100 @@ import {
   ElementRef
 } from "@angular/core";
 // import json data from assets
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent} from '@angular/material/chips';
-import {FilterDiscoursePipe} from "./filter-discourse.pipe";
+import { COMMA, ENTER } from "@angular/cdk/keycodes";
+import { MatChipInputEvent } from "@angular/material/chips";
+import { FilterDiscoursePipe } from "./filter-discourse.pipe";
 import * as SDGTree from "../../assets/SDGTree.json";
 import * as SPITree from "../../assets/SPITree.json";
 import * as TSFTree from "../../assets/TSFTree.json";
 import * as NewImpactTree from "../../assets/NewImpactTree.json";
 import * as tags from "../../assets/impact_tags.json";
 
-
 @Component({
   selector: "app-verbatim",
   templateUrl: "./verbatim.component.html",
   styleUrls: ["./verbatim.component.css"],
-  providers:[FilterDiscoursePipe]
+  providers: [FilterDiscoursePipe]
 })
 export class VerbatimComponent implements OnInit {
+  @ViewChild("myaccordion", { static: true }) accordion: NgbAccordion;
+  subscription: Subscription;
   // get json data from import
   SDGTree = (SDGTree as any).default;
   SPITree = (SPITree as any).default;
   TSFTree = (TSFTree as any).default;
   NewImpactTree = (NewImpactTree as any).default;
   tags = (tags as any).default;
-
+  
+  // variables related to UI behavior
   loading = true;
-  error: any;
   show = false;
-  empty: boolean = false;
+  empty: boolean = true;
+  p: number = 0;
+  pageSize: number = 10;
+
+  //  variables left by Akriti
   start = String;
   end = String;
   text = "";
   dates = [];
-
-  discourseDetails = [];
-  filterImpact = [];
-  getTopics = [];
-  impactTreeData = [];
-  p: number = 0;
-  pageSize:number = 10;
   showCardBody = false;
   flatView = true;
   otherComments = [];
-  subscription: Subscription;
-  impactIds = [];
-
-  @ViewChild("myaccordion", { static: true }) accordion: NgbAccordion;
-
-  final: any;
-
   keys: Array<number>;
   items: any;
   region: string;
   changedObjtext: string;
   changedObjLocation: string;
   parent_region: string;
-
+  
+  // variables used for filter pipe
+  impactIds = [];
+  filterImpact = [];
+  getTopics = [];
+  impactTreeData = [];
+  checkboxes: any;
   filterForm: FormGroup;
 
-  checkboxes: any;
-
+  // whether the filter drawer is open
   isOn: boolean = false;
 
+  // variables to store discourse data
   filteredDiscourses = [];
+  filteredDiscoursesCopy = [];
+  discourseDetails = [];
 
+  // variables related to filter search bar 
   visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  searchStrings:string[] = [
-    
-  ];
-  isThreadView:boolean = false;
+  searchStrings: string[] = [];
 
-  add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
+  // variables relatede to thread view
+  isThreadView: boolean = false;
 
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.searchStrings.push(value.trim());
-    }
+  // variables related to total count of discourses
+  count;
+  filteredDiscourseCount;
+  countCopy;
 
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
-  }
+  // variables related UI error message
+  MESSAGE_TIMEOUT = "Query timed out. Please refine your date range.";
+  MESSAGE_NODATA = "No data found. Please refine your search.";
+  MESSAGE_NODATA_FILTER = "No data found. Please refine your filter.";
+  message: String = this.MESSAGE_NODATA;
 
-  remove(chip: any): void {
-    const index = this.searchStrings.indexOf(chip);
-
-    if (index >= 0) {
-      this.searchStrings.splice(index, 1);
-    }
-  }
+  
 
   constructor(
     private data: DataTransferService,
     private apollo: Apollo,
     private fb: FormBuilder,
-    private pipe:FilterDiscoursePipe
+    private pipe: FilterDiscoursePipe
   ) {}
+
   ngOnInit(): void {
     this.initFilterFormControlGroup();
     this.initCheckboxes();
@@ -154,6 +145,26 @@ export class VerbatimComponent implements OnInit {
     });
   }
 
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+    if ((value || "").trim()) {
+      this.searchStrings.push(value.trim());
+    }
+    // Reset the input value
+    if (input) {
+      input.value = "";
+    }
+  }
+
+  remove(chip: any): void {
+    const index = this.searchStrings.indexOf(chip);
+
+    if (index >= 0) {
+      this.searchStrings.splice(index, 1);
+    }
+  }
+
   mappingData(impactAreaIds, frameworkQueries) {
     this.impactTreeData = [];
 
@@ -172,14 +183,49 @@ export class VerbatimComponent implements OnInit {
         }
       }
     });
-    // console.log("[[[[[[[[[[[[[[[[[[", this.impactTreeData);
     return this.impactTreeData;
   }
 
-  
   createVerbatimView() {
     this.loading = true;
+    this.p = 0;
+    this.empty = true;
     this.discourseDetails = [];
+    this.filteredDiscourses = [];
+    this.apollo
+      .query<any>({
+        query: gql`
+          query getDiscourseCount(
+            $start: String!
+            $end: String!
+            $region: String!
+          ) {
+            getDiscourseCount(start: $start, end: $end, region: $region) {
+              count
+            }
+          }
+        `,
+        variables: {
+          start: this.start,
+          end: this.end,
+          region: "King County"
+        }
+      })
+      .subscribe(
+        ({ data, loading }) => {
+          if (data && data.getDiscourseCount != null) {
+            this.count = data && data.getDiscourseCount.count;
+            this.filteredDiscourseCount = this.count;
+            this.discourseDetails = Array(this.count).fill(0);
+          } 
+        },
+        error => {
+          this.message = this.MESSAGE_TIMEOUT;
+        }
+      );
+    this.initializeDiscourseData();
+  }
+  initializeDiscourseData() {
     this.apollo
       .query<any>({
         query: gql`
@@ -187,10 +233,16 @@ export class VerbatimComponent implements OnInit {
             $start: String!
             $end: String!
             $region: String!
-            $offset:Int!
-            $limit:Int!
+            $offset: Int!
+            $limit: Int!
           ) {
-            listDiscourseData(start: $start, end: $end, region: $region, offset: $offset, limit: $limit) {
+            listDiscourseData(
+              start: $start
+              end: $end
+              region: $region
+              offset: $offset
+              limit: $limit
+            ) {
               Topics
               discourse_id
               comment
@@ -209,49 +261,100 @@ export class VerbatimComponent implements OnInit {
           start: this.start,
           end: this.end,
           region: "King County",
-          limit: 400,
+          limit: 2000,
           offset: 0
         }
       })
       .subscribe(
         ({ data, loading }) => {
-          this.discourseDetails = data && data.listDiscourseData;
-          this.filteredDiscourses = this.discourseDetails
+          if (data && data.listDiscourseData != null) {
+            var result = data && data.listDiscourseData;
+            result.forEach(function(item, index) {
+              this[0 + index] = item;
+            }, this.discourseDetails);
+            this.filteredDiscourses = this.discourseDetails;
+          } 
           this.items = new Map<number, post>();
           this.fetchPostFromResponse(this.discourseDetails);
           this.populateComments(this.discourseDetails);
           this.keys = Array.from(this.items.keys());
         },
         error => {
-          this.error = error;
-          console.log("error is: ", error);
+          this.message = this.MESSAGE_TIMEOUT;
         }
       )
       .add(() => {
         if (this.discourseDetails.length != 0) {
           this.empty = false;
-          // var filterImpactAreas = this.mappingData(
-          //   this.discourseDetails,
-          //   this.impactIds
-          // );
-
-          // var output = filterImpactAreas.reduce((a, b) => {
-          //   if (!a.some(({ tag }) => tag == b.tag)) {
-          //     a.push({ impactArea: b.source_ontology, tag: b.tag, count: 1 });
-          //   } else {
-          //     a.find(({ tag }) => tag == b.tag).count++;
-          //   }
-          //   return a;
-          // }, []);
-
-          // console.log(">>>>>", output);
-        } else {
+        }else{
           this.empty = true;
         }
         this.loading = false;
       });
   }
 
+  updateDiscourseData(offset) {
+    if (this.discourseDetails[offset] == 0) {
+      this.loading = true;
+      this.apollo
+        .query<any>({
+          query: gql`
+            query listDiscourseData(
+              $start: String!
+              $end: String!
+              $region: String!
+              $offset: Int!
+              $limit: Int!
+            ) {
+              listDiscourseData(
+                start: $start
+                end: $end
+                region: $region
+                offset: $offset
+                limit: $limit
+              ) {
+                Topics
+                discourse_id
+                comment
+                sentiment
+                platform_name
+                created_time
+                impact_area_id
+                isPost
+                post_id
+                url
+                type
+              }
+            }
+          `,
+          variables: {
+            start: this.start,
+            end: this.end,
+            region: "King County",
+            limit: 2000,
+            offset: offset
+          }
+        })
+        .subscribe(
+          ({ data, loading }) => {
+            var result = data && data.listDiscourseData;
+            result.forEach(function(item, index) {
+              this[offset + index] = item;
+            }, this.discourseDetails);
+            console.log(this.discourseDetails);
+            this.filteredDiscourses = this.discourseDetails;
+            this.items = new Map<number, post>();
+            this.fetchPostFromResponse(this.discourseDetails);
+            this.populateComments(this.discourseDetails);
+            this.keys = Array.from(this.items.keys());
+          },
+          error => {}
+        )
+        .add(() => {
+          this.loading = false;
+        });
+    }
+  }
   populateComments(verbatimData) {
     this.otherComments = [];
     for (let i = 0; i < verbatimData.length; i++) {
@@ -385,15 +488,26 @@ export class VerbatimComponent implements OnInit {
     }
   }
 
-
   applyFilter() {
-    var filterArgs = {}
-    filterArgs['search_text']=this.searchStrings;
-    filterArgs['impact_area_id']=this.filterForm.value.impact_child.flatMap((bool, index) => bool ? index+1 : [])
-    filterArgs['sentiment']=this.filterForm.value.sentiment;
-    filterArgs['source'] = this.filterForm.value.source;
-    filterArgs['type'] = this.filterForm.value.type;
-    this.filteredDiscourses = this.pipe.transform(this.discourseDetails,filterArgs)
+    this.loading = true;
+    var filterArgs = {};
+    filterArgs["search_text"] = this.searchStrings;
+    filterArgs[
+      "impact_area_id"
+    ] = this.filterForm.value.impact_child.flatMap((bool, index) =>
+      bool ? index + 1 : []
+    );
+    filterArgs["sentiment"] = this.filterForm.value.sentiment;
+    filterArgs["source"] = this.filterForm.value.source;
+    filterArgs["type"] = this.filterForm.value.type;
+    this.filteredDiscourses = this.pipe.transform(
+      this.discourseDetails,
+      filterArgs
+    );
+    // need to update count here
+    this.filteredDiscourseCount = this.filteredDiscourses.length;
+    this.p = 0;
+    this.loading = false;
     this.isOn = false;
   }
   reset() {
@@ -401,7 +515,7 @@ export class VerbatimComponent implements OnInit {
     this.initFilterFormControlGroup();
     this.searchStrings = [];
     this.filteredDiscourses = this.discourseDetails;
-    // this.isOn = false;
+    this.filteredDiscourseCount = this.count;
   }
 
   initCheckboxes() {
@@ -456,61 +570,62 @@ export class VerbatimComponent implements OnInit {
       this.show = true;
     }
   }
-  onPageChange(event:any){
+  onPageChange(event: any) {
     this.p = event.pageIndex;
     this.pageSize = event.pageSize;
-  }
-  onToggleChange(event:any,discourse:any){
-    this.isThreadView = event.checked;
-    if(this.isThreadView){
-      this.loading=true;
-    this.apollo
-      .query<any>({
-        query: gql`
-          query getThread(
-            $post_id:Int
-          ) {
-            getThread(post_id: $post_id) {
-              Topics
-              discourse_id
-              comment
-              sentiment
-              platform_name
-              created_time
-              impact_area_id
-              isPost
-              post_id
-              url
-              type
-            }
-          }
-        `,
-        variables: {
-          post_id:discourse.isPost?discourse.discourse_id:discourse.post_id
-        }
-      })
-      .subscribe(
-        ({ data, loading }) => {
-          this.filteredDiscourses = data && data.getThread;
-        },
-        error => {
-          this.error = error;
-          console.log("error is: ", error);
-        }
-      )
-      .add(() => {
-        if (this.filteredDiscourses.length != 0) {
-          this.empty = false;
-        } else {
-          this.empty = true;
-        }
-        this.loading = false;
-      });
-    }else{
-      this.filteredDiscourses = this.discourseDetails
+    console.log(this.p, this.pageSize);
+    if ((this.p * this.pageSize) % 2000 != 0) {
+      var offset = Math.floor((this.p * this.pageSize) / 2000) * 2000;
+      this.updateDiscourseData(offset);
+    } else {
+      this.updateDiscourseData(this.p * this.pageSize);
     }
-    
   }
-
-  
+  onToggleChange(event: any, discourse: any) {
+    this.isThreadView = event.checked;
+    if (this.isThreadView) {
+      this.loading = true;
+      this.filteredDiscoursesCopy = this.filteredDiscourses;
+      this.countCopy = this.filteredDiscourseCount;
+      this.apollo
+        .query<any>({
+          query: gql`
+            query getThread($post_id: Int) {
+              getThread(post_id: $post_id) {
+                Topics
+                discourse_id
+                comment
+                sentiment
+                platform_name
+                created_time
+                impact_area_id
+                isPost
+                post_id
+                url
+                type
+              }
+            }
+          `,
+          variables: {
+            post_id: discourse.isPost
+              ? discourse.discourse_id
+              : discourse.post_id
+          }
+        })
+        .subscribe(
+          ({ data, loading }) => {
+            this.filteredDiscourses = data && data.getThread;
+            this.filteredDiscourseCount = this.filteredDiscourses.length;
+          },
+          error => {}
+        )
+        .add(() => {
+          this.p = 0;
+          this.loading = false;
+        });
+    } else {
+      this.filteredDiscourses = this.filteredDiscoursesCopy;
+      this.filteredDiscourseCount = this.countCopy;
+    }
+  }
 }

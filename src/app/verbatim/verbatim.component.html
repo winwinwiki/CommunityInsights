@@ -1,7 +1,7 @@
 <ng-container *ngIf="empty && !loading">
   <div class="text-center mt-5 mx-auto p-4">
     <img class="mb-4 text-center pb-2 " src="/assets/zero_page_icon.svg">
-    <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> No Data Found. Please Refine your Search</p>
+    <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> {{message}}</p>
   </div>
 </ng-container>
 <ng-container *ngIf="loading">
@@ -11,7 +11,7 @@
 </ng-container>
 
 
-<ng-container *ngIf="!loading">
+<ng-container *ngIf="!loading && !empty">
   <div class="page-wrapper chiller-theme verbatim-tab" [ngClass]="[isOn === true ? 'toggled' : 'toggle']">
     <a (click)="isOn = !isOn" id="show-sidebar" placement="right" [ngbTooltip]="isOn?'Close Filter':'Open Filter'"
       class="btn btn-sm btn-dark" href="#">
@@ -252,7 +252,7 @@
 
 
 
-    <main class="page-content">
+    <main class="page-content" *ngIf="!empty">
       <!-- <code>{{ impact_child.value | json }}</code> -->
       <!-- <div *ngFor="let control of filterForm.get('impact_child').controls;let i = index "> 
         <div *ngIf="control.value"><button>{{tags[i].tag}}</button></div>
@@ -266,7 +266,7 @@
         </div>
         <div class="d-flex justify-content-end">
           <div>
-            <mat-paginator [length]="filteredDiscourses.length" [pageIndex]="p" [pageSize]="pageSize"
+            <mat-paginator [length]="filteredDiscourseCount" [pageIndex]="p" [pageSize]="pageSize"
               showFirstLastButtons="true" (page)="onPageChange($event)" [pageSize]="10"
               [pageSizeOptions]="[10, 25, 50, 100]">
             </mat-paginator>
@@ -384,7 +384,7 @@
         <ng-container *ngIf="flatView">
           <div *ngIf="filteredDiscourses.length==0" class="text-center mt-5 mx-auto p-4">
             <img class="mb-4 text-center pb-2 " src="/assets/zero_page_icon.svg">
-            <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> No Data Found. Please Refine your Search
+            <p id="emptySearch"><i class="fas fa-exclamation-circle mx-2"></i> {{MESSAGE_NODATA}}
             </p>
           </div>
           <div *ngFor="let discourse of filteredDiscourses.slice(pageSize*p,pageSize*p+pageSize-1)">

@@ -20,6 +20,7 @@ export class FilterDiscoursePipe implements PipeTransform {
     const result = [];
     
     for (var i = 0; i < discourses.length; i++) {
+      if(discourses[i]==0) continue;
       if (search_text.length != 0){
         var bingo = false;
         for(var text of search_text){
