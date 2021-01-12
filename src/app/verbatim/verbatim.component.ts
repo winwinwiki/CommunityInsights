@@ -98,6 +98,7 @@ export class VerbatimComponent implements OnInit {
   searchStrings:string[] = [
     
   ];
+  isThreadView:boolean = false;
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
@@ -458,6 +459,57 @@ export class VerbatimComponent implements OnInit {
   onPageChange(event:any){
     this.p = event.pageIndex;
     this.pageSize = event.pageSize;
+  }
+  onToggleChange(event:any,discourse:any){
+    this.isThreadView = event.checked;
+    if(this.isThreadView){
+      this.loading=true;
+    this.apollo
+      .query<any>({
+        query: gql`
+          query getThread(
+            $post_id:Int
+          ) {
+            getThread(post_id: $post_id) {
+              Topics
+              discourse_id
+              comment
+              sentiment
+              platform_name
+              created_time
+              impact_area_id
+              isPost
+              post_id
+              url
+              type
+            }
+          }
+        `,
+        variables: {
+          post_id:discourse.isPost?discourse.discourse_id:discourse.post_id
+        }
+      })
+      .subscribe(
+        ({ data, loading }) => {
+          this.filteredDiscourses = data && data.getThread;
+        },
+        error => {
+          this.error = error;
+          console.log("error is: ", error);
+        }
+      )
+      .add(() => {
+        if (this.filteredDiscourses.length != 0) {
+          this.empty = false;
+        } else {
+          this.empty = true;
+        }
+        this.loading = false;
+      });
+    }else{
+      this.filteredDiscourses = this.discourseDetails
+    }
+    
   }
 
   

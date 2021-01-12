@@ -21,8 +21,10 @@
       <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
           <div class="sidebar-brand">
-            <span>Filter Data</span>
+            <span id="header">Filter Data</span>
           </div>
+          <p style="color:#ffffffc1;padding:0px 20px;font-weight:lighter;font-size:small">( click 'Apply' to view
+            results )</p>
           <!-- sidebar-header  -->
 
           <div class="sidebar-search">
@@ -264,7 +266,9 @@
         </div>
         <div class="d-flex justify-content-end">
           <div>
-            <mat-paginator [length]="filteredDiscourses.length" [pageIndex]="p" [pageSize]="pageSize" showFirstLastButtons = "true" (page)="onPageChange($event)" [pageSize]="10" [pageSizeOptions]="[10, 25, 50, 100]">
+            <mat-paginator [length]="filteredDiscourses.length" [pageIndex]="p" [pageSize]="pageSize"
+              showFirstLastButtons="true" (page)="onPageChange($event)" [pageSize]="10"
+              [pageSizeOptions]="[10, 25, 50, 100]">
             </mat-paginator>
           </div>
         </div>
@@ -386,11 +390,13 @@
           <div *ngFor="let discourse of filteredDiscourses.slice(pageSize*p,pageSize*p+pageSize-1)">
             <mat-card class="sub-details">
               <mat-card-header>
-                <p class="date p-3 mx-3 text-center">
+                <p class="p-3 mx-3 text-center date">
                   {{discourse.created_time}}
                 </p>
                 <mat-card-title>{{discourse.type | titlecase}}</mat-card-title>
                 <mat-card-subtitle>From {{discourse.platform_name}}</mat-card-subtitle>
+                <mat-slide-toggle [checked]="isThreadView" (change)="onToggleChange($event,discourse)">View Thread
+                </mat-slide-toggle>
               </mat-card-header>
               <mat-card-content>
                 <div class="row d-flex align-items-center p-0 mx-3">
@@ -424,7 +430,9 @@
 
               </mat-card-content>
               <mat-card-actions align="end" *ngIf="discourse.url">
-                <a target="_blank" rel="noopener noreferrer" [href]="discourse.url.charAt(discourse.url.indexOf('com')+3)=='/'?'https://www.'+discourse.url:'https://www.'+discourse.url.slice(0,discourse.url.indexOf('com')+3)+'/'+discourse.url.slice(discourse.url.indexOf('com')+3,discourse.url.length)"><u>View original post</u></a>
+                <a target="_blank" rel="noopener noreferrer"
+                  [href]="discourse.url.charAt(discourse.url.indexOf('com')+3)=='/'?'https://www.'+discourse.url:'https://www.'+discourse.url.slice(0,discourse.url.indexOf('com')+3)+'/'+discourse.url.slice(discourse.url.indexOf('com')+3,discourse.url.length)"><u>View
+                    original post</u></a>
                 <span class="mx-2 text-center">
                   <i class="fas fa-external-link-alt"></i>
                 </span>

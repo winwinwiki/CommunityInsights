@@ -38,6 +38,7 @@ import {MatCardModule} from '@angular/material/card';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +72,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatChipsModule,
     MatCardModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSlideToggleModule
   ],
   entryComponents: [
   ],

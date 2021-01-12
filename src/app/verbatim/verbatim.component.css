@@ -536,7 +536,7 @@ mat-accordion mat-expansion-panel {
   border-radius: 0px;
 } */
 
-/deep/ .mat-expansion-indicator::after,
+::ng-deep .mat-expansion-indicator::after,
 .mat-expansion-panel-header-description {
   color: white;
 }
@@ -582,3 +582,4 @@ input{
   caret-color: white;
   padding:5px;
 }
+
