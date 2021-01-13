@@ -106,9 +106,9 @@ export class VerbatimComponent implements OnInit {
   countCopy;
 
   // variables related UI error message
-  MESSAGE_TIMEOUT = "Query timed out. Please refine your date range.";
-  MESSAGE_NODATA = "No data found. Please refine your search.";
-  MESSAGE_NODATA_FILTER = "No data found. Please refine your filter.";
+  MESSAGE_TIMEOUT = "Query timed out. Please shorten your date range.";
+  MESSAGE_NODATA = "No data found for current search.";
+  MESSAGE_NODATA_FILTER = "No data found for current filter settings.";
   message: String = this.MESSAGE_NODATA;
 
   
@@ -138,8 +138,9 @@ export class VerbatimComponent implements OnInit {
         this.dates = text.split(" to ");
         this.start = this.dates[0];
         this.end = this.dates[1];
-        this.region = location[0] + "".split(" - ")[0];
-        this.parent_region = location[0] + "".split(" - ")[1];
+        this.region = (location[0] + "").split(" - ")[0];
+        this.parent_region = (location[0] + "").split(" - ")[1];
+        console.log(this.region)
         this.createVerbatimView();
       }
     });
@@ -208,7 +209,7 @@ export class VerbatimComponent implements OnInit {
         variables: {
           start: this.start,
           end: this.end,
-          region: "King County"
+          region: this.region
         }
       })
       .subscribe(
@@ -216,6 +217,11 @@ export class VerbatimComponent implements OnInit {
           if (data && data.getDiscourseCount != null) {
             this.count = data && data.getDiscourseCount.count;
             this.filteredDiscourseCount = this.count;
+            if(this.count==0) {
+              this.empty = true;
+              this.loading = false;
+              return;
+            }
             this.discourseDetails = Array(this.count).fill(0);
           } 
         },
@@ -260,7 +266,7 @@ export class VerbatimComponent implements OnInit {
         variables: {
           start: this.start,
           end: this.end,
-          region: "King County",
+          region: this.region,
           limit: 2000,
           offset: 0
         }
@@ -330,7 +336,7 @@ export class VerbatimComponent implements OnInit {
           variables: {
             start: this.start,
             end: this.end,
-            region: "King County",
+            region: this.region,
             limit: 2000,
             offset: offset
           }

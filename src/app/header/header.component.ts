@@ -146,7 +146,8 @@ export class HeaderComponent implements OnInit, AfterContentInit {
 
   onSelectedLocation(locChoice){
     this.locText = [locChoice.location];
-    this.updateLocation(this.locText)
+    // console.log(this.locText)
+    // this.updateLocation(this.locText)
   }
 
   updateText(text) {
