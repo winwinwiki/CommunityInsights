@@ -140,7 +140,7 @@ export class VerbatimComponent implements OnInit {
         this.end = this.dates[1];
         this.region = (location[0] + "").split(" - ")[0];
         this.parent_region = (location[0] + "").split(" - ")[1];
-        console.log(this.region)
+        // console.log(this.region)
         this.createVerbatimView();
       }
     });

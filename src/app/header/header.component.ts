@@ -168,40 +168,42 @@ export class HeaderComponent implements OnInit, AfterContentInit {
       this.router.navigateByUrl('/about');
     }
   }
+  addDays(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
 
   getToday(date: NgbDateStruct, initialData){
     let parsed = '';
     let currentDate = new Date(date.year + "-" + date.month + "-" + date.day);
     let currentTime = currentDate.getDay() ? currentDate.getDay() - 2 : 6;
 
-    let fromDate = new Date(currentDate.getTime() - 6 * 24 * 60 * 60 * 1000);
+    let fromDate = this.addDays(currentDate,-7);
     this.fromDate = new NgbDate(
       fromDate.getFullYear(),
       fromDate.getMonth() + 1,
       fromDate.getDate()
     );
-    // this.fromDate = new NgbDate(
-    //   2021,
-    //   1,
-    //   12
-    // );
+    
 
-    let toDate = new Date(fromDate.getTime() + 6 * 24 * 60 * 60 * 1000);
+    let toDate = this.addDays(currentDate,-1);
     this.toDate = new NgbDate(
       toDate.getFullYear(),
       toDate.getMonth() + 1,
       toDate.getDate()
     ); 
-    // this.toDate = new NgbDate(
-    //   2021,
-    //   1,
-    //   13
-    // );
+
     if(initialData != ''){
       parsed += this._parserFormatter.format(this.fromDate) + ' to ' + this._parserFormatter.format(this.toDate);
       this.initialDate = parsed;
     } else {
-      this.fromDate=this.toDate;
+      this.fromDate=new NgbDate(
+        currentDate.getFullYear(),
+        currentDate.getMonth() + 1,
+        currentDate.getDate()
+      );
+      this.toDate = this.fromDate;
       parsed += this._parserFormatter.format(this.fromDate) + ' to ' + this._parserFormatter.format(this.toDate);
       this.renderer.setProperty(this.myRangeInput.nativeElement, 'value', parsed);
     }
@@ -209,21 +211,21 @@ export class HeaderComponent implements OnInit, AfterContentInit {
 
   getWeek(date: NgbDateStruct) {
     let currentDate = new Date(date.year + "-" + date.month + "-" + date.day);
-    let currentTime = currentDate.getDay() ? currentDate.getDay() - 1 : 6;
 
-    let fromDate = new Date(currentDate.getTime() - 6 * 24 * 60 * 60 * 1000);
+    let fromDate = this.addDays(currentDate,-7);
     this.fromDate = new NgbDate(
       fromDate.getFullYear(),
       fromDate.getMonth() + 1,
       fromDate.getDate()
-    )
+    );
+    
 
-    let toDate = new Date(fromDate.getTime() + 6 * 24 * 60 * 60 * 1000);
+    let toDate = this.addDays(currentDate,-1);
     this.toDate = new NgbDate(
       toDate.getFullYear(),
       toDate.getMonth() + 1,
       toDate.getDate()
-    );
+    ); 
 
     let weekparsed = '';
     weekparsed += this._parserFormatter.format(this.fromDate);

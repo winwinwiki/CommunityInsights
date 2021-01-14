@@ -123,7 +123,7 @@ export class ChartComponent implements OnInit, OnDestroy {
       })
 
       .render();
-    console.log("Ended: " + (Date.now() - this.startTime));
+    // console.log("Ended: " + (Date.now() - this.startTime));
     this.empty = false;
   }
 
@@ -136,7 +136,7 @@ export class ChartComponent implements OnInit, OnDestroy {
       this.data.sharedData
     ).subscribe(([text, location, selectedData]) => {
       this.startTime = Date.now();
-      console.log("started");
+      // console.log("started");
       if (
         this.changedObjtext != text ||
         this.changedObjLocation != location[0] ||
@@ -209,7 +209,7 @@ export class ChartComponent implements OnInit, OnDestroy {
         ({ data, loading }) => {
           // console.log(this.searchValue)
           // console.log(data)
-          console.log("Got data: " + (Date.now() - this.startTime));
+          // console.log("Got data: " + (Date.now() - this.startTime));
           this.topicsChart = data && data.discourseTrendingTopics;
           document.getElementById("chart")
             ? this.plotChart(this.topicsChart)
@@ -259,7 +259,7 @@ export class ChartComponent implements OnInit, OnDestroy {
       })
       .subscribe(
         ({ data, loading }) => {
-          console.log("Got data: " + (Date.now() - this.startTime));
+          // console.log("Got data: " + (Date.now() - this.startTime));
           this.hashtagChart = data && data.hashtagMaster;
           document.getElementById("chart")
             ? this.plotChart(this.hashtagChart)
