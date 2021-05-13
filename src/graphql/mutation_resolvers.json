@@ -1,0 +1,193 @@
+{
+    "resolvers": [
+        {
+            "typeName": "Mutation",
+            "fieldName": "createDiscourse",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/createDiscourse",
+            "requestMappingTemplate": "#set( $cols = [] )\n#set( $vals = [] )\n#foreach( $entry in $ctx.args.createDiscourseInput.keySet() )\n  #set( $discard = $cols.add($entry) )\n  #set( $discard = $vals.add(\"'$ctx.args.createDiscourseInput[$entry]'\") )\n#end\n#set( $valStr = $vals.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n#set( $colStr = $cols.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"INSERT INTO Discourse $colStr VALUES $valStr\", \"SELECT * FROM Discourse WHERE discourse_id=$ctx.args.createDiscourseInput.discourse_id\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.parseJson($utils.rds.toJsonString($ctx.result))[1][0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "createImpactArea",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/createImpactArea",
+            "requestMappingTemplate": "#set( $cols = [] )\n#set( $vals = [] )\n#foreach( $entry in $ctx.args.createImpactAreaInput.keySet() )\n  #set( $discard = $cols.add($entry) )\n  #set( $discard = $vals.add(\"'$ctx.args.createImpactAreaInput[$entry]'\") )\n#end\n#set( $valStr = $vals.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n#set( $colStr = $cols.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"INSERT INTO ImpactArea $colStr VALUES $valStr\", \"SELECT * FROM ImpactArea WHERE impact_area_id=$ctx.args.createImpactAreaInput.impact_area_id\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.parseJson($utils.rds.toJsonString($ctx.result))[1][0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "createModelVersion",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/createModelVersion",
+            "requestMappingTemplate": "#set( $cols = [] )\n#set( $vals = [] )\n#foreach( $entry in $ctx.args.createModelVersionInput.keySet() )\n  #set( $discard = $cols.add($entry) )\n  #set( $discard = $vals.add(\"'$ctx.args.createModelVersionInput[$entry]'\") )\n#end\n#set( $valStr = $vals.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n#set( $colStr = $cols.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"INSERT INTO ModelVersion $colStr VALUES $valStr\", \"SELECT * FROM ModelVersion WHERE model_id=$ctx.args.createModelVersionInput.model_id\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.parseJson($utils.rds.toJsonString($ctx.result))[1][0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "createPlatform",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/createPlatform",
+            "requestMappingTemplate": "#set( $cols = [] )\n#set( $vals = [] )\n#foreach( $entry in $ctx.args.createPlatformInput.keySet() )\n  #set( $discard = $cols.add($entry) )\n  #set( $discard = $vals.add(\"'$ctx.args.createPlatformInput[$entry]'\") )\n#end\n#set( $valStr = $vals.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n#set( $colStr = $cols.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"INSERT INTO Platform $colStr VALUES $valStr\", \"SELECT * FROM Platform WHERE platform_id=$ctx.args.createPlatformInput.platform_id\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.parseJson($utils.rds.toJsonString($ctx.result))[1][0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "createRegions",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/createRegions",
+            "requestMappingTemplate": "#set( $cols = [] )\n#set( $vals = [] )\n#foreach( $entry in $ctx.args.createRegionsInput.keySet() )\n  #set( $discard = $cols.add($entry) )\n  #set( $discard = $vals.add(\"'$ctx.args.createRegionsInput[$entry]'\") )\n#end\n#set( $valStr = $vals.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n#set( $colStr = $cols.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"INSERT INTO Regions $colStr VALUES $valStr\", \"SELECT * FROM Regions WHERE region='$ctx.args.createRegionsInput.region'\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.parseJson($utils.rds.toJsonString($ctx.result))[1][0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "createSource",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/createSource",
+            "requestMappingTemplate": "#set( $cols = [] )\n#set( $vals = [] )\n#foreach( $entry in $ctx.args.createSourceInput.keySet() )\n  #set( $discard = $cols.add($entry) )\n  #set( $discard = $vals.add(\"'$ctx.args.createSourceInput[$entry]'\") )\n#end\n#set( $valStr = $vals.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n#set( $colStr = $cols.toString().replace(\"[\",\"(\").replace(\"]\",\")\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"INSERT INTO Source $colStr VALUES $valStr\", \"SELECT * FROM Source WHERE source_id=$ctx.args.createSourceInput.source_id\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.parseJson($utils.rds.toJsonString($ctx.result))[1][0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "createTodo",
+            "dataSourceName": "TodoTable",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/createTodo",
+            "requestMappingTemplate": "## [Start] Prepare DynamoDB PutItem Request. **\n$util.qr($context.args.input.put(\"createdAt\", $util.defaultIfNull($ctx.args.input.createdAt, $util.time.nowISO8601())))\n$util.qr($context.args.input.put(\"updatedAt\", $util.defaultIfNull($ctx.args.input.updatedAt, $util.time.nowISO8601())))\n$util.qr($context.args.input.put(\"__typename\", \"Todo\"))\n#set( $condition = {\n  \"expression\": \"attribute_not_exists(#id)\",\n  \"expressionNames\": {\n      \"#id\": \"id\"\n  }\n} )\n#if( $context.args.condition )\n  #set( $condition.expressionValues = {} )\n  #set( $conditionFilterExpressions = $util.parseJson($util.transform.toDynamoDBConditionExpression($context.args.condition)) )\n  $util.qr($condition.put(\"expression\", \"($condition.expression) AND $conditionFilterExpressions.expression\"))\n  $util.qr($condition.expressionNames.putAll($conditionFilterExpressions.expressionNames))\n  $util.qr($condition.expressionValues.putAll($conditionFilterExpressions.expressionValues))\n#end\n#if( $condition.expressionValues && $condition.expressionValues.size() == 0 )\n  #set( $condition = {\n  \"expression\": $condition.expression,\n  \"expressionNames\": $condition.expressionNames\n} )\n#end\n{\n  \"version\": \"2017-02-28\",\n  \"operation\": \"PutItem\",\n  \"key\": #if( $modelObjectKey ) $util.toJson($modelObjectKey) #else {\n  \"id\":   $util.dynamodb.toDynamoDBJson($util.defaultIfNullOrBlank($ctx.args.input.id, $util.autoId()))\n} #end,\n  \"attributeValues\": $util.dynamodb.toMapValuesJson($context.args.input),\n  \"condition\": $util.toJson($condition)\n}\n## [End] Prepare DynamoDB PutItem Request. **",
+            "responseMappingTemplate": "$util.toJson($ctx.result)",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "deleteDiscourse",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/deleteDiscourse",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Discourse WHERE discourse_id=$ctx.args.discourse_id\", \"DELETE FROM Discourse WHERE discourse_id=$ctx.args.discourse_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "deleteImpactArea",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/deleteImpactArea",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM ImpactArea WHERE impact_area_id=$ctx.args.impact_area_id\", \"DELETE FROM ImpactArea WHERE impact_area_id=$ctx.args.impact_area_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "deleteModelVersion",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/deleteModelVersion",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM ModelVersion WHERE model_id=$ctx.args.model_id\", \"DELETE FROM ModelVersion WHERE model_id=$ctx.args.model_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "deletePlatform",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/deletePlatform",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Platform WHERE platform_id=$ctx.args.platform_id\", \"DELETE FROM Platform WHERE platform_id=$ctx.args.platform_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "deleteRegions",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/deleteRegions",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Regions WHERE region='$ctx.args.region'\", \"DELETE FROM Regions WHERE region=$ctx.args.region\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "deleteSource",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/deleteSource",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Source WHERE source_id=$ctx.args.source_id\", \"DELETE FROM Source WHERE source_id=$ctx.args.source_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "deleteTodo",
+            "dataSourceName": "TodoTable",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/deleteTodo",
+            "requestMappingTemplate": "#if( $authCondition )\n  #set( $condition = $authCondition )\n  #if( $modelObjectKey )\n    #foreach( $entry in $modelObjectKey.entrySet() )\n      $util.qr($condition.put(\"expression\", \"$condition.expression AND attribute_exists(#keyCondition$velocityCount)\"))\n      $util.qr($condition.expressionNames.put(\"#keyCondition$velocityCount\", \"$entry.key\"))\n    #end\n  #else\n    $util.qr($condition.put(\"expression\", \"$condition.expression AND attribute_exists(#id)\"))\n    $util.qr($condition.expressionNames.put(\"#id\", \"id\"))\n  #end\n#else\n  #if( $modelObjectKey )\n    #set( $condition = {\n  \"expression\": \"\",\n  \"expressionNames\": {}\n} )\n    #foreach( $entry in $modelObjectKey.entrySet() )\n      #if( $velocityCount == 1 )\n        $util.qr($condition.put(\"expression\", \"attribute_exists(#keyCondition$velocityCount)\"))\n      #else\n        $util.qr($condition.put(\"expression\", \"$condition.expression AND attribute_exists(#keyCondition$velocityCount)\"))\n      #end\n      $util.qr($condition.expressionNames.put(\"#keyCondition$velocityCount\", \"$entry.key\"))\n    #end\n  #else\n    #set( $condition = {\n  \"expression\": \"attribute_exists(#id)\",\n  \"expressionNames\": {\n      \"#id\": \"id\"\n  }\n} )\n  #end\n#end\n#if( $versionedCondition )\n  $util.qr($condition.put(\"expression\", \"($condition.expression) AND $versionedCondition.expression\"))\n  $util.qr($condition.expressionNames.putAll($versionedCondition.expressionNames))\n  #set( $expressionValues = $util.defaultIfNull($condition.expressionValues, {}) )\n  $util.qr($expressionValues.putAll($versionedCondition.expressionValues))\n  #set( $condition.expressionValues = $expressionValues )\n#end\n#if( $context.args.condition )\n  #set( $conditionFilterExpressions = $util.parseJson($util.transform.toDynamoDBConditionExpression($context.args.condition)) )\n  $util.qr($condition.put(\"expression\", \"($condition.expression) AND $conditionFilterExpressions.expression\"))\n  $util.qr($condition.expressionNames.putAll($conditionFilterExpressions.expressionNames))\n  #set( $conditionExpressionValues = $util.defaultIfNull($condition.expressionValues, {}) )\n  $util.qr($conditionExpressionValues.putAll($conditionFilterExpressions.expressionValues))\n  #set( $condition.expressionValues = $conditionExpressionValues )\n  $util.qr($condition.expressionValues.putAll($conditionFilterExpressions.expressionValues))\n#end\n#if( $condition.expressionValues && $condition.expressionValues.size() == 0 )\n  #set( $condition = {\n  \"expression\": $condition.expression,\n  \"expressionNames\": $condition.expressionNames\n} )\n#end\n{\n  \"version\": \"2017-02-28\",\n  \"operation\": \"DeleteItem\",\n  \"key\": #if( $modelObjectKey ) $util.toJson($modelObjectKey) #else {\n  \"id\": $util.dynamodb.toDynamoDBJson($ctx.args.input.id)\n} #end,\n  \"condition\": $util.toJson($condition)\n}",
+            "responseMappingTemplate": "$util.toJson($ctx.result)",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "updateDiscourse",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/updateDiscourse",
+            "requestMappingTemplate": "#set( $updateList = {} )\n#foreach( $entry in $ctx.args.updateDiscourseInput.keySet() )\n  #set( $discard = $updateList.put($entry, \"'$ctx.args.updateDiscourseInput[$entry]'\") )\n#end\n#set( $update = $updateList.toString().replace(\"{\",\"\").replace(\"}\",\"\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"UPDATE Discourse SET $update WHERE discourse_id=$ctx.args.updateDiscourseInput.discourse_id\", \"SELECT * FROM Discourse WHERE discourse_id=$ctx.args.updateDiscourseInput.discourse_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.length() < 2 )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[1] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "updateImpactArea",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/updateImpactArea",
+            "requestMappingTemplate": "#set( $updateList = {} )\n#foreach( $entry in $ctx.args.updateImpactAreaInput.keySet() )\n  #set( $discard = $updateList.put($entry, \"'$ctx.args.updateImpactAreaInput[$entry]'\") )\n#end\n#set( $update = $updateList.toString().replace(\"{\",\"\").replace(\"}\",\"\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"UPDATE ImpactArea SET $update WHERE impact_area_id=$ctx.args.updateImpactAreaInput.impact_area_id\", \"SELECT * FROM ImpactArea WHERE impact_area_id=$ctx.args.updateImpactAreaInput.impact_area_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.length() < 2 )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[1] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "updateModelVersion",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/updateModelVersion",
+            "requestMappingTemplate": "#set( $updateList = {} )\n#foreach( $entry in $ctx.args.updateModelVersionInput.keySet() )\n  #set( $discard = $updateList.put($entry, \"'$ctx.args.updateModelVersionInput[$entry]'\") )\n#end\n#set( $update = $updateList.toString().replace(\"{\",\"\").replace(\"}\",\"\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"UPDATE ModelVersion SET $update WHERE model_id=$ctx.args.updateModelVersionInput.model_id\", \"SELECT * FROM ModelVersion WHERE model_id=$ctx.args.updateModelVersionInput.model_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.length() < 2 )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[1] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "updatePlatform",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/updatePlatform",
+            "requestMappingTemplate": "#set( $updateList = {} )\n#foreach( $entry in $ctx.args.updatePlatformInput.keySet() )\n  #set( $discard = $updateList.put($entry, \"'$ctx.args.updatePlatformInput[$entry]'\") )\n#end\n#set( $update = $updateList.toString().replace(\"{\",\"\").replace(\"}\",\"\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"UPDATE Platform SET $update WHERE platform_id=$ctx.args.updatePlatformInput.platform_id\", \"SELECT * FROM Platform WHERE platform_id=$ctx.args.updatePlatformInput.platform_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.length() < 2 )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[1] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "updateRegions",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/updateRegions",
+            "requestMappingTemplate": "#set( $updateList = {} )\n#foreach( $entry in $ctx.args.updateRegionsInput.keySet() )\n  #set( $discard = $updateList.put($entry, \"'$ctx.args.updateRegionsInput[$entry]'\") )\n#end\n#set( $update = $updateList.toString().replace(\"{\",\"\").replace(\"}\",\"\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"UPDATE Regions SET $update WHERE region=$ctx.args.updateRegionsInput.region\", \"SELECT * FROM Regions WHERE region='$ctx.args.updateRegionsInput.region'\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.length() < 2 )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[1] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "updateSource",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/updateSource",
+            "requestMappingTemplate": "#set( $updateList = {} )\n#foreach( $entry in $ctx.args.updateSourceInput.keySet() )\n  #set( $discard = $updateList.put($entry, \"'$ctx.args.updateSourceInput[$entry]'\") )\n#end\n#set( $update = $updateList.toString().replace(\"{\",\"\").replace(\"}\",\"\") )\n{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"UPDATE Source SET $update WHERE source_id=$ctx.args.updateSourceInput.source_id\", \"SELECT * FROM Source WHERE source_id=$ctx.args.updateSourceInput.source_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.length() < 2 )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[1] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Mutation",
+            "fieldName": "updateTodo",
+            "dataSourceName": "TodoTable",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Mutation/resolvers/updateTodo",
+            "requestMappingTemplate": "#if( $authCondition && $authCondition.expression != \"\" )\n  #set( $condition = $authCondition )\n  #if( $modelObjectKey )\n    #foreach( $entry in $modelObjectKey.entrySet() )\n      $util.qr($condition.put(\"expression\", \"$condition.expression AND attribute_exists(#keyCondition$velocityCount)\"))\n      $util.qr($condition.expressionNames.put(\"#keyCondition$velocityCount\", \"$entry.key\"))\n    #end\n  #else\n    $util.qr($condition.put(\"expression\", \"$condition.expression AND attribute_exists(#id)\"))\n    $util.qr($condition.expressionNames.put(\"#id\", \"id\"))\n  #end\n#else\n  #if( $modelObjectKey )\n    #set( $condition = {\n  \"expression\": \"\",\n  \"expressionNames\": {},\n  \"expressionValues\": {}\n} )\n    #foreach( $entry in $modelObjectKey.entrySet() )\n      #if( $velocityCount == 1 )\n        $util.qr($condition.put(\"expression\", \"attribute_exists(#keyCondition$velocityCount)\"))\n      #else\n        $util.qr($condition.put(\"expression\", \"$condition.expression AND attribute_exists(#keyCondition$velocityCount)\"))\n      #end\n      $util.qr($condition.expressionNames.put(\"#keyCondition$velocityCount\", \"$entry.key\"))\n    #end\n  #else\n    #set( $condition = {\n  \"expression\": \"attribute_exists(#id)\",\n  \"expressionNames\": {\n      \"#id\": \"id\"\n  },\n  \"expressionValues\": {}\n} )\n  #end\n#end\n## Automatically set the updatedAt timestamp. **\n$util.qr($context.args.input.put(\"updatedAt\", $util.defaultIfNull($ctx.args.input.updatedAt, $util.time.nowISO8601())))\n$util.qr($context.args.input.put(\"__typename\", \"Todo\"))\n## Update condition if type is @versioned **\n#if( $versionedCondition )\n  $util.qr($condition.put(\"expression\", \"($condition.expression) AND $versionedCondition.expression\"))\n  $util.qr($condition.expressionNames.putAll($versionedCondition.expressionNames))\n  $util.qr($condition.expressionValues.putAll($versionedCondition.expressionValues))\n#end\n#if( $context.args.condition )\n  #set( $conditionFilterExpressions = $util.parseJson($util.transform.toDynamoDBConditionExpression($context.args.condition)) )\n  $util.qr($condition.put(\"expression\", \"($condition.expression) AND $conditionFilterExpressions.expression\"))\n  $util.qr($condition.expressionNames.putAll($conditionFilterExpressions.expressionNames))\n  $util.qr($condition.expressionValues.putAll($conditionFilterExpressions.expressionValues))\n#end\n#if( $condition.expressionValues && $condition.expressionValues.size() == 0 )\n  #set( $condition = {\n  \"expression\": $condition.expression,\n  \"expressionNames\": $condition.expressionNames\n} )\n#end\n#set( $expNames = {} )\n#set( $expValues = {} )\n#set( $expSet = {} )\n#set( $expAdd = {} )\n#set( $expRemove = [] )\n#if( $modelObjectKey )\n  #set( $keyFields = [] )\n  #foreach( $entry in $modelObjectKey.entrySet() )\n    $util.qr($keyFields.add(\"$entry.key\"))\n  #end\n#else\n  #set( $keyFields = [\"id\"] )\n#end\n#foreach( $entry in $util.map.copyAndRemoveAllKeys($context.args.input, $keyFields).entrySet() )\n  #if( !$util.isNull($dynamodbNameOverrideMap) && $dynamodbNameOverrideMap.containsKey(\"$entry.key\") )\n    #set( $entryKeyAttributeName = $dynamodbNameOverrideMap.get(\"$entry.key\") )\n  #else\n    #set( $entryKeyAttributeName = $entry.key )\n  #end\n  #if( $util.isNull($entry.value) )\n    #set( $discard = $expRemove.add(\"#$entryKeyAttributeName\") )\n    $util.qr($expNames.put(\"#$entryKeyAttributeName\", \"$entry.key\"))\n  #else\n    $util.qr($expSet.put(\"#$entryKeyAttributeName\", \":$entryKeyAttributeName\"))\n    $util.qr($expNames.put(\"#$entryKeyAttributeName\", \"$entry.key\"))\n    $util.qr($expValues.put(\":$entryKeyAttributeName\", $util.dynamodb.toDynamoDB($entry.value)))\n  #end\n#end\n#set( $expression = \"\" )\n#if( !$expSet.isEmpty() )\n  #set( $expression = \"SET\" )\n  #foreach( $entry in $expSet.entrySet() )\n    #set( $expression = \"$expression $entry.key = $entry.value\" )\n    #if( $foreach.hasNext() )\n      #set( $expression = \"$expression,\" )\n    #end\n  #end\n#end\n#if( !$expAdd.isEmpty() )\n  #set( $expression = \"$expression ADD\" )\n  #foreach( $entry in $expAdd.entrySet() )\n    #set( $expression = \"$expression $entry.key $entry.value\" )\n    #if( $foreach.hasNext() )\n      #set( $expression = \"$expression,\" )\n    #end\n  #end\n#end\n#if( !$expRemove.isEmpty() )\n  #set( $expression = \"$expression REMOVE\" )\n  #foreach( $entry in $expRemove )\n    #set( $expression = \"$expression $entry\" )\n    #if( $foreach.hasNext() )\n      #set( $expression = \"$expression,\" )\n    #end\n  #end\n#end\n#set( $update = {} )\n$util.qr($update.put(\"expression\", \"$expression\"))\n#if( !$expNames.isEmpty() )\n  $util.qr($update.put(\"expressionNames\", $expNames))\n#end\n#if( !$expValues.isEmpty() )\n  $util.qr($update.put(\"expressionValues\", $expValues))\n#end\n{\n  \"version\": \"2017-02-28\",\n  \"operation\": \"UpdateItem\",\n  \"key\": #if( $modelObjectKey ) $util.toJson($modelObjectKey) #else {\n  \"id\": {\n      \"S\": $util.toJson($context.args.input.id)\n  }\n} #end,\n  \"update\": $util.toJson($update),\n  \"condition\": $util.toJson($condition)\n}",
+            "responseMappingTemplate": "$util.toJson($ctx.result)",
+            "kind": "UNIT"
+        }
+    ]
+}
