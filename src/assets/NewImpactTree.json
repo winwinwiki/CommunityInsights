@@ -1,0 +1,2214 @@
+[
+	{
+		"value" : 1,
+		"label" : "1.1 End Extreme Poverty",
+		"parent" : "Opportunity - Financial",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 2,
+		"label" : "1.2 Reduce Poverty",
+		"parent" : "Opportunity - Financial",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 3,
+		"label" : "1.3 Social Protection",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 4,
+		"label" : "1.4 Equal Access to Goods & Services",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 5,
+		"label" : "1.5 Build Resilience",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 6,
+		"label" : "1.a Secure Resources for Programs",
+		"parent" : "Opportunity - Financial",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 7,
+		"label" : "1.b Scalable Policy Frameworks",
+		"parent" : "Progress - Improvements",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 8,
+		"label" : "2.1 End Hunger",
+		"parent" : "Food - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 9,
+		"label" : "2.2 End Malnutrition",
+		"parent" : "Food - Nutrition",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 10,
+		"label" : "2.3 Increase Agricultural Activity & Income",
+		"parent" : "Food - Supply",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 11,
+		"label" : "2.4 Sustainable Food Systems",
+		"parent" : "Food - Supply",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 12,
+		"label" : "2.5 Seed Genetic Diversity",
+		"parent" : "Food - Supply",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 13,
+		"label" : "2.a Investment in Agriculture",
+		"parent" : "Food - Supply",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 14,
+		"label" : "2.b Reduce Trade Restrictions",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 15,
+		"label" : "2.c Food Market Systems",
+		"parent" : "Food - Supply",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 16,
+		"label" : "3.1 Reduce Maternal Mortality",
+		"parent" : "Health - Reproductive",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 17,
+		"label" : "3.2 End Child Mortality",
+		"parent" : "Health - Youth",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 18,
+		"label" : "3.3 End Disease Epidemics",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 19,
+		"label" : "3.4 Reduce Mortality from Treatable Disease",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 20,
+		"label" : "3.5 Treat & Prevent Substance Abuse",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 21,
+		"label" : "3.6 Traffic Safety",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 22,
+		"label" : "3.7 Reproductive Healthcare & Education",
+		"parent" : "Health - Reproductive",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 23,
+		"label" : "3.8 Universal Healthcare",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 24,
+		"label" : "3.9 Reduce Illness from Contamination",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 25,
+		"label" : "3.a Reduce Tobacco Supply & Demand",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 26,
+		"label" : "3.b Research Disease Prevention & Treatment",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 27,
+		"label" : "3.c Health Financing",
+		"parent" : "Health - Systems",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 28,
+		"label" : "3.d Risk Management",
+		"parent" : "Health - Systems",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 29,
+		"label" : "4.1 Complete Childhood Education",
+		"parent" : "Education - Childhood",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 30,
+		"label" : "4.2 Early Childhood Development",
+		"parent" : "Education - Childhood",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 31,
+		"label" : "4.3 Equal Access to Higher Education",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 32,
+		"label" : "4.4 Employable Skills Development",
+		"parent" : "Employment - Training",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 33,
+		"label" : "4.5 Educational Gender Equity",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 34,
+		"label" : "4.6 100% Literacy & Numeracy",
+		"parent" : "Education - Population",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 35,
+		"label" : "4.7 Sustainability Education",
+		"parent" : "Climate - Education",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 36,
+		"label" : "4.a Quality Education Facilities",
+		"parent" : "Education - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 37,
+		"label" : "4.b Scholarship Availability",
+		"parent" : "Education - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 38,
+		"label" : "4.c Qualified Teacher Training",
+		"parent" : "Education - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 39,
+		"label" : "5.1 End Female Discrimination",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 40,
+		"label" : "5.2 End Female-Targeted Violence",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 41,
+		"label" : "5.3 End Harmful Female Practices",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 42,
+		"label" : "5.4 Services for Unpaid Females",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 43,
+		"label" : "5.5 Gender Equity in Leadership",
+		"parent" : "Government - Representation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 44,
+		"label" : "5.6 Reproductive Rights and Health Care",
+		"parent" : "Health - Reproductive",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 45,
+		"label" : "5.a Female Access to Economic Resources",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 46,
+		"label" : "5.b Female Empowerment Through Technology",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 47,
+		"label" : "5.c Gender Equity Policies",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 48,
+		"label" : "6.1 Access to Drinking Water",
+		"parent" : "Drinking Water - Supply and Consumption",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 49,
+		"label" : "6.2 Access to Sanitation and Hygiene",
+		"parent" : "Drinking Water - Supply and Consumption",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 50,
+		"label" : "6.3 Water Quality",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 51,
+		"label" : "6.4 Efficient Use of Water",
+		"parent" : "Drinking Water - Supply and Consumption",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 52,
+		"label" : "6.5 Water Resource Management",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 53,
+		"label" : "6.6 Protect & Restore Water Resources",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 54,
+		"label" : "6.a International Support",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 55,
+		"label" : "6.b Local Support",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 56,
+		"label" : "7.1 Universal Energy Access",
+		"parent" : "Energy - Access",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 57,
+		"label" : "7.2 Increase Renewable Energy",
+		"parent" : "Energy - Renewable",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 58,
+		"label" : "7.3 Increase Energy Efficiency",
+		"parent" : "Energy - Access",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 59,
+		"label" : "7.a Increase International Participation",
+		"parent" : "Energy - Access",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 60,
+		"label" : "7.b Improve Renewable Energy Infrastructure",
+		"parent" : "Energy - Renewable",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 61,
+		"label" : "8.1 Economic Growth",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 62,
+		"label" : "8.2 Economic Productivity",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 63,
+		"label" : "8.3 Economic Development Policies",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 64,
+		"label" : "8.4 Resource Efficiency",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 65,
+		"label" : "8.5 Full Employment",
+		"parent" : "Employment - Training",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 66,
+		"label" : "8.6 Increase Youth Employment",
+		"parent" : "Employment - Training",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 67,
+		"label" : "8.7 End Forced Labor",
+		"parent" : "Employment - Equity",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 68,
+		"label" : "8.8 Protect Labor Rights",
+		"parent" : "Employment - Equity",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 69,
+		"label" : "8.9 Grow Sustainable Tourism Industry",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 70,
+		"label" : "8.10 Access to Financial Services",
+		"parent" : "Opportunity - Financial",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 71,
+		"label" : "8.a Support Trade",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 72,
+		"label" : "8.b Global Employment Strategies",
+		"parent" : "Employment - Training",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 73,
+		"label" : "9.1 Equity & Affordability Infrastructure",
+		"parent" : "Progress - Innovation",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 74,
+		"label" : "9.2 Sustainable Industrialization",
+		"parent" : "Progress - Improvements",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 75,
+		"label" : "9.3 Financial Services for Small Businesses",
+		"parent" : "Progress - Improvements",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 76,
+		"label" : "9.4 Existing Infrastructure Upgrades",
+		"parent" : "Progress - Improvements",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 77,
+		"label" : "9.5 Scientific Research",
+		"parent" : "Progress - Improvements",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 78,
+		"label" : "9.a Financial & Technical Support",
+		"parent" : "Progress - Improvements",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 79,
+		"label" : "9.b Domestic Technology Development",
+		"parent" : "Progress - Innovation",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 80,
+		"label" : "9.c Access to Information & Communication",
+		"parent" : "Economics - Information",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 81,
+		"label" : "10.1 Sustainable Income Growth",
+		"parent" : "Opportunity - Financial",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 82,
+		"label" : "10.2 Social, Economic, & Political Inclusion",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 83,
+		"label" : "10.3 Equal Opportunity",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 84,
+		"label" : "10.4 Policies for Equality",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 85,
+		"label" : "10.5 Market Regulation",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 86,
+		"label" : "10.6 Political Representation",
+		"parent" : "Government - Representation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 87,
+		"label" : "10.7 Safe & Orderly Migration",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 88,
+		"label" : "10.a Elevate Developing Countries",
+		"parent" : "Economics - Global",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 89,
+		"label" : "10.b Foreign Development Assistance",
+		"parent" : "Economics - Global",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 90,
+		"label" : "10.c Remittance Cost Reduction",
+		"parent" : "Opportunity - Financial",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 91,
+		"label" : "11.1 Access to Housing",
+		"parent" : "Housing - Availability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 92,
+		"label" : "11.2 Access to Transportation Systems",
+		"parent" : "Opportunity - Transportation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 93,
+		"label" : "11.3 Sustainable & Inclusive  Urbanization",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 94,
+		"label" : "11.4 Culture & Heritage Protection",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 95,
+		"label" : "11.5 Resistance to Disaster",
+		"parent" : "Climate - Policy",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 96,
+		"label" : "11.6 Reduce Environmental Impact",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 97,
+		"label" : "11.7 Access to Public & Green Space",
+		"parent" : "Nature - Forest",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 98,
+		"label" : "11.a Connectivity Between Regions",
+		"parent" : "Opportunity - Social",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 99,
+		"label" : "11.b Policies for Sustainability & Inclusion",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 100,
+		"label" : "11.c Sustainable and Resilient Buildings",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 101,
+		"label" : "12.1 Global Action Framework",
+		"parent" : "Climate - Sustainability",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 102,
+		"label" : "12.2 Sustainable Resource Management",
+		"parent" : "Climate - Sustainability",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 103,
+		"label" : "12.3 Reduce Food Waste",
+		"parent" : "Climate - Sustainability",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 104,
+		"label" : "12.4 Waste Management",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 105,
+		"label" : "12.5 Waste Prevention & Reduction",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 106,
+		"label" : "12.6 Corporate Sustainability",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 107,
+		"label" : "12.7 Sustainable Procurement",
+		"parent" : "Climate - Sustainability",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 108,
+		"label" : "12.8 Sustainable Lifestyle Education",
+		"parent" : "Climate - Education",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 109,
+		"label" : "12.a Sustainability Support for Developing Countries",
+		"parent" : "Climate - Policy",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 110,
+		"label" : "12.b Impact Measurement",
+		"parent" : "Climate - Policy",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 111,
+		"label" : "12.c Reduce Fossil Fuel Subsidies",
+		"parent" : "Energy - Renewable",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 112,
+		"label" : "13.1 Climate Resilience",
+		"parent" : "Climate - Policy",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 113,
+		"label" : "13.2 Policies & Planning for Climate Change",
+		"parent" : "Climate - Policy",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 114,
+		"label" : "13.3 Climate Change Education",
+		"parent" : "Climate - Education",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 115,
+		"label" : "13.a Implement UN Climate Change framework",
+		"parent" : "Climate - Policy",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 116,
+		"label" : "13.b Climate Change Management Capacity",
+		"parent" : "Climate - Policy",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 117,
+		"label" : "14.1 Marine Pollution Prevention & Reduction",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 118,
+		"label" : "14.2 Coastal Ecosystem Management & Protection",
+		"parent" : "Nature - Water",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 119,
+		"label" : "14.3 Minimize Ocean Acidification",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 120,
+		"label" : "14.4 End Overfishing",
+		"parent" : "Nature - Water",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 121,
+		"label" : "14.5 Coastal & Marine Conservation",
+		"parent" : "Nature - Water",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 122,
+		"label" : "14.6 Eliminate Overfishing Subsidies",
+		"parent" : "Nature - Water",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 123,
+		"label" : "14.7 Economic Benefits for Sustainable Marine Practices",
+		"parent" : "Nature - Water",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 124,
+		"label" : "14.a Marine Research",
+		"parent" : "Nature - Water",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 125,
+		"label" : "14.b Access to Marine Resources & Markets",
+		"parent" : "Nature - Water",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 126,
+		"label" : "14.c Ocean Conservation",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 127,
+		"label" : "15.1 Freshwater Ecosystem Conservation & Restoration",
+		"parent" : "Nature - Water",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 128,
+		"label" : "15.2 Sustainable Forest Management",
+		"parent" : "Nature - Forest",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 129,
+		"label" : "15.3 Land Degredation Neutrality",
+		"parent" : "Nature - Forest",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 130,
+		"label" : "15.4 Moutain Ecosystem Conservation",
+		"parent" : "Nature - Forest",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 131,
+		"label" : "15.5 Reduce Loss of Biodiversity & Habitat",
+		"parent" : "Nature - Wildlife",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 132,
+		"label" : "15.6 Genetic Resource Sharing",
+		"parent" : "Nature - Wildlife",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 133,
+		"label" : "15.7 End Species Poaching & Trafficking",
+		"parent" : "Nature - Wildlife",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 134,
+		"label" : "15.8 Species Evasion Prevention & Reduction",
+		"parent" : "Nature - Wildlife",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 135,
+		"label" : "15.9 Ecosystem & Biodiversity Planning",
+		"parent" : "Nature - Wildlife",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 136,
+		"label" : "15.a Financial Resources for Conservation",
+		"parent" : "Nature - Forest",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 137,
+		"label" : "15.b Resources for Sustainable Forest Management",
+		"parent" : "Nature - Forest",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 138,
+		"label" : "15.c Global Support Species Protection",
+		"parent" : "Nature - Wildlife",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 139,
+		"label" : "16.1 Reduce Violence",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 140,
+		"label" : "16.2 End Child Abuse, Exploitation, Trafficking, and Violence",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 141,
+		"label" : "16.3 Justice Equality",
+		"parent" : "Safety - Justice",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 142,
+		"label" : "16.4 Reduce Organized Crime",
+		"parent" : "Safety - Justice",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 143,
+		"label" : "16.5 Reduce Corruption & Bribery",
+		"parent" : "Safety - Justice",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 144,
+		"label" : "16.6 Institutional Accountability & Transparency",
+		"parent" : "Government - Accountability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 145,
+		"label" : "16.7 Participatory & Inclusive Governance",
+		"parent" : "Government - Accountability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 146,
+		"label" : "16.8 Developing Countries Governmental Participation",
+		"parent" : "Government - Elections",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 147,
+		"label" : "16.9 Legal Identities for All",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 148,
+		"label" : "16.10 Equal Access to Information & Freedoms",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 149,
+		"label" : "16.a Stronger Institutions for Violence Prevention",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 150,
+		"label" : "16.b Non-Discriminatory Laws & Policies",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 151,
+		"label" : "17.1 Domestic Resource Mobilization",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 152,
+		"label" : "17.2 Assitance to Developing Countries",
+		"parent" : "Economics - Global",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 153,
+		"label" : "17.3 Financial Resources for Developing Countries",
+		"parent" : "Economics - Global",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 154,
+		"label" : "17.4 Long-Term Debt Sustainability",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 155,
+		"label" : "17.5 Investment Promotion Regimes",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 156,
+		"label" : "17.6 Global Cooperation and Innovation",
+		"parent" : "Progress - Innovation",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 157,
+		"label" : "17.7 Sustainable Technology Development",
+		"parent" : "Climate - Sustainability",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 158,
+		"label" : "17.8 Innovation Capacity Building",
+		"parent" : "Progress - Innovation",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 159,
+		"label" : "17.9 International Capacity Building",
+		"parent" : "Progress - Improvements",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 160,
+		"label" : "17.10 Universal Open Trade",
+		"parent" : "Economics - Global",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 161,
+		"label" : "17.11 Exports from Developing Countries",
+		"parent" : "Economics - Global",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 162,
+		"label" : "17.12 Duty-Free Market Access",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 163,
+		"label" : "17.13 Global Macroeconomic Stability",
+		"parent" : "Economics - Global",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 164,
+		"label" : "17.14 Coherent Sustainable Development Policies",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 165,
+		"label" : "17.15 Respectful Policy Implementation",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 166,
+		"label" : "17.16 Global & Multi-Stakeholder Partnerships",
+		"parent" : "Economics - Global",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 167,
+		"label" : "17.17 Effective Multi-Sector Partnerships",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 168,
+		"label" : "17.18 Accessibility to Reliable Data",
+		"parent" : "Economics - Information",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 169,
+		"label" : "17.19 Measure Progress",
+		"parent" : "Economics - Information",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 170,
+		"label" : "Access to piped water",
+		"parent" : "Drinking Water - Supply and Consumption",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 171,
+		"label" : "Access to electricity",
+		"parent" : "Energy - Access",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 172,
+		"label" : "Quality of electricity supply",
+		"parent" : "Energy - Access",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 173,
+		"label" : "Clothing",
+		"parent" : "Opportunity - Social",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 174,
+		"label" : "Political terror",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 175,
+		"label" : "Traffic deaths",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 176,
+		"label" : "Emergency response",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 177,
+		"label" : "Adult literacy rate",
+		"parent" : "Education - Population",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 178,
+		"label" : "Primary school enrollment",
+		"parent" : "Education - Childhood",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 179,
+		"label" : "Transparency",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 180,
+		"label" : "Homicide rate",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 181,
+		"label" : "Gender parity in secondary enrollment",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 182,
+		"label" : "Mobile telephone subscriptions",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 183,
+		"label" : "Life expectancy",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 184,
+		"label" : "Suicide rate",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 185,
+		"label" : "Care for the aging",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 186,
+		"label" : "Access to mental health resources",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 187,
+		"label" : "Political rights",
+		"parent" : "Government - Accountability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 188,
+		"label" : "Freedom of assembly/association",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 189,
+		"label" : "Freedom of movement",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 190,
+		"label" : "Private property rights",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 191,
+		"label" : "Freedom over life choices",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 192,
+		"label" : "Renewable energy consumption",
+		"parent" : "Energy - Renewable",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 193,
+		"label" : "Access to at least basic sanitation facilities",
+		"parent" : "Health - Systems",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 194,
+		"label" : "Freedom of religion",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 195,
+		"label" : "Early marriage",
+		"parent" : "Opportunity - Social",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 196,
+		"label" : "Satisfied demand for contraception",
+		"parent" : "Health - Reproductive",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 197,
+		"label" : "Transportation",
+		"parent" : "Opportunity - Transportation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 198,
+		"label" : "Employment opportunity",
+		"parent" : "Employment - Training",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 199,
+		"label" : "Innovation and Creativity Support",
+		"parent" : "Progress - Innovation",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 200,
+		"label" : "Tolerance for immigrants",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 201,
+		"label" : "Discrimination and violence against minorities",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 202,
+		"label" : "Community safety net",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 203,
+		"label" : "Arts and Culture Access",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 204,
+		"label" : "Years of tertiary schooling",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 205,
+		"label" : "Globally ranked universities",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 206,
+		"label" : "Wildfire vulnerability",
+		"parent" : "Nature - Forest",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 207,
+		"label" : "Food insecurity",
+		"parent" : "Food - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 208,
+		"label" : "Pesticide exposure",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 209,
+		"label" : "Infant mortality rate",
+		"parent" : "Health - Youth",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 210,
+		"label" : "Carbon footprint",
+		"parent" : "Climate - Policy",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 211,
+		"label" : "Vulnerable employment",
+		"parent" : "Employment - Equity",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 212,
+		"label" : "Access to quality healthcare",
+		"parent" : "Health - Systems",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 213,
+		"label" : "Premature Deaths",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 214,
+		"label" : "Violent crime rate",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 215,
+		"label" : "Access to independent media",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 216,
+		"label" : "Access to exercise opportunities",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 217,
+		"label" : "Access to justice",
+		"parent" : "Safety - Justice",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 218,
+		"label" : "Air pollution",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 219,
+		"label" : "Drug overdose deaths",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 220,
+		"label" : "Employment discrimination",
+		"parent" : "Employment - Equity",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 221,
+		"label" : "Equality of political power by social group",
+		"parent" : "Government - Representation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 222,
+		"label" : "Homelessness",
+		"parent" : "Housing - Availability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 223,
+		"label" : "Residential segregation",
+		"parent" : "Housing - Availability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 224,
+		"label" : "Urban access to broadband",
+		"parent" : "Opportunity - Social",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 225,
+		"label" : "Youth mortality rate",
+		"parent" : "Health - Youth",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 226,
+		"label" : "Linguistic Isolation",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 227,
+		"label" : "Bachelor's degree holders",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 228,
+		"label" : "Disconnected youth",
+		"parent" : "Opportunity - Social",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 229,
+		"label" : "Access to quality education",
+		"parent" : "Education - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 230,
+		"label" : "Child care deserts",
+		"parent" : "Opportunity - Social",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 231,
+		"label" : "Child stunting",
+		"parent" : "Health - Youth",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 232,
+		"label" : "Cost burden of treatment",
+		"parent" : "Health - Systems",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 233,
+		"label" : "Property crime rate",
+		"parent" : "Safety - Justice",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 234,
+		"label" : "Public library use",
+		"parent" : "Education - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 235,
+		"label" : "Rural access to broadband",
+		"parent" : "Opportunity - Social",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 236,
+		"label" : "Solid waste sites",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 237,
+		"label" : "Supermarket access",
+		"parent" : "Food - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 238,
+		"label" : "Youth preventative dental",
+		"parent" : "Health - Youth",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 239,
+		"label" : "Access to disability services",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 240,
+		"label" : "Advanced degree holders",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 241,
+		"label" : "Associate's degree holders",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 242,
+		"label" : "Groundwater pollutants",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 243,
+		"label" : "Income parity in broadband",
+		"parent" : "Opportunity - Social",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 244,
+		"label" : "Perceived safety",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 245,
+		"label" : "College retention rate",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 246,
+		"label" : "Citizen complaints against peace officers",
+		"parent" : "Safety - Justice",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 247,
+		"label" : "Clean and safe water",
+		"parent" : "Drinking Water - Supply and Consumption",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 248,
+		"label" : "College or graduate school enrollment",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 249,
+		"label" : "Diabetes prevalence",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 250,
+		"label" : "Equality of political power by gender",
+		"parent" : "Government - Representation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 251,
+		"label" : "Equality of political power by socioeconomic position",
+		"parent" : "Government - Representation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 252,
+		"label" : "Financial literacy",
+		"parent" : "Education - Population",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 253,
+		"label" : "Freedom of expression",
+		"parent" : "Opportunity - Freedom/Rights",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 254,
+		"label" : "Gender pay gap",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 255,
+		"label" : "Hate crime rate",
+		"parent" : "Safety - Justice",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 256,
+		"label" : "Household air pollution attributable deaths",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 257,
+		"label" : "Housing cost burden (Owners)",
+		"parent" : "Housing - Availability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 258,
+		"label" : "Housing cost burden (Renters)",
+		"parent" : "Housing - Availability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 259,
+		"label" : "Housing overcrowding",
+		"parent" : "Housing - Availability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 260,
+		"label" : "Lead exposure",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 261,
+		"label" : "Less than 9th grade education",
+		"parent" : "Education - Childhood",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 262,
+		"label" : "Math proficiency",
+		"parent" : "Education - Population",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 263,
+		"label" : "Outstanding regional housing needs allocation",
+		"parent" : "Housing - Availability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 264,
+		"label" : "Ozone concentration",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 265,
+		"label" : "Participation in online governance",
+		"parent" : "Government - Elections",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 266,
+		"label" : "Percent of tertiary students enrolled in globally ranked universities",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 267,
+		"label" : "Preschool enrollment",
+		"parent" : "Education - Childhood",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 268,
+		"label" : "Prevalence of overweight youth",
+		"parent" : "Health - Youth",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 269,
+		"label" : "Property rights for women",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 270,
+		"label" : "Quality of public transportation",
+		"parent" : "Opportunity - Transportation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 271,
+		"label" : "Reading proficiency",
+		"parent" : "Education - Population",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 272,
+		"label" : "Robust election process",
+		"parent" : "Government - Elections",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 273,
+		"label" : "Salmonellosis prevalence",
+		"parent" : "Food - Nutrition",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 274,
+		"label" : "School bullying",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 275,
+		"label" : "Secondary school enrollment",
+		"parent" : "Education - Childhood",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 276,
+		"label" : "Traffic density",
+		"parent" : "Opportunity - Transportation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 277,
+		"label" : "Voter registration",
+		"parent" : "Government - Elections",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 278,
+		"label" : "Voter turnout",
+		"parent" : "Government - Elections",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 279,
+		"label" : "Wastewater treatment",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 280,
+		"label" : "Teenage birth rate",
+		"parent" : "Opportunity - Social",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 281,
+		"label" : "Water consumption",
+		"parent" : "Drinking Water - Supply and Consumption",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 282,
+		"label" : "Water fluoridation",
+		"parent" : "Drinking Water - Quality",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 283,
+		"label" : "Youth preventative medical",
+		"parent" : "Health - Youth",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 284,
+		"label" : "Maternal mortality rate",
+		"parent" : "Health - Reproductive",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 285,
+		"label" : "Corruption",
+		"parent" : "Government - Accountability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 286,
+		"label" : "Adult obesity rate",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 287,
+		"label" : "Infectious and vaccine-preventable diseases",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 288,
+		"label" : "Social isolation and loneliness",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 289,
+		"label" : "Sex Crimes",
+		"parent" : "Safety - Violence",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 290,
+		"label" : "Wildlife Conservation",
+		"parent" : "Nature - Wildlife",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 291,
+		"label" : "LGBTQ Inclusion",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 292,
+		"label" : "Women's average years in school",
+		"parent" : "Opportunity - Gender",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 293,
+		"label" : "Water withdrawals as a percent of resources",
+		"parent" : "Drinking Water - Supply and Consumption",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 294,
+		"label" : "Change in small business employment",
+		"parent" : "Employment - Equity",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 296,
+		"label" : "Change in loans to businesses <$1M in revenue",
+		"parent" : "Progress - Improvements",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 297,
+		"label" : "Change in GDP growth",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 298,
+		"label" : "Change in employment",
+		"parent" : "Employment - Training",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 299,
+		"label" : "Median household income",
+		"parent" : "Economics - Domestic",
+		"group" : "Industry",
+		"checked" : 0
+	},
+	{
+		"value" : 300,
+		"label" : "Postsecondary completion rate",
+		"parent" : "Education - Tertiary",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 302,
+		"label" : "Jobs that pay a family-sustaining wage",
+		"parent" : "Opportunity - Financial",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 303,
+		"label" : "Food insecurity rate",
+		"parent" : "Food - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 304,
+		"label" : "Cost-burdened households",
+		"parent" : "Housing - Housing",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 305,
+		"label" : "Neighbor participation rate",
+		"parent" : "Opportunity - Inclusion",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 308,
+		"label" : "Contacted public official",
+		"parent" : "Government - Accountability",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 309,
+		"label" : "Voter participation rate",
+		"parent" : "Government - Elections",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 310,
+		"label" : "On-time high school graduation rate",
+		"parent" : "Education - Childhood",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 311,
+		"label" : "Index ratio of teachers of color to students of color",
+		"parent" : "Education - Access",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 312,
+		"label" : "Change in CO2 emissions",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 313,
+		"label" : "Change in unhealthy air quality days",
+		"parent" : "Climate - Pollution",
+		"group" : "Environment",
+		"checked" : 0
+	},
+	{
+		"value" : 314,
+		"label" : "Adults with health concerns",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 315,
+		"label" : "Poor physical health",
+		"parent" : "Health - Death/Disease",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 316,
+		"label" : "Poor mental health",
+		"parent" : "Health - Behavior",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 317,
+		"label" : "Change in average rental price",
+		"parent" : "Housing - Housing",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 318,
+		"label" : "Homeownership rate",
+		"parent" : "Housing - Housing",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 319,
+		"label" : "Change in weekday traffic delay",
+		"parent" : "Opportunity - Transportation",
+		"group" : "Society",
+		"checked" : 0
+	},
+	{
+		"value" : 320,
+		"label" : "Public transportation accessibility",
+		"parent" : "Opportunity - Transportation",
+		"group" : "Society",
+		"checked" : 0
+	}
+]

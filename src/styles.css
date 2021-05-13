@@ -360,7 +360,7 @@ body {
   
   ngb-accordion.accordion .card {
     background:#31353d   !important;
-    color: #818896!important;
+    color: #ffffff!important;
     border: none;
     border-radius: 0px;
   }
@@ -372,7 +372,7 @@ body {
   }
   
   ngb-accordion.accordion .btn {
-    color: #818896 !important;
+    color: #ffffff !important;
     width: 100%;
     text-align: left;
     border-radius: 0px;
@@ -381,7 +381,7 @@ body {
   ngb-accordion.accordion .btn:hover, ngb-accordion.accordion .btn:focus, ngb-accordion.accordion .btn:active {
     background-color: transparent;
     box-shadow: none;
-    color: #b8bfce!important;
+    color: #ffffff!important;
   }
   
   ngb-accordion.accordion .card-header button:after {
@@ -487,3 +487,5 @@ g#d3plus-textBox-0 text {
 #top-nav button.dropdown-item {
   padding: 0.5rem 0.70rem;
 }
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

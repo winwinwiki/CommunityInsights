@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, Component } from '@angular/core';
-import { NgbDateFRParserFormatter } from './ngb-date-fr-parser-formatter';
-import { NgbUTCStringAdapter } from './ngb-UTC-string-adapter';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule, Component } from "@angular/core";
+import { NgbDateFRParserFormatter } from "./ngb-date-fr-parser-formatter";
+import { NgbUTCStringAdapter } from "./ngb-UTC-string-adapter";
 import {
   NgbDropdownModule,
   NgbModule,
@@ -13,23 +13,32 @@ import {
   NgbDatepickerConfig,
   NgbDateParserFormatter,
   NgbDateAdapter
-} from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { TrendingComponent } from './trending/trending.component';
-import { VerbatimComponent } from './verbatim/verbatim.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ChartComponent } from './chart/chart.component';
-import { TreeMapComponent } from './tree-map/tree-map.component';
-import { TagInputModule } from 'ngx-chips';
-import { GraphQLModule } from './graphql.module';
-import { HttpClientModule } from '@angular/common/http';
-import {NgxPaginationModule} from 'ngx-pagination';
-import { AboutPageComponent } from './about-page/about-page.component';
+} from "@ng-bootstrap/ng-bootstrap";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { RouterModule } from "@angular/router";
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./header/header.component";
+import { TrendingComponent } from "./trending/trending.component";
+import { VerbatimComponent } from "./verbatim/verbatim.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ChartComponent } from "./chart/chart.component";
+import { TreeMapComponent } from "./tree-map/tree-map.component";
+import { TagInputModule } from "ngx-chips";
+import { GraphQLModule } from "./graphql.module";
+import { HttpClientModule } from "@angular/common/http";
+import { NgxPaginationModule } from "ngx-pagination";
+import { AboutPageComponent } from "./about-page/about-page.component";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatRadioModule } from "@angular/material/radio";
+import { TreePipe } from "./verbatim/tree.pipe";
+import {FilterDiscoursePipe} from "./verbatim/filter-discourse.pipe";
 
+import {MatChipsModule} from '@angular/material/chips'
+import {MatCardModule} from '@angular/material/card';
 
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +47,9 @@ import { AboutPageComponent } from './about-page/about-page.component';
     VerbatimComponent,
     ChartComponent,
     TreeMapComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    TreePipe,
+    FilterDiscoursePipe
   ],
   imports: [
     BrowserModule,
@@ -51,11 +62,20 @@ import { AboutPageComponent } from './about-page/about-page.component';
     HttpClientModule,
     NgxPaginationModule,
     RouterModule.forRoot([
-      { path: 'verbatim', component: VerbatimComponent},
-      { path: 'about', component: AboutPageComponent },
-      { path: '', component: TrendingComponent }, 
-    ])
-    
+      { path: "verbatim", component: VerbatimComponent },
+      { path: "about", component: AboutPageComponent },
+      { path: "", component: TrendingComponent }
+    ]),
+    MatExpansionModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatChipsModule,
+    MatCardModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatSlideToggleModule
+  ],
+  entryComponents: [
   ],
   exports: [],
   providers: [
@@ -66,8 +86,8 @@ import { AboutPageComponent } from './about-page/about-page.component';
     {
       provide: NgbDateAdapter,
       useClass: NgbUTCStringAdapter
-    },
+    }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

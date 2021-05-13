@@ -60,7 +60,7 @@
                   <button class="btn btn-primary btn-sm m-2 float-left" (click)="getToday(today, '')">Today</button>
                   <button class="btn btn-secondary btn-sm m-2" (click)="getWeek(today);">Past 7 days</button>
                   <button class="btn btn-secondary btn-sm m-2 float-right" (click)="d.close()">Cancel</button>
-                  <button class="btn btn-primary btn-sm m-2 float-right" (click)="updateText(myRangeInput.value); updateLocation(getloc.value); d.close()">Search</button>
+                  <button class="btn btn-primary btn-sm m-2 float-right" (click)="updateText(myRangeInput.value);d.close()">Search</button>
                   
                 </ng-template>
                 <div class="input-group-append">
@@ -71,17 +71,16 @@
               </div>
             </div>
           </form>
-          <span>about this impact area </span>
          
-          <div ngbDropdown class="d-inline-block">
+          <!-- <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownMenuButton" ngbDropdownToggle>{{displayFramework}}</button>
             <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
               <div *ngFor="let option of frameworkOptions" >
                 <button ngbDropdownItem (click)="changeMessage(option)">{{option}}</button>
               </div>
             </div>
-          </div>
-          <button type="button" class="btn btn-sm ml-4 bg-light" (click)="updateText(myRangeInput.value); updateLocation(getloc.value)"><i class="fas fa-search text-dark"></i></button>
+          </div> -->
+          <button type="button" class="btn btn-sm ml-2 bg-light" (click)="updateText(myRangeInput.value); ;updateLocation(locText)"><i class="fas fa-search text-dark"></i></button>
           <!--    <hr /><pre>From: {{ fromDate | json }}</pre><pre>To: {{ toDate | json }}</pre>-->
 
         </div>
@@ -100,13 +99,13 @@
   <div class="main-tabs">
     <ngb-tabset [destroyOnHide]="false">
       <ngb-tab>
-        <ng-template ngbTabTitle><span class="tabIcons trending-icon"></span><span class="tab-title text-dark" (click)="updateText(myRangeInput.value); updateLocation(locations)">Trending</span></ng-template>
+        <ng-template ngbTabTitle><span class="tabIcons trending-icon"></span><span class="tab-title text-dark" >Trending</span></ng-template>
         <ng-template ngbTabContent>
           <app-trending></app-trending>
         </ng-template>
       </ngb-tab>
       <ngb-tab>
-        <ng-template ngbTabTitle><span class="tabIcons verbatim-icon"></span><span class="tab-title text-dark" (click)="updateText(myRangeInput.value); updateLocation(locations)">Verbatim</span></ng-template>
+        <ng-template ngbTabTitle><span class="tabIcons verbatim-icon"></span><span class="tab-title text-dark" >Verbatim</span></ng-template>
         <ng-template ngbTabContent>
           <app-verbatim></app-verbatim>
         </ng-template>

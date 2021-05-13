@@ -1,0 +1,962 @@
+[
+	{
+		"tag" : "1.1 End Extreme Poverty"
+	},
+	{
+		"tag" : "1.2 Reduce Poverty"
+	},
+	{
+		"tag" : "1.3 Social Protection"
+	},
+	{
+		"tag" : "1.4 Equal Access to Goods & Services"
+	},
+	{
+		"tag" : "1.5 Build Resilience"
+	},
+	{
+		"tag" : "1.a Secure Resources for Programs"
+	},
+	{
+		"tag" : "1.b Scalable Policy Frameworks"
+	},
+	{
+		"tag" : "2.1 End Hunger"
+	},
+	{
+		"tag" : "2.2 End Malnutrition"
+	},
+	{
+		"tag" : "2.3 Increase Agricultural Activity & Income"
+	},
+	{
+		"tag" : "2.4 Sustainable Food Systems"
+	},
+	{
+		"tag" : "2.5 Seed Genetic Diversity"
+	},
+	{
+		"tag" : "2.a Investment in Agriculture"
+	},
+	{
+		"tag" : "2.b Reduce Trade Restrictions"
+	},
+	{
+		"tag" : "2.c Food Market Systems"
+	},
+	{
+		"tag" : "3.1 Reduce Maternal Mortality"
+	},
+	{
+		"tag" : "3.2 End Child Mortality"
+	},
+	{
+		"tag" : "3.3 End Disease Epidemics"
+	},
+	{
+		"tag" : "3.4 Reduce Mortality from Treatable Disease"
+	},
+	{
+		"tag" : "3.5 Treat & Prevent Substance Abuse"
+	},
+	{
+		"tag" : "3.6 Traffic Safety"
+	},
+	{
+		"tag" : "3.7 Reproductive Healthcare & Education"
+	},
+	{
+		"tag" : "3.8 Universal Healthcare"
+	},
+	{
+		"tag" : "3.9 Reduce Illness from Contamination"
+	},
+	{
+		"tag" : "3.a Reduce Tobacco Supply & Demand"
+	},
+	{
+		"tag" : "3.b Research Disease Prevention & Treatment"
+	},
+	{
+		"tag" : "3.c Health Financing"
+	},
+	{
+		"tag" : "3.d Risk Management"
+	},
+	{
+		"tag" : "4.1 Complete Childhood Education"
+	},
+	{
+		"tag" : "4.2 Early Childhood Development"
+	},
+	{
+		"tag" : "4.3 Equal Access to Higher Education"
+	},
+	{
+		"tag" : "4.4 Employable Skills Development"
+	},
+	{
+		"tag" : "4.5 Educational Gender Equity"
+	},
+	{
+		"tag" : "4.6 100% Literacy & Numeracy"
+	},
+	{
+		"tag" : "4.7 Sustainability Education"
+	},
+	{
+		"tag" : "4.a Quality Education Facilities"
+	},
+	{
+		"tag" : "4.b Scholarship Availability"
+	},
+	{
+		"tag" : "4.c Qualified Teacher Training"
+	},
+	{
+		"tag" : "5.1 End Female Discrimination"
+	},
+	{
+		"tag" : "5.2 End Female-Targeted Violence"
+	},
+	{
+		"tag" : "5.3 End Harmful Female Practices"
+	},
+	{
+		"tag" : "5.4 Services for Unpaid Females"
+	},
+	{
+		"tag" : "5.5 Gender Equity in Leadership"
+	},
+	{
+		"tag" : "5.6 Reproductive Rights and Health Care"
+	},
+	{
+		"tag" : "5.a Female Access to Economic Resources"
+	},
+	{
+		"tag" : "5.b Female Empowerment Through Technology"
+	},
+	{
+		"tag" : "5.c Gender Equity Policies"
+	},
+	{
+		"tag" : "6.1 Access to Drinking Water"
+	},
+	{
+		"tag" : "6.2 Access to Sanitation and Hygiene"
+	},
+	{
+		"tag" : "6.3 Water Quality"
+	},
+	{
+		"tag" : "6.4 Efficient Use of Water"
+	},
+	{
+		"tag" : "6.5 Water Resource Management"
+	},
+	{
+		"tag" : "6.6 Protect & Restore Water Resources"
+	},
+	{
+		"tag" : "6.a International Support"
+	},
+	{
+		"tag" : "6.b Local Support"
+	},
+	{
+		"tag" : "7.1 Universal Energy Access"
+	},
+	{
+		"tag" : "7.2 Increase Renewable Energy"
+	},
+	{
+		"tag" : "7.3 Increase Energy Efficiency"
+	},
+	{
+		"tag" : "7.a Increase International Participation"
+	},
+	{
+		"tag" : "7.b Improve Renewable Energy Infrastructure"
+	},
+	{
+		"tag" : "8.1 Economic Growth"
+	},
+	{
+		"tag" : "8.2 Economic Productivity"
+	},
+	{
+		"tag" : "8.3 Economic Development Policies"
+	},
+	{
+		"tag" : "8.4 Resource Efficiency"
+	},
+	{
+		"tag" : "8.5 Full Employment"
+	},
+	{
+		"tag" : "8.6 Increase Youth Employment"
+	},
+	{
+		"tag" : "8.7 End Forced Labor"
+	},
+	{
+		"tag" : "8.8 Protect Labor Rights"
+	},
+	{
+		"tag" : "8.9 Grow Sustainable Tourism Industry"
+	},
+	{
+		"tag" : "8.10 Access to Financial Services"
+	},
+	{
+		"tag" : "8.a Support Trade"
+	},
+	{
+		"tag" : "8.b Global Employment Strategies"
+	},
+	{
+		"tag" : "9.1 Equity & Affordability Infrastructure"
+	},
+	{
+		"tag" : "9.2 Sustainable Industrialization"
+	},
+	{
+		"tag" : "9.3 Financial Services for Small Businesses"
+	},
+	{
+		"tag" : "9.4 Existing Infrastructure Upgrades"
+	},
+	{
+		"tag" : "9.5 Scientific Research"
+	},
+	{
+		"tag" : "9.a Financial & Technical Support"
+	},
+	{
+		"tag" : "9.b Domestic Technology Development"
+	},
+	{
+		"tag" : "9.c Access to Information & Communication"
+	},
+	{
+		"tag" : "10.1 Sustainable Income Growth"
+	},
+	{
+		"tag" : "10.2 Social, Economic, & Political Inclusion"
+	},
+	{
+		"tag" : "10.3 Equal Opportunity"
+	},
+	{
+		"tag" : "10.4 Policies for Equality"
+	},
+	{
+		"tag" : "10.5 Market Regulation"
+	},
+	{
+		"tag" : "10.6 Political Representation"
+	},
+	{
+		"tag" : "10.7 Safe & Orderly Migration"
+	},
+	{
+		"tag" : "10.a Elevate Developing Countries"
+	},
+	{
+		"tag" : "10.b Foreign Development Assistance"
+	},
+	{
+		"tag" : "10.c Remittance Cost Reduction"
+	},
+	{
+		"tag" : "11.1 Access to Housing"
+	},
+	{
+		"tag" : "11.2 Access to Transportation Systems"
+	},
+	{
+		"tag" : "11.3 Sustainable & Inclusive  Urbanization"
+	},
+	{
+		"tag" : "11.4 Culture & Heritage Protection"
+	},
+	{
+		"tag" : "11.5 Resistance to Disaster"
+	},
+	{
+		"tag" : "11.6 Reduce Environmental Impact"
+	},
+	{
+		"tag" : "11.7 Access to Public & Green Space"
+	},
+	{
+		"tag" : "11.a Connectivity Between Regions"
+	},
+	{
+		"tag" : "11.b Policies for Sustainability & Inclusion"
+	},
+	{
+		"tag" : "11.c Sustainable and Resilient Buildings"
+	},
+	{
+		"tag" : "12.1 Global Action Framework"
+	},
+	{
+		"tag" : "12.2 Sustainable Resource Management"
+	},
+	{
+		"tag" : "12.3 Reduce Food Waste"
+	},
+	{
+		"tag" : "12.4 Waste Management"
+	},
+	{
+		"tag" : "12.5 Waste Prevention & Reduction"
+	},
+	{
+		"tag" : "12.6 Corporate Sustainability"
+	},
+	{
+		"tag" : "12.7 Sustainable Procurement"
+	},
+	{
+		"tag" : "12.8 Sustainable Lifestyle Education"
+	},
+	{
+		"tag" : "12.a Sustainability Support for Developing Countries"
+	},
+	{
+		"tag" : "12.b Impact Measurement"
+	},
+	{
+		"tag" : "12.c Reduce Fossil Fuel Subsidies"
+	},
+	{
+		"tag" : "13.1 Climate Resilience"
+	},
+	{
+		"tag" : "13.2 Policies & Planning for Climate Change"
+	},
+	{
+		"tag" : "13.3 Climate Change Education"
+	},
+	{
+		"tag" : "13.a Implement UN Climate Change framework"
+	},
+	{
+		"tag" : "13.b Climate Change Management Capacity"
+	},
+	{
+		"tag" : "14.1 Marine Pollution Prevention & Reduction"
+	},
+	{
+		"tag" : "14.2 Coastal Ecosystem Management & Protection"
+	},
+	{
+		"tag" : "14.3 Minimize Ocean Acidification"
+	},
+	{
+		"tag" : "14.4 End Overfishing"
+	},
+	{
+		"tag" : "14.5 Coastal & Marine Conservation"
+	},
+	{
+		"tag" : "14.6 Eliminate Overfishing Subsidies"
+	},
+	{
+		"tag" : "14.7 Economic Benefits for Sustainable Marine Practices"
+	},
+	{
+		"tag" : "14.a Marine Research"
+	},
+	{
+		"tag" : "14.b Access to Marine Resources & Markets"
+	},
+	{
+		"tag" : "14.c Ocean Conservation"
+	},
+	{
+		"tag" : "15.1 Freshwater Ecosystem Conservation & Restoration"
+	},
+	{
+		"tag" : "15.2 Sustainable Forest Management"
+	},
+	{
+		"tag" : "15.3 Land Degredation Neutrality"
+	},
+	{
+		"tag" : "15.4 Moutain Ecosystem Conservation"
+	},
+	{
+		"tag" : "15.5 Reduce Loss of Biodiversity & Habitat"
+	},
+	{
+		"tag" : "15.6 Genetic Resource Sharing"
+	},
+	{
+		"tag" : "15.7 End Species Poaching & Trafficking"
+	},
+	{
+		"tag" : "15.8 Species Evasion Prevention & Reduction"
+	},
+	{
+		"tag" : "15.9 Ecosystem & Biodiversity Planning"
+	},
+	{
+		"tag" : "15.a Financial Resources for Conservation"
+	},
+	{
+		"tag" : "15.b Resources for Sustainable Forest Management"
+	},
+	{
+		"tag" : "15.c Global Support Species Protection"
+	},
+	{
+		"tag" : "16.1 Reduce Violence"
+	},
+	{
+		"tag" : "16.2 End Child Abuse, Exploitation, Trafficking, and Violence"
+	},
+	{
+		"tag" : "16.3 Justice Equality"
+	},
+	{
+		"tag" : "16.4 Reduce Organized Crime"
+	},
+	{
+		"tag" : "16.5 Reduce Corruption & Bribery"
+	},
+	{
+		"tag" : "16.6 Institutional Accountability & Transparency"
+	},
+	{
+		"tag" : "16.7 Participatory & Inclusive Governance"
+	},
+	{
+		"tag" : "16.8 Developing Countries Governmental Participation"
+	},
+	{
+		"tag" : "16.9 Legal Identities for All"
+	},
+	{
+		"tag" : "16.10 Equal Access to Information & Freedoms"
+	},
+	{
+		"tag" : "16.a Stronger Institutions for Violence Prevention"
+	},
+	{
+		"tag" : "16.b Non-Discriminatory Laws & Policies"
+	},
+	{
+		"tag" : "17.1 Domestic Resource Mobilization"
+	},
+	{
+		"tag" : "17.2 Assitance to Developing Countries"
+	},
+	{
+		"tag" : "17.3 Financial Resources for Developing Countries"
+	},
+	{
+		"tag" : "17.4 Long-Term Debt Sustainability"
+	},
+	{
+		"tag" : "17.5 Investment Promotion Regimes"
+	},
+	{
+		"tag" : "17.6 Global Cooperation and Innovation"
+	},
+	{
+		"tag" : "17.7 Sustainable Technology Development"
+	},
+	{
+		"tag" : "17.8 Innovation Capacity Building"
+	},
+	{
+		"tag" : "17.9 International Capacity Building"
+	},
+	{
+		"tag" : "17.10 Universal Open Trade"
+	},
+	{
+		"tag" : "17.11 Exports from Developing Countries"
+	},
+	{
+		"tag" : "17.12 Duty-Free Market Access"
+	},
+	{
+		"tag" : "17.13 Global Macroeconomic Stability"
+	},
+	{
+		"tag" : "17.14 Coherent Sustainable Development Policies"
+	},
+	{
+		"tag" : "17.15 Respectful Policy Implementation"
+	},
+	{
+		"tag" : "17.16 Global & Multi-Stakeholder Partnerships"
+	},
+	{
+		"tag" : "17.17 Effective Multi-Sector Partnerships"
+	},
+	{
+		"tag" : "17.18 Accessibility to Reliable Data"
+	},
+	{
+		"tag" : "17.19 Measure Progress"
+	},
+	{
+		"tag" : "Access to piped water"
+	},
+	{
+		"tag" : "Access to electricity"
+	},
+	{
+		"tag" : "Quality of electricity supply"
+	},
+	{
+		"tag" : "Clothing"
+	},
+	{
+		"tag" : "Political terror"
+	},
+	{
+		"tag" : "Traffic deaths"
+	},
+	{
+		"tag" : "Emergency response"
+	},
+	{
+		"tag" : "Adult literacy rate"
+	},
+	{
+		"tag" : "Primary school enrollment"
+	},
+	{
+		"tag" : "Transparency"
+	},
+	{
+		"tag" : "Homicide rate"
+	},
+	{
+		"tag" : "Gender parity in secondary enrollment"
+	},
+	{
+		"tag" : "Mobile telephone subscriptions"
+	},
+	{
+		"tag" : "Life expectancy"
+	},
+	{
+		"tag" : "Suicide rate"
+	},
+	{
+		"tag" : "Care for the aging"
+	},
+	{
+		"tag" : "Access to mental health resources"
+	},
+	{
+		"tag" : "Political rights"
+	},
+	{
+		"tag" : "Freedom of assembly/association"
+	},
+	{
+		"tag" : "Freedom of movement"
+	},
+	{
+		"tag" : "Private property rights"
+	},
+	{
+		"tag" : "Freedom over life choices"
+	},
+	{
+		"tag" : "Renewable energy consumption"
+	},
+	{
+		"tag" : "Access to at least basic sanitation facilities"
+	},
+	{
+		"tag" : "Freedom of religion"
+	},
+	{
+		"tag" : "Early marriage"
+	},
+	{
+		"tag" : "Satisfied demand for contraception"
+	},
+	{
+		"tag" : "Transportation"
+	},
+	{
+		"tag" : "Employment opportunity"
+	},
+	{
+		"tag" : "Innovation and Creativity Support"
+	},
+	{
+		"tag" : "Tolerance for immigrants"
+	},
+	{
+		"tag" : "Discrimination and violence against minorities"
+	},
+	{
+		"tag" : "Community safety net"
+	},
+	{
+		"tag" : "Arts and Culture Access"
+	},
+	{
+		"tag" : "Years of tertiary schooling"
+	},
+	{
+		"tag" : "Globally ranked universities"
+	},
+	{
+		"tag" : "Wildfire vulnerability"
+	},
+	{
+		"tag" : "Food insecurity"
+	},
+	{
+		"tag" : "Pesticide exposure"
+	},
+	{
+		"tag" : "Infant mortality rate"
+	},
+	{
+		"tag" : "Carbon footprint"
+	},
+	{
+		"tag" : "Vulnerable employment"
+	},
+	{
+		"tag" : "Access to quality healthcare"
+	},
+	{
+		"tag" : "Premature Deaths"
+	},
+	{
+		"tag" : "Violent crime rate"
+	},
+	{
+		"tag" : "Access to independent media"
+	},
+	{
+		"tag" : "Access to exercise opportunities"
+	},
+	{
+		"tag" : "Access to justice"
+	},
+	{
+		"tag" : "Air pollution"
+	},
+	{
+		"tag" : "Drug overdose deaths"
+	},
+	{
+		"tag" : "Employment discrimination"
+	},
+	{
+		"tag" : "Equality of political power by social group"
+	},
+	{
+		"tag" : "Homelessness"
+	},
+	{
+		"tag" : "Residential segregation"
+	},
+	{
+		"tag" : "Urban access to broadband"
+	},
+	{
+		"tag" : "Youth mortality rate"
+	},
+	{
+		"tag" : "Linguistic Isolation"
+	},
+	{
+		"tag" : "Bachelor's degree holders"
+	},
+	{
+		"tag" : "Disconnected youth"
+	},
+	{
+		"tag" : "Access to quality education"
+	},
+	{
+		"tag" : "Child care deserts"
+	},
+	{
+		"tag" : "Child stunting"
+	},
+	{
+		"tag" : "Cost burden of treatment"
+	},
+	{
+		"tag" : "Property crime rate"
+	},
+	{
+		"tag" : "Public library use"
+	},
+	{
+		"tag" : "Rural access to broadband"
+	},
+	{
+		"tag" : "Solid waste sites"
+	},
+	{
+		"tag" : "Supermarket access"
+	},
+	{
+		"tag" : "Youth preventative dental"
+	},
+	{
+		"tag" : "Access to disability services"
+	},
+	{
+		"tag" : "Advanced degree holders"
+	},
+	{
+		"tag" : "Associate's degree holders"
+	},
+	{
+		"tag" : "Groundwater pollutants"
+	},
+	{
+		"tag" : "Income parity in broadband"
+	},
+	{
+		"tag" : "Perceived safety"
+	},
+	{
+		"tag" : "College retention rate"
+	},
+	{
+		"tag" : "Citizen complaints against peace officers"
+	},
+	{
+		"tag" : "Clean and safe water"
+	},
+	{
+		"tag" : "College or graduate school enrollment"
+	},
+	{
+		"tag" : "Diabetes prevalence"
+	},
+	{
+		"tag" : "Equality of political power by gender"
+	},
+	{
+		"tag" : "Equality of political power by socioeconomic position"
+	},
+	{
+		"tag" : "Financial literacy"
+	},
+	{
+		"tag" : "Freedom of expression"
+	},
+	{
+		"tag" : "Gender pay gap"
+	},
+	{
+		"tag" : "Hate crime rate"
+	},
+	{
+		"tag" : "Household air pollution attributable deaths"
+	},
+	{
+		"tag" : "Housing cost burden (Owners)"
+	},
+	{
+		"tag" : "Housing cost burden (Renters)"
+	},
+	{
+		"tag" : "Housing overcrowding"
+	},
+	{
+		"tag" : "Lead exposure"
+	},
+	{
+		"tag" : "Less than 9th grade education"
+	},
+	{
+		"tag" : "Math proficiency"
+	},
+	{
+		"tag" : "Outstanding regional housing needs allocation"
+	},
+	{
+		"tag" : "Ozone concentration"
+	},
+	{
+		"tag" : "Participation in online governance"
+	},
+	{
+		"tag" : "Percent of tertiary students enrolled in globally ranked universities"
+	},
+	{
+		"tag" : "Preschool enrollment"
+	},
+	{
+		"tag" : "Prevalence of overweight youth"
+	},
+	{
+		"tag" : "Property rights for women"
+	},
+	{
+		"tag" : "Quality of public transportation"
+	},
+	{
+		"tag" : "Reading proficiency"
+	},
+	{
+		"tag" : "Robust election process"
+	},
+	{
+		"tag" : "Salmonellosis prevalence"
+	},
+	{
+		"tag" : "School bullying"
+	},
+	{
+		"tag" : "Secondary school enrollment"
+	},
+	{
+		"tag" : "Traffic density"
+	},
+	{
+		"tag" : "Voter registration"
+	},
+	{
+		"tag" : "Voter turnout"
+	},
+	{
+		"tag" : "Wastewater treatment"
+	},
+	{
+		"tag" : "Teenage birth rate"
+	},
+	{
+		"tag" : "Water consumption"
+	},
+	{
+		"tag" : "Water fluoridation"
+	},
+	{
+		"tag" : "Youth preventative medical"
+	},
+	{
+		"tag" : "Maternal mortality rate"
+	},
+	{
+		"tag" : "Corruption"
+	},
+	{
+		"tag" : "Adult obesity rate"
+	},
+	{
+		"tag" : "Infectious and vaccine-preventable diseases"
+	},
+	{
+		"tag" : "Social isolation and loneliness"
+	},
+	{
+		"tag" : "Sex Crimes"
+	},
+	{
+		"tag" : "Wildlife Conservation"
+	},
+	{
+		"tag" : "LGBTQ Inclusion"
+	},
+	{
+		"tag" : "Women's average years in school"
+	},
+	{
+		"tag" : "Water withdrawals as a percent of resources"
+	},
+	{
+		"tag" : "Change in small business employment"
+	},
+	{
+		"tag" : "New private sector establishments"
+	},
+	{
+		"tag" : "Change in loans to businesses <$1M in revenue"
+	},
+	{
+		"tag" : "Change in GDP growth"
+	},
+	{
+		"tag" : "Change in employment"
+	},
+	{
+		"tag" : "Median household income"
+	},
+	{
+		"tag" : "Postsecondary completion rate"
+	},
+	{
+		"tag" : "# of people moving to King County"
+	},
+	{
+		"tag" : "Jobs that pay a family-sustaining wage"
+	},
+	{
+		"tag" : "Food insecurity rate"
+	},
+	{
+		"tag" : "Cost-burdened households"
+	},
+	{
+		"tag" : "Neighbor participation rate"
+	},
+	{
+		"tag" : "Group participation rate"
+	},
+	{
+		"tag" : "Change in incarceration rate"
+	},
+	{
+		"tag" : "Contacted public official"
+	},
+	{
+		"tag" : "Voter participation rate"
+	},
+	{
+		"tag" : "On-time high school graduation rate"
+	},
+	{
+		"tag" : "Index ratio of teachers of color to students of color"
+	},
+	{
+		"tag" : "Change in CO2 emissions"
+	},
+	{
+		"tag" : "Change in unhealthy air quality days"
+	},
+	{
+		"tag" : "Adults with health concerns"
+	},
+	{
+		"tag" : "Poor physical health"
+	},
+	{
+		"tag" : "Poor mental health"
+	},
+	{
+		"tag" : "Change in average rental price"
+	},
+	{
+		"tag" : "Homeownership rate"
+	},
+	{
+		"tag" : "Change in weekday traffic delay"
+	},
+	{
+		"tag" : "Public transportation accessibility"
+	}
+]
