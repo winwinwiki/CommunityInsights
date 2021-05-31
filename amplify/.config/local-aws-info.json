@@ -1,7 +1,12 @@
 {
-    "dev": {
-        "configLevel": "project",
-        "useProfile": false,
-        "awsConfigFilePath": "C:\\Users\\akrit\\.amplify\\awscloudformation\\mLZdhBtoYw"
-    }
+  "dev": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "C:\\Users\\akrit\\.amplify\\awscloudformation\\mLZdhBtoYw"
+  },
+  "prod": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "default"
+  }
 }

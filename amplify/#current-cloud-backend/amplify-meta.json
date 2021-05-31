@@ -1,56 +1,15 @@
 {
-	"providers": {
-		"awscloudformation": {
-			"AuthRoleName": "amplify-newimpact-dev-53011-authRole",
-			"UnauthRoleArn": "arn:aws:iam::749571805792:role/amplify-newimpact-dev-53011-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::749571805792:role/amplify-newimpact-dev-53011-authRole",
-			"Region": "us-west-2",
-			"DeploymentBucketName": "amplify-newimpact-dev-53011-deployment",
-			"UnauthRoleName": "amplify-newimpact-dev-53011-unauthRole",
-			"StackName": "amplify-newimpact-dev-53011",
-			"StackId": "arn:aws:cloudformation:us-west-2:749571805792:stack/amplify-newimpact-dev-53011/20e05270-afcd-11ea-9b32-0ab0a05de03c",
-			"AmplifyAppId": "d19ek953tnvzih"
-		}
-	},
-	"api": {
-		"newImpact-newbucket": {
-			"service": "AppSync",
-			"output": {
-				"authConfig": {
-					"defaultAuthentication": {
-						"authenticationType": "API_KEY"
-					},
-					"additionalAuthenticationProviders": null
-				},
-				"GraphQLAPIIdOutput": "saj4edhbsvckxk64pk3cqlybwu",
-				"GraphQLAPIEndpointOutput": "https://a4kfqfeqkfgxhaad2777qxhiy4.appsync-api.us-west-2.amazonaws.com/graphql",
-				"name": "newImpact-newbucket",
-				"region": "us-west-2",
-				"GraphQLAPIKeyOutput": "da2-qqxjrucf4zgq7fppjnlrfwj55a"
-			},
-			"lastPushTimeStamp": "2020-06-16T12:31:19.872Z"
-		}
-	},
-	"hosting": {
-		"S3AndCloudFront": {
-			"service": "S3AndCloudFront",
-			"providerPlugin": "awscloudformation",
-			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/amplify-newimpact-dev-53011-deployment/amplify-cfn-templates/hosting/template.json",
-				"logicalId": "hostingS3AndCloudFront"
-			},
-			"lastPushTimeStamp": "2020-06-16T12:42:15.422Z",
-			"output": {
-				"CloudFrontSecureURL": "https://d1a73pf6h7aw89.cloudfront.net",
-				"S3BucketSecureURL": "https://newimpact-bucket-dev.s3.amazonaws.com",
-				"CloudFrontOriginAccessIdentity": "E3GZQOGOTMZ40A",
-				"WebsiteURL": "http://newimpact-bucket-dev.s3-website-us-west-2.amazonaws.com",
-				"CloudFrontDistributionID": "E1QMBQ60I5ZSFY",
-				"Region": "us-west-2",
-				"HostingBucketName": "newimpact-bucket-dev",
-				"CloudFrontDomainName": "d1a73pf6h7aw89.cloudfront.net"
-			},
-			"lastPushDirHash": "e0GbR7zGjFpdRtgnEVs9SaAYcEY="
-		}
-	}
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-newimpact-prod-191707-authRole",
+      "UnauthRoleArn": "arn:aws:iam::111556172152:role/amplify-newimpact-prod-191707-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::111556172152:role/amplify-newimpact-prod-191707-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-newimpact-prod-191707-deployment",
+      "UnauthRoleName": "amplify-newimpact-prod-191707-unauthRole",
+      "StackName": "amplify-newimpact-prod-191707",
+      "StackId": "arn:aws:cloudformation:us-west-2:111556172152:stack/amplify-newimpact-prod-191707/ce75a370-bf5a-11eb-a561-06eacac6fcad",
+      "AmplifyAppId": "d2rim4nqx2fb2d"
+    }
+  }
 }
