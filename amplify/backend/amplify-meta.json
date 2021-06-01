@@ -26,13 +26,17 @@
             }
           },
           "additionalAuthenticationProviders": []
-        }
+        },
+        "GraphQLAPIIdOutput": "fgecgqnccjakvpwswwtlpulcr4",
+        "GraphQLAPIEndpointOutput": "https://aizd7wkjorb5bpkxb7zombwj4u.appsync-api.us-west-2.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-5yw25adiabg6ven5ohrzxqphnq"
       },
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-communityinsights-prod-191704-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apicommunityinsights"
       },
-      "lastPushTimeStamp": "2021-06-01T02:23:51.589Z"
+      "lastPushTimeStamp": "2021-06-01T08:51:55.610Z",
+      "lastPushDirHash": "hIMBJFg9Q0D0NLpWqbTCx9DeHrM="
     }
   }
 }

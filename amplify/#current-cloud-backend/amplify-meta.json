@@ -11,5 +11,32 @@
       "StackId": "arn:aws:cloudformation:us-west-2:111556172152:stack/amplify-communityinsights-prod-191704/76add130-c27f-11eb-85b0-06bc7d55dc11",
       "AmplifyAppId": "d38db7kzivvqrf"
     }
+  },
+  "api": {
+    "communityinsights": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": "CommunityInsights API Key"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "fgecgqnccjakvpwswwtlpulcr4",
+        "GraphQLAPIEndpointOutput": "https://aizd7wkjorb5bpkxb7zombwj4u.appsync-api.us-west-2.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-5yw25adiabg6ven5ohrzxqphnq"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-communityinsights-prod-191704-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apicommunityinsights"
+      },
+      "lastPushTimeStamp": "2021-06-01T08:51:55.610Z",
+      "lastPushDirHash": "hIMBJFg9Q0D0NLpWqbTCx9DeHrM="
+    }
   }
 }
