@@ -1,42 +1,15 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-newimpact-prod-191707-authRole",
-      "UnauthRoleArn": "arn:aws:iam::111556172152:role/amplify-newimpact-prod-191707-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::111556172152:role/amplify-newimpact-prod-191707-authRole",
+      "AuthRoleName": "amplify-communityinsights-prod-191704-authRole",
+      "UnauthRoleArn": "arn:aws:iam::111556172152:role/amplify-communityinsights-prod-191704-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::111556172152:role/amplify-communityinsights-prod-191704-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-newimpact-prod-191707-deployment",
-      "UnauthRoleName": "amplify-newimpact-prod-191707-unauthRole",
-      "StackName": "amplify-newimpact-prod-191707",
-      "StackId": "arn:aws:cloudformation:us-west-2:111556172152:stack/amplify-newimpact-prod-191707/ce75a370-bf5a-11eb-a561-06eacac6fcad",
-      "AmplifyAppId": "d2rim4nqx2fb2d"
-    }
-  },
-  "api": {
-    "NewImpactProductionAPI": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 365,
-              "description": "New Impact Production API Key"
-            }
-          },
-          "additionalAuthenticationProviders": []
-        },
-        "GraphQLAPIIdOutput": "lyhq5dykgzgjnj35x4ksukwye4",
-        "GraphQLAPIEndpointOutput": "https://qef3yixcmzdz3bjn7mshvw3a7y.appsync-api.us-west-2.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-itkhr65aubdcnmzjds33mjl72y"
-      },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-newimpact-prod-191707-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "logicalId": "apiNewImpactProductionAPI"
-      },
-      "lastPushTimeStamp": "2021-06-01T00:02:30.961Z",
-      "lastPushDirHash": "+CZ+3uBMvnCty20tyHo/tZQFinI="
+      "DeploymentBucketName": "amplify-communityinsights-prod-191704-deployment",
+      "UnauthRoleName": "amplify-communityinsights-prod-191704-unauthRole",
+      "StackName": "amplify-communityinsights-prod-191704",
+      "StackId": "arn:aws:cloudformation:us-west-2:111556172152:stack/amplify-communityinsights-prod-191704/76add130-c27f-11eb-85b0-06bc7d55dc11",
+      "AmplifyAppId": "d38db7kzivvqrf"
     }
   }
 }

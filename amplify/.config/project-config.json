@@ -1,13 +1,13 @@
 {
-  "projectName": "NewImpact",
+  "projectName": "CommunityInsights",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
     "framework": "angular",
     "config": {
       "SourceDir": "src",
-      "DistributionDir": "dist/NewImpact",
-      "BuildCommand": "npm run build",
+      "DistributionDir": "dist/CommunityInsights",
+      "BuildCommand": "npm run-script build",
       "StartCommand": "ng serve"
     }
   },
