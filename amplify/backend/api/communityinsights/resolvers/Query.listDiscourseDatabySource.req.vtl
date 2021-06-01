@@ -1,0 +1,9 @@
+#**
+  Select statement for a relational database data source
+*#
+{
+    "version": "2018-05-29",
+    "statements": [
+        "Select d.discourse_id, d.region as region, d.content as comment, ds.sentiment, GROUP_CONCAT(DISTINCT dtt.topic) as Topics, so.platform_name, d.created_time, GROUP_CONCAT(DISTINCT di.impact_area_id) as impact_area_id, ia.source_ontology, d.isPost, d.post_id From Discourse d Join Source so on d.source_id = so.source_id Left join DiscourseImpactArea di on d.discourse_id = di.discourse_id Left join DiscourseTopicGraph dtt on d.discourse_id = dtt.discourse_id LEFT JOIN DiscourseSentiment ds ON d.discourse_id = ds.discourse_id LEFT JOIN ImpactTree ia ON ia.impact_area_id = di.impact_area_id WHERE d.created_time between '$ctx.args.start' and '$ctx.args.end' AND d.region = '$ctx.args.region' AND ia.source_ontology = '$ctx.args.source_ontology' and ia.tag = '$ctx.args.tag' GROUP BY d.discourse_id"
+    ]
+}

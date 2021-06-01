@@ -1,0 +1,9 @@
+#set( $updateList = {} )
+#foreach( $entry in $ctx.args.updateModelVersionInput.keySet() )
+  #set( $discard = $updateList.put($entry, "'$ctx.args.updateModelVersionInput[$entry]'") )
+#end
+#set( $update = $updateList.toString().replace("{","").replace("}","") )
+{
+  "version": "2018-05-29",
+  "statements":   ["UPDATE ModelVersion SET $update WHERE model_id=$ctx.args.updateModelVersionInput.model_id", "SELECT * FROM ModelVersion WHERE model_id=$ctx.args.updateModelVersionInput.model_id"]
+}

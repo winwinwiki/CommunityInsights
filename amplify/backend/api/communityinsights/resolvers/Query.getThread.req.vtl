@@ -1,0 +1,9 @@
+#**
+  Select statement for a relational database data source
+*#
+{
+    "version": "2018-05-29",
+    "statements": [
+        "Select d.discourse_id, d.url, d.region as region, d.content as comment, ds.sentiment, GROUP_CONCAT(DISTINCT dtt.topic) as Topics, so.platform_name, d.created_time, GROUP_CONCAT(DISTINCT di.impact_area_id) as impact_area_id, ia.source_ontology, d.isPost, d.post_id, dt.type From Discourse as d Join Source so on d.source_id = so.source_id Left join DiscourseImpactArea di on d.discourse_id = di.discourse_id Left join DiscourseTopicGraph dtt on d.discourse_id = dtt.discourse_id LEFT JOIN DiscourseSentiment ds ON d.discourse_id = ds.discourse_id LEFT JOIN ImpactTree ia ON ia.impact_area_id = di.impact_area_id LEFT JOIN DiscourseType dt ON d.discourse_id = dt.discourse_id where d.discourse_id = $ctx.args.post_id or d.post_id = $ctx.args.post_id group by d.discourse_id order by d.isPost desc"
+    ]
+}

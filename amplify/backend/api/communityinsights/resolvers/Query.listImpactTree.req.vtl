@@ -1,0 +1,8 @@
+#**
+  Select statement for a relational database data source
+*#
+{
+    "version": "2018-05-29",
+    "statements": [
+        "select impact_area_id, source_ontology, tag, level0, level1, level2, (CASE WHEN level0 ='Society' THEN '#2194c0' WHEN level0 = 'Industry' THEN '#ffc000' WHEN level0='Environment' THEN '#53a948' END) as color from ImpactTree" ]
+}

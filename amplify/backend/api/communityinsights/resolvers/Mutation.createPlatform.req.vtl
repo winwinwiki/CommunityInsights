@@ -1,0 +1,12 @@
+#set( $cols = [] )
+#set( $vals = [] )
+#foreach( $entry in $ctx.args.createPlatformInput.keySet() )
+  #set( $discard = $cols.add($entry) )
+  #set( $discard = $vals.add("'$ctx.args.createPlatformInput[$entry]'") )
+#end
+#set( $valStr = $vals.toString().replace("[","(").replace("]",")") )
+#set( $colStr = $cols.toString().replace("[","(").replace("]",")") )
+{
+  "version": "2018-05-29",
+  "statements":   ["INSERT INTO Platform $colStr VALUES $valStr", "SELECT * FROM Platform WHERE platform_id=$ctx.args.createPlatformInput.platform_id"]
+}

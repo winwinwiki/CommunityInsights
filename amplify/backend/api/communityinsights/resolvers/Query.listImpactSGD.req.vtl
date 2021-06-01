@@ -1,0 +1,9 @@
+#**
+  Select statement for a relational database data source
+*#
+{
+    "version": "2018-05-29",
+    "statements": [
+        "select impact_area_id, source_ontology, tag, level0, (CASE WHEN level0 ='1 End Poverty' THEN '#E5243B' WHEN level0 = '2 End Hunger' THEN '#dda63a' WHEN level0='3 Good Health' THEN '#4c9f38' WHEN level0 ='4 Quality Education' THEN '#C5192D' WHEN level0 = '5 Gender Equality' THEN '#FF3A21' WHEN level0='6 Clean Water and Sanitation' THEN '#26BDE2' WHEN level0 ='7 Renewable Energy' THEN '#FCC30B' WHEN level0 = '8 Good Jobs and Econ Growth' THEN '#a21942' WHEN level0='9 Innovation and Infrastructure' THEN '#fd6925' WHEN level0 ='10 Reduced Inequalities' THEN '#dd1367' WHEN level0 = '11 Sustainable Cities and Communities' THEN '#fd9d24' WHEN level0='12 Sustainable Comsumption and Production' THEN '#BF8B2E' WHEN level0 ='13 Climate Action' THEN '#3f7e44' WHEN level0 = '14 Life Below Water' THEN '#0a97d9' WHEN level0='15 Life on Land' THEN '#56c02b' WHEN level0 = '16 Peace and Justice' THEN '#00689d' WHEN level0='17 Partnerships for the Goals' THEN '#19486a' END) as color from SDGTree"
+        ]
+}

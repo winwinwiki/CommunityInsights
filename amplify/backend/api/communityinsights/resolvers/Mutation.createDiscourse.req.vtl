@@ -1,0 +1,12 @@
+#set( $cols = [] )
+#set( $vals = [] )
+#foreach( $entry in $ctx.args.createDiscourseInput.keySet() )
+  #set( $discard = $cols.add($entry) )
+  #set( $discard = $vals.add("'$ctx.args.createDiscourseInput[$entry]'") )
+#end
+#set( $valStr = $vals.toString().replace("[","(").replace("]",")") )
+#set( $colStr = $cols.toString().replace("[","(").replace("]",")") )
+{
+  "version": "2018-05-29",
+  "statements":   ["INSERT INTO Discourse $colStr VALUES $valStr", "SELECT * FROM Discourse WHERE discourse_id=$ctx.args.createDiscourseInput.discourse_id"]
+}

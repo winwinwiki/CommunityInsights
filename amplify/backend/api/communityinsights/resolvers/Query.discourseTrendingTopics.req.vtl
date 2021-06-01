@@ -1,0 +1,9 @@
+#**
+  Select statement for a relational database data source
+*#
+{
+    "version": "2018-05-29",
+    "statements": [
+        "select count(*) as counts, sentiment as sentiment,topic as topic, created_time as date from DiscourseTrendingTopics where created_time between '$ctx.args.start' and '$ctx.args.end' and topic ='$ctx.args.topic' and region='$ctx.args.region' and parent_region='$ctx.args.parent' group by created_time, sentiment order by created_time"
+    ]
+}

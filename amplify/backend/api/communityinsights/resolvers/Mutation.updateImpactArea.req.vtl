@@ -1,0 +1,9 @@
+#set( $updateList = {} )
+#foreach( $entry in $ctx.args.updateImpactAreaInput.keySet() )
+  #set( $discard = $updateList.put($entry, "'$ctx.args.updateImpactAreaInput[$entry]'") )
+#end
+#set( $update = $updateList.toString().replace("{","").replace("}","") )
+{
+  "version": "2018-05-29",
+  "statements":   ["UPDATE ImpactArea SET $update WHERE impact_area_id=$ctx.args.updateImpactAreaInput.impact_area_id", "SELECT * FROM ImpactArea WHERE impact_area_id=$ctx.args.updateImpactAreaInput.impact_area_id"]
+}

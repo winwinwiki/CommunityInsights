@@ -1,0 +1,9 @@
+#**
+  select (case when level = 2 then concat(region) when level = 3 then concat(region, ' - ', parent1) when level = 4 then concat(parent1, ' - ', region,' - ', parent2) end) as location from RegionLevels order by level
+*#
+{
+    "version": "2018-05-29",
+    "statements": [
+        "SELECT concat(region,' - ',parent_region) as location FROM Regions where level = 3;"
+        ]
+}

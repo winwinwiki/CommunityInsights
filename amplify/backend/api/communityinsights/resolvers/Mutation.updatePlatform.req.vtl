@@ -1,0 +1,9 @@
+#set( $updateList = {} )
+#foreach( $entry in $ctx.args.updatePlatformInput.keySet() )
+  #set( $discard = $updateList.put($entry, "'$ctx.args.updatePlatformInput[$entry]'") )
+#end
+#set( $update = $updateList.toString().replace("{","").replace("}","") )
+{
+  "version": "2018-05-29",
+  "statements":   ["UPDATE Platform SET $update WHERE platform_id=$ctx.args.updatePlatformInput.platform_id", "SELECT * FROM Platform WHERE platform_id=$ctx.args.updatePlatformInput.platform_id"]
+}
