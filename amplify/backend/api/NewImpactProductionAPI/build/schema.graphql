@@ -1,0 +1,320 @@
+type Discourse {
+  content: String
+  country_code: String
+  created_time: AWSDate
+  discourse_id: Int!
+  imported_time: AWSDate
+  region: String
+  source_id: Int
+}
+
+type DiscourseHashtags {
+  counts: Int
+  hashtag: String!
+}
+
+type ImpactArea {
+  impact_area_id: Int!
+  impact_parent_id: Int
+  source_ontology: String
+  source_parent_id: Int
+  tag: String
+}
+
+type ImpactTree {
+  color: String
+  date: AWSDate
+  discourse_id: Int
+  level0: String
+  level1: String
+  level2: String
+  region: String!
+  source_ontology: String
+  tag: String
+  value: Int
+}
+
+type ModelVersion {
+  created_time: AWSDate
+  model_id: Int!
+  model_task: String
+}
+
+type Mutation {
+  createDiscourse(createDiscourseInput: CreateDiscourseInput!): Discourse
+  createImpactArea(createImpactAreaInput: CreateImpactAreaInput!): ImpactArea
+  createModelVersion(createModelVersionInput: CreateModelVersionInput!): ModelVersion
+  createPlatform(createPlatformInput: CreatePlatformInput!): Platform
+  createSource(createSourceInput: CreateSourceInput!): Source
+  deleteDiscourse(discourse_id: Int!): Discourse
+  deleteImpactArea(impact_area_id: Int!): ImpactArea
+  deleteModelVersion(model_id: Int!): ModelVersion
+  deletePlatform(platform_id: Int!): Platform
+  deleteSource(source_id: Int!): Source
+  updateDiscourse(updateDiscourseInput: UpdateDiscourseInput!): Discourse
+  updateImpactArea(updateImpactAreaInput: UpdateImpactAreaInput!): ImpactArea
+  updateModelVersion(updateModelVersionInput: UpdateModelVersionInput!): ModelVersion
+  updatePlatform(updatePlatformInput: UpdatePlatformInput!): Platform
+  updateSource(updateSourceInput: UpdateSourceInput!): Source
+}
+
+type Platform {
+  platform_desc: String
+  platform_id: Int!
+}
+
+type Query {
+  discourseTrendingTopics(end: String!, parent: String!, region: String!, start: String!, topic: String!): [discourseTrendingTopics]
+  getDiscourse(discourse_id: Int!): Discourse
+  getImpactArea(impact_area_id: Int!): ImpactArea
+  getModelVersion(model_id: Int!): ModelVersion
+  getPlatform(platform_id: Int!): Platform
+  getSource(source_id: Int!): Source
+  getTopicsComment(discourse_id: Int): [getTopicsComment]
+  hashtagMaster(end: String!, parent: String!, region: String!, start: String!, topic: String!): [hashtagMaster]
+  impactFilter(end: String!, parent: String, region: String!, start: String!): [impactFilter]
+  listDiscourseData(end: String!, region: String!, start: String!): [listDiscourseData]
+  listDiscourseHashtags: [DiscourseHashtags]
+  listDiscourses: [Discourse]
+  listImpactAreas: [ImpactArea]
+  listImpactSGD(end: String!, parent: String, region: String!, start: String!): [listImpactSDG]
+  listImpactSPI(end: String!, parent: String, region: String!, start: String!): [listImpactSPI]
+  listImpactTSF(end: String!, parent: String, region: String!, start: String!): [listImpactTSF]
+  listImpactTree(end: String!, parent: String!, region: String!, start: String!): [ImpactTree]
+  listModelVersions: [ModelVersion]
+  listPlatforms: [Platform]
+  listSources: [Source]
+  listTrendingHashtags(end: String!, parent: String!, region: String!, start: String!): [listTrendingHashtags]
+  listTrendingTopics: [TrendingTopics]
+  listTrendingTopicsMaster(end: String!, parent: String!, region: String!, start: String!): [listTrendingTopicsMaster]
+  location: [location]
+}
+
+type Source {
+  platform_id: Int
+  source_desc: String
+  source_id: Int!
+}
+
+type Subscription {
+  onCreateDiscourse: Discourse @aws_subscribe(mutations: ["createDiscourse"])
+  onCreateImpactArea: ImpactArea @aws_subscribe(mutations: ["createImpactArea"])
+  onCreateModelVersion: ModelVersion @aws_subscribe(mutations: ["createModelVersion"])
+  onCreatePlatform: Platform @aws_subscribe(mutations: ["createPlatform"])
+  onCreateSource: Source @aws_subscribe(mutations: ["createSource"])
+}
+
+type TrendingTopics {
+  counts: Int!
+  created_time: AWSDate
+  n_gram: Int!
+  topic: String
+}
+
+type discourseTrendingTopics {
+  counts: Int
+  date: AWSDate
+  sentiment: Int
+  topic: String!
+}
+
+type getTopicsComment {
+  topic: String
+}
+
+type hashtagMaster {
+  counts: Int
+  date: AWSDate
+  sentiment: Int
+  topic: String!
+}
+
+type impactFilter {
+  counts: Int
+  source_ontology: String
+  tag: String
+}
+
+type listDiscourseData {
+  comment: String!
+  created_time: AWSDate
+  discourse_id: Int!
+  isPost: Boolean
+  platform_name: String
+  post_id: Int
+  region: String!
+  sentiment: Int
+  source_ontology: String
+  topics: String
+}
+
+type listImpactSDG {
+  color: String
+  level0: String!
+  level1: String!
+  level2: String!
+  value: Int
+}
+
+type listImpactSPI {
+  color: String
+  level0: String!
+  level1: String!
+  level2: String!
+  value: Int
+}
+
+type listImpactTSF {
+  color: String
+  level0: String!
+  level1: String!
+  level2: String!
+  value: Int
+}
+
+type listTrendingHashtags {
+  counts: Int
+  hashtag: String!
+  negative: Int
+  neutral: Int
+  positive: Int
+  sentiment: Int
+  start_date: AWSDate
+}
+
+type listTrendingTopicsMaster {
+  counts: Int
+  negative: Int
+  neutral: Int
+  positive: Int
+  sentiment: Int
+  topic: String!
+}
+
+type location {
+  location: String
+}
+
+input CreateDiscourseInput {
+  content: String
+  created_time: AWSDate
+  discourse_id: Int!
+  imported_time: AWSDate
+  region: String
+  source_id: Int
+}
+
+input CreateImpactAreaInput {
+  impact_area_id: Int!
+  impact_parent_id: Int
+  source_ontology: String
+  source_parent_id: Int
+  tag: String
+}
+
+input CreateModelVersionInput {
+  created_time: AWSDate
+  model_id: Int!
+  model_task: String
+}
+
+input CreatePlatformInput {
+  platform_desc: String
+  platform_id: Int!
+}
+
+input CreateSourceInput {
+  platform_id: Int
+  source_desc: String
+  source_id: Int!
+}
+
+input TableBooleanFilterInput {
+  eq: Boolean
+  ne: Boolean
+}
+
+input TableFloatFilterInput {
+  between: [Float]
+  contains: Float
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+  notContains: Float
+}
+
+input TableIDFilterInput {
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+}
+
+input TableIntFilterInput {
+  between: [Int]
+  contains: Int
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+  notContains: Int
+}
+
+input TableStringFilterInput {
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+}
+
+input UpdateDiscourseInput {
+  content: String
+  country_code: Int
+  created_time: AWSDate
+  discourse_id: Int!
+  imported_time: AWSDate
+  region: String
+  source_id: Int
+}
+
+input UpdateImpactAreaInput {
+  impact_area_id: Int!
+  impact_parent_id: Int
+  source_ontology: String
+  source_parent_id: Int
+  tag: String
+}
+
+input UpdateModelVersionInput {
+  created_time: AWSDate
+  model_id: Int!
+  model_task: String
+}
+
+input UpdatePlatformInput {
+  platform_desc: String
+  platform_id: Int!
+}
+
+input UpdateSourceInput {
+  platform_id: Int
+  source_desc: String
+  source_id: Int!
+}
