@@ -15,8 +15,8 @@ import ApolloClient, { ApolloLink } from "apollo-boost";
 
 
 
-//const uri = 'https://aizd7wkjorb5bpkxb7zombwj4u.appsync-api.us-west-2.amazonaws.com/graphql';
-const uri = 'https://a4kfqfeqkfgxhaad2777qxhiy4.appsync-api.us-west-2.amazonaws.com/graphql';
+const uri = 'https://aizd7wkjorb5bpkxb7zombwj4u.appsync-api.us-west-2.amazonaws.com/graphql';
+//const uri = 'https://a4kfqfeqkfgxhaad2777qxhiy4.appsync-api.us-west-2.amazonaws.com/graphql';
 export function createApollo(httpLink: HttpLink) {
   const http = httpLink.create({ uri });
 
