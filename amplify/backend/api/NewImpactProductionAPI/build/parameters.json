@@ -1,8 +1,0 @@
-{
-    "CreateAPIKey": 1,
-    "AppSyncApiName": "NewImpactProductionAPI",
-    "DynamoDBBillingMode": "PAY_PER_REQUEST",
-    "DynamoDBEnableServerSideEncryption": false,
-    "S3DeploymentBucket": "amplify-newimpact-prod-191707-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/26eefd1facc2dafb42e31940554869fc2eca44a3"
-}
