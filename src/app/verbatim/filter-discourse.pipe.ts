@@ -24,7 +24,7 @@ export class FilterDiscoursePipe implements PipeTransform {
       if (search_text.length != 0){
         var bingo = false;
         for(var text of search_text){
-          if(discourses[i].comment.toLowerCase().includes(text.toLowerCase())) {
+          if(discourses[i].comment.toLowerCase().includes(" " + text.toLowerCase() + " ")) {
             bingo = true;
             break;
           }
