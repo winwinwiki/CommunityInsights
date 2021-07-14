@@ -93,7 +93,7 @@ export class TreeMapComponent implements OnInit {
           if(this.treemapdata.length != 0){
             this.empty = false;
            // this.impactTypes = [...new Set(data.listImpactTree.map(item => item.source_ontology))];
-           this.impactTypes = ['NewImpact', 'SDG', 'SPI', 'TSF'];
+           this.impactTypes = ['NewImpact', 'SDG', 'SPI', 'Scorecard for Prosperity - Civic Commons'];
           //  this.impactTypes.splice(0, 0,'NewImpact');
             this.treeFramework(this.treemapdata);
       
