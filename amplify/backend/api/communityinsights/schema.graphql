@@ -318,6 +318,19 @@ type Query {
 		parent: String,
 		tag: String
 	): [listDiscourseData]
+        filterDiscourseData(
+                start: String!,
+                end: String!,
+                region: String!,
+                limit: Int!,
+                offset: Int!,
+                topics: String!,
+                impactarea: String!,
+                source: String!,
+                sentiment: String!,
+                parent: String,
+                tag: String
+        ): [listDiscourseData]
 	listDiscourseDatabySource(
 		start: String!,
 		end: String!,

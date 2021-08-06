@@ -29,16 +29,39 @@
   "Resources": {
 
 
+"CommunityInsightsRDSDataSource": {
+  "Type" : "AWS::AppSync::DataSource",
+  "Properties" : {
+      "ApiId" : {
+         "Ref": "AppSyncApiId"
+      },
+      "Description" : "CommunityInsightsRDSDataSource",
+      "Name" : "CommunityInsightsRDSDataSource",
+      "RelationalDatabaseConfig" : {
+          "RdsHttpEndpointConfig" : {
+            "AwsRegion" : "us-west-2",
+            "AwsSecretStoreArn" : "arn:aws:secretsmanager:us-west-2:111556172152:secret:rds-db-credentials/cluster-S3TVGPDQLY5S2KL3ASWCOZKRSY/admin-JVpLry",
+            "DatabaseName" : "newimpact",
+            "DbClusterIdentifier" : "arn:aws:rds:us-west-2:111556172152:cluster:newimpact-prod",
+            "Schema" : "mysql"
+          },
+          "RelationalDatabaseSourceType" : "RDS_HTTP_ENDPOINT"
+      },
+      "ServiceRoleArn" : "arn:aws:iam::111556172152:role/service-role/appsync-ds-rds-jlyylh-newimpact-prod",
+      "Type" : "RELATIONAL_DATABASE"
+    }
+},
 
 
 
         "QuerytreemapMasterResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "treemapMaster",
                 "RequestMappingTemplateS3Location": {
@@ -75,11 +98,12 @@
 
         "QuerygetImpactAreaResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getImpactArea",
                 "RequestMappingTemplateS3Location": {
@@ -116,11 +140,12 @@
 
         "QuerylistRegionssResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listRegionss",
                 "RequestMappingTemplateS3Location": {
@@ -157,11 +182,12 @@
 
         "QuerygetSourceResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getSource",
                 "RequestMappingTemplateS3Location": {
@@ -198,11 +224,12 @@
 
         "QuerynewimpactframeworkResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "newimpactframework",
                 "RequestMappingTemplateS3Location": {
@@ -239,11 +266,12 @@
 
         "QuerygetDiscourseCountResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getDiscourseCount",
                 "RequestMappingTemplateS3Location": {
@@ -280,11 +308,12 @@
 
         "QuerylistTodosResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listTodos",
                 "RequestMappingTemplateS3Location": {
@@ -321,11 +350,12 @@
 
         "QuerylistTrendingTopicsResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listTrendingTopics",
                 "RequestMappingTemplateS3Location": {
@@ -362,11 +392,12 @@
 
         "QuerygetPlatformResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getPlatform",
                 "RequestMappingTemplateS3Location": {
@@ -403,11 +434,12 @@
 
         "QuerylistDiscoursesResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listDiscourses",
                 "RequestMappingTemplateS3Location": {
@@ -444,11 +476,12 @@
 
         "QuerylevelsResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "levels",
                 "RequestMappingTemplateS3Location": {
@@ -485,11 +518,12 @@
 
         "QuerylistDiscourseDatabySourceResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listDiscourseDatabySource",
                 "RequestMappingTemplateS3Location": {
@@ -526,11 +560,12 @@
 
         "QuerylistPlatformsResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listPlatforms",
                 "RequestMappingTemplateS3Location": {
@@ -567,11 +602,12 @@
 
         "QuerylistModelVersionsResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listModelVersions",
                 "RequestMappingTemplateS3Location": {
@@ -608,11 +644,12 @@
 
         "QuerydiscourseTrendingTopicsResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "discourseTrendingTopics",
                 "RequestMappingTemplateS3Location": {
@@ -649,11 +686,12 @@
 
         "QuerygetTodoResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getTodo",
                 "RequestMappingTemplateS3Location": {
@@ -690,11 +728,12 @@
 
         "QuerylistImpactTSFResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listImpactTSF",
                 "RequestMappingTemplateS3Location": {
@@ -731,11 +770,12 @@
 
         "QuerygetModelVersionResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getModelVersion",
                 "RequestMappingTemplateS3Location": {
@@ -772,11 +812,12 @@
 
         "QuerylistDiscourseDataResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listDiscourseData",
                 "RequestMappingTemplateS3Location": {
@@ -813,11 +854,12 @@
 
         "QuerylistDiscourseHashtagsResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listDiscourseHashtags",
                 "RequestMappingTemplateS3Location": {
@@ -854,11 +896,12 @@
 
         "QuerygetThreadResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getThread",
                 "RequestMappingTemplateS3Location": {
@@ -895,11 +938,12 @@
 
         "QuerygetRegionsResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getRegions",
                 "RequestMappingTemplateS3Location": {
@@ -936,11 +980,12 @@
 
         "QuerygetDiscourseResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getDiscourse",
                 "RequestMappingTemplateS3Location": {
@@ -977,11 +1022,12 @@
 
         "QuerylistImpactSGDResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listImpactSGD",
                 "RequestMappingTemplateS3Location": {
@@ -1018,11 +1064,12 @@
 
         "QuerylistTrendingTopicsMasterResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listTrendingTopicsMaster",
                 "RequestMappingTemplateS3Location": {
@@ -1059,11 +1106,12 @@
 
         "QuerylistImpactAreasResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listImpactAreas",
                 "RequestMappingTemplateS3Location": {
@@ -1100,11 +1148,12 @@
 
         "QueryhashtagMasterResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "hashtagMaster",
                 "RequestMappingTemplateS3Location": {
@@ -1141,11 +1190,12 @@
 
         "QuerylistImpactTreeResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listImpactTree",
                 "RequestMappingTemplateS3Location": {
@@ -1182,11 +1232,12 @@
 
         "QueryimpactFilterResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "impactFilter",
                 "RequestMappingTemplateS3Location": {
@@ -1223,11 +1274,12 @@
 
         "QuerylistSourcesResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listSources",
                 "RequestMappingTemplateS3Location": {
@@ -1264,11 +1316,12 @@
 
         "QuerygetTopicsCommentResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "getTopicsComment",
                 "RequestMappingTemplateS3Location": {
@@ -1305,11 +1358,12 @@
 
         "QuerylocationResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "location",
                 "RequestMappingTemplateS3Location": {
@@ -1346,11 +1400,12 @@
 
         "QuerylistTrendingHashtagsResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listTrendingHashtags",
                 "RequestMappingTemplateS3Location": {
@@ -1387,11 +1442,12 @@
 
         "QuerylistImpactSPIResolver": {
             "Type": "AWS::AppSync::Resolver",
+            "DependsOn" : "CommunityInsightsRDSDataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "DataSourceName": "CommunityInsights_RDS_DataSource",
+                "DataSourceName": "CommunityInsightsRDSDataSource",
                 "TypeName": "Query",
                 "FieldName": "listImpactSPI",
                 "RequestMappingTemplateS3Location": {
