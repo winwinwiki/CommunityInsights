@@ -56,6 +56,8 @@ const after = (one: NgbDateStruct, two: NgbDateStruct) =>
   !one || !two ? false : one.year === two.year ? one.month === two.month ? one.day === two.day
     ? false : one.day > two.day : one.month > two.month : one.year > two.year;
 
+const defaultLoc = 'King County - Washington';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -66,7 +68,7 @@ export class HeaderComponent implements OnInit, AfterContentInit {
   loading = true;
   error: any;
   text : any;
-  locText = ['King County - Washington'];
+  locText = [defaultLoc];
   startDate: NgbDateStruct;
   maxDate: NgbDateStruct;
   minDate: NgbDateStruct;
@@ -106,37 +108,67 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     config.outsideDays = "hidden";
   }
   
-  parseDate(datestr) {
+  parseDate(datestr,offset=0) {
     // TODO: use moment.js
-    console.log(datestr);
     let parts = datestr.split('-');
-    console.log(parts);
+    //month numbers begin with zero in Javascript dates
     var dt = new Date(parts[0], parts[1]-1, parts[2]);
-    console.log(dt);
+    dt.setDate(dt.getDate() + offset);
     var ret = new NgbDate(dt.getFullYear(), dt.getMonth()+1, dt.getDate()); 
-    console.log(ret);
     return ret;
   }
 
   ngAfterContentInit(): void {
     var params = this.getQueryParams();
-    // if (params['fromDate'] & params['toDate'] & params['location']) {
-    if (params) {
-        var fromDt = this.parseDate(params['fromDate']);
-        var toDt = this.parseDate(params['toDate']);
-        this.text = this.getDateRange(fromDt, toDt);
-        this.updateText(this.text);
-        this.locText = [params['location']];
-        this.updateLocation(this.locText);
-    } else {
-        var today = this.calendar.getToday(); 
-        console.log(today);
+
+    // if no parameters provided, use today's date and default location
+    if (!params['fromDate'] && !params['toDate'] && !params['location']) {
+        var today = this.calendar.getToday();
         this.getToday(today, 'getinitialdate');
         this.text = this.initialDate;
         this.updateText(this.text);
         this.updateLocation(this.locText);
-        this.updateRoute();
-    }
+    } else {
+
+	// Handle location
+	if (params['location']) {
+	    // a location was provided as query string; use it
+	    this.locText = [params['location']];
+	} else {
+	    // no location was provided; use the default
+	    this.locText = [defaultLoc];
+	}
+	this.updateLocation(this.locText);
+
+	// Handle from date and to date
+
+	// if only fromDate is provided, make toDate 2 days later
+	if (params['fromDate'] && !params['toDate']) {
+	    this.fromDate = this.parseDate(params['fromDate']);
+	    this.toDate = this.parseDate(params['fromDate'], 2);
+
+	// if only toDate is provided, make fromDate 2 days earlier
+	} else if (!params['fromDate'] && params['toDate']) {
+	    this.toDate = this.parseDate(params['toDate']);
+	    this.fromDate = this.parseDate(params['toDate'], -2);
+
+        // if both were provided so use them
+        } else if (params['fromDate'] && params['toDate']) {
+	    this.fromDate = this.parseDate(params['fromDate']);
+	    this.toDate = this.parseDate(params['toDate']);
+
+        // otherwise, neither were provided
+        } else {
+	    var today = this.calendar.getToday();
+	    this.getToday(today, 'getinitialdate');
+	    this.text = this.initialDate;
+        } 
+	this.text = this.getDateRange(this.fromDate, this.toDate);
+	this.updateText(this.text);
+
+    } 
+    // make the address bar match the parameters
+    this.updateRoute();
   }
 
   async ngOnInit() {
