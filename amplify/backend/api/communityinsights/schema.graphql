@@ -324,7 +324,7 @@ type Query {
                 region: String!,
                 limit: Int!,
                 offset: Int!,
-                topics: String!,
+                search: String!,
                 impactarea: String!,
                 source: String!,
                 sentiment: String!,
