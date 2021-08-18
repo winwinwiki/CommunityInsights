@@ -71,15 +71,15 @@
     "apicommunityinsights": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-communityinsights-prod-191704-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-communityinsights-dev-151108-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
           "CreateAPIKey": 1,
           "AppSyncApiName": "CommunityInsights",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
-          "S3DeploymentBucket": "amplify-communityinsights-prod-191704-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/6fc0d87582b4fada0832d9ea372e361d49810bf8",
-          "env": "prod"
+          "S3DeploymentBucket": "amplify-communityinsights-dev-151108-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/fc8ac64a593eb9e3a58093231b55531ab88ccac4",
+          "env": "dev"
         }
       }
     }
