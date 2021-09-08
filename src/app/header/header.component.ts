@@ -13,6 +13,12 @@ import {
   NgbTabChangeEvent
 } from '@ng-bootstrap/ng-bootstrap';
 
+import { UrlTree, UrlSegmentGroup, ActivatedRoute, Params, DefaultUrlSerializer, UrlSegment } from "@angular/router";
+
+import {Location} from '@angular/common';
+
+import { parse } from 'qs';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { NgModel } from "@angular/forms";
@@ -50,6 +56,8 @@ const after = (one: NgbDateStruct, two: NgbDateStruct) =>
   !one || !two ? false : one.year === two.year ? one.month === two.month ? one.day === two.day
     ? false : one.day > two.day : one.month > two.month : one.year > two.year;
 
+const defaultLoc = 'King County - Washington';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -60,7 +68,7 @@ export class HeaderComponent implements OnInit, AfterContentInit {
   loading = true;
   error: any;
   text : any;
-  locText = ['King County - Washington'];
+  locText = [defaultLoc];
   startDate: NgbDateStruct;
   maxDate: NgbDateStruct;
   minDate: NgbDateStruct;
@@ -93,22 +101,80 @@ export class HeaderComponent implements OnInit, AfterContentInit {
   onTouched: any;
 
 
-  constructor(private config: NgbDatepickerConfig, private data: DataTransferService, element: ElementRef, private renderer: Renderer2, private _parserFormatter: NgbDateParserFormatter, private calendar: NgbCalendar, private apollo: Apollo, private router: Router) {
+  constructor(private config: NgbDatepickerConfig, private data: DataTransferService, element: ElementRef, private renderer: Renderer2, private _parserFormatter: NgbDateParserFormatter, private calendar: NgbCalendar, private apollo: Apollo, private router: Router, private routelocation: Location, private activatedRoute: ActivatedRoute) {
     const current = new Date();
     config.minDate =  { year: 2000, month: 1, day: 1 };
     this.maxDate = { year: current.getFullYear(), month: current.getMonth() + 1, day: current.getDate() };
     config.outsideDays = "hidden";
   }
   
+  parseDate(datestr,offset=0) {
+    // TODO: use moment.js
+    let parts = datestr.split('-');
+    //month numbers begin with zero in Javascript dates
+    var dt = new Date(parts[0], parts[1]-1, parts[2]);
+    dt.setDate(dt.getDate() + offset);
+    var ret = new NgbDate(dt.getFullYear(), dt.getMonth()+1, dt.getDate()); 
+    return ret;
+  }
+
   ngAfterContentInit(): void {
-    this.text = this.calendar.getToday(); 
-    this.getToday(this.text, 'getinitialdate');
-    this.text = this.initialDate;
-    this.updateText(this.text);
-    this.updateLocation(this.locText);
+    var params = this.getQueryParams();
+    const REGION='region';
+
+    // if no parameters provided, use today's date and default location
+    if (!params['fromDate'] && !params['toDate'] && !params[REGION]) {
+        var today = this.calendar.getToday();
+        this.getToday(today, 'getinitialdate');
+        this.text = this.initialDate;
+        this.updateText(this.text);
+        this.updateLocation(this.locText);
+    } else {
+
+	// Handle location
+	if (params[REGION]) {
+	    // a location was provided as query string; use it
+	    this.locText = [params[REGION]];
+	} else {
+	    // no location was provided; use the default
+	    this.locText = [defaultLoc];
+	}
+	this.updateLocation(this.locText);
+
+	// Handle from date and to date
+
+	// if only fromDate is provided, make toDate 2 days later
+	if (params['fromDate'] && !params['toDate']) {
+	    this.fromDate = this.parseDate(params['fromDate']);
+	    this.toDate = this.parseDate(params['fromDate'], 2);
+
+	// if only toDate is provided, make fromDate 2 days earlier
+	} else if (!params['fromDate'] && params['toDate']) {
+	    this.toDate = this.parseDate(params['toDate']);
+	    this.fromDate = this.parseDate(params['toDate'], -2);
+
+        // if both were provided so use them
+        } else if (params['fromDate'] && params['toDate']) {
+	    this.fromDate = this.parseDate(params['fromDate']);
+	    this.toDate = this.parseDate(params['toDate']);
+
+        // otherwise, neither were provided
+        } else {
+	    var today = this.calendar.getToday();
+	    this.getToday(today, 'getinitialdate');
+	    this.text = this.initialDate;
+        } 
+	this.text = this.getDateRange(this.fromDate, this.toDate);
+	this.updateText(this.text);
+
+    } 
+    // make the address bar match the parameters
+    this.updateRoute();
   }
 
   async ngOnInit() {
+    this.fromDate = this.activatedRoute.snapshot.paramMap.get("fromDate")
+    console.log(this.fromDate);
     this.apollo
     .query<any>({
       query: gql`
@@ -148,6 +214,37 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     this.locText = [locChoice.location];
     // console.log(this.locText)
     // this.updateLocation(this.locText)
+    this.updateRoute();
+  }
+
+  getQueryParams() {
+    // None of these work, because Angular
+    //var fromDate = this.activatedRoute.params['fromDate'];
+    //let urlTree = this.router.parseUrl(this.router.url);
+    //fromDate = urlTree.queryParams['fromDate']; 
+    //fromDate = this.activatedRoute.snapshot.paramMap.get('fromDate');
+    
+    //first char is ?
+    var paramstr = window.location.search.slice(1);
+    var params = parse(paramstr)
+    console.log(params);
+    return params;
+  }
+
+  updateRoute(){
+    //const tree = this.router.createUrlTree([], { queryParams: { minDate: this.minDate, maxDate: this.maxDate, location: this.locText } });
+    //const url = this.serializer.serialize(tree);
+    //console.log(url);
+
+    let urlTree = this.router.parseUrl(this.router.url);
+    urlTree.queryParams = {}; 
+    const path = urlTree.toString();
+
+
+    var todatestring : String = this._parserFormatter.format(this.toDate)
+    var fromdatestring : String = this._parserFormatter.format(this.fromDate)
+    const qs = "fromDate="+fromdatestring+"&toDate="+todatestring+"&region="+this.locText;
+    this.routelocation.replaceState(path, qs);
   }
 
   updateText(text) {
@@ -166,12 +263,17 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     }
     else if ($event.nextId === 'third') {
       this.router.navigateByUrl('/about');
-    }
+    } 
+    this.updateRoute();
   }
   addDays(date, days) {
     var result = new Date(date);
     result.setDate(result.getDate() + days);
     return result;
+  }
+
+  getDateRange(fromDt, toDt) {
+     return this._parserFormatter.format(fromDt) + ' to ' + this._parserFormatter.format(toDt);
   }
 
   getToday(date: NgbDateStruct, initialData){
@@ -195,7 +297,7 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     ); 
 
     if(initialData != ''){
-      parsed += this._parserFormatter.format(this.fromDate) + ' to ' + this._parserFormatter.format(this.toDate);
+      parsed += this.getDateRange(this.fromDate,this.toDate)
       this.initialDate = parsed;
     } else {
       this.fromDate=new NgbDate(
@@ -204,7 +306,7 @@ export class HeaderComponent implements OnInit, AfterContentInit {
         currentDate.getDate()
       );
       this.toDate = this.fromDate;
-      parsed += this._parserFormatter.format(this.fromDate) + ' to ' + this._parserFormatter.format(this.toDate);
+      parsed += this.getDateRange(this.fromDate,this.toDate)
       this.renderer.setProperty(this.myRangeInput.nativeElement, 'value', parsed);
     }
   }
@@ -237,29 +339,30 @@ export class HeaderComponent implements OnInit, AfterContentInit {
   onDateSelection(date: NgbDate) {
     let parsed = ''; 
 
-        if (!this.fromDate && !this.toDate) {
-          this.fromDate = date;
-        } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
-          this.toDate = date;
-          this.input.close();
-          this.input.open();
-        } else {
-          this.toDate = null;
-          this.fromDate = date;
-        }
-        if(this.fromDate) {
-          // if fromDate is set: add the first date
-          parsed += this._parserFormatter.format(this.fromDate);
-        }
-        if(this.toDate!=null) {
-          // if toDate is set: add the second date with separator
-          parsed += ' to ' + this._parserFormatter.format(this.toDate);
-        }
-        else if(this.toDate === null){
-          parsed += ' to ' + this._parserFormatter.format(this.fromDate);
-        }
-        // here we update the input value with the new parsed value
-        this.renderer.setProperty(this.myRangeInput.nativeElement, 'value', parsed);
+    if (!this.fromDate && !this.toDate) {
+      this.fromDate = date;
+    } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
+      this.toDate = date;
+      this.input.close();
+      this.input.open();
+    } else {
+      this.toDate = null;
+      this.fromDate = date;
+    }
+    if(this.fromDate) {
+      // if fromDate is set: add the first date
+      parsed += this._parserFormatter.format(this.fromDate);
+    }
+    if(this.toDate!=null) {
+      // if toDate is set: add the second date with separator
+      parsed += ' to ' + this._parserFormatter.format(this.toDate);
+    }
+    else if(this.toDate === null){
+      parsed += ' to ' + this._parserFormatter.format(this.fromDate);
+    }
+    // here we update the input value with the new parsed value
+    this.renderer.setProperty(this.myRangeInput.nativeElement, 'value', parsed);
+    this.updateRoute();
   }
 
   cancelSelection(){

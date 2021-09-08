@@ -14,7 +14,7 @@
 <ng-container *ngIf="!loading && !empty">
   <div class="page-wrapper chiller-theme verbatim-tab" [ngClass]="[isOn === true ? 'toggled' : 'toggle']">
     <a (click)="isOn = !isOn" id="show-sidebar" placement="right" [ngbTooltip]="isOn?'Close Filter':'Open Filter'"
-      class="btn btn-sm btn-dark" href="#">
+      class="btn btn-sm btn-dark">
       <i class="fas fa-filter"></i>
     </a>
     <form [formGroup]="filterForm">

@@ -92,8 +92,8 @@ export class TreeMapComponent implements OnInit {
           $('#treemap').find('svg').remove();
           if(this.treemapdata.length != 0){
             this.empty = false;
-           // this.impactTypes = [...new Set(data.listImpactTree.map(item => item.source_ontology))];
-           this.impactTypes = ['NewImpact', 'SDG', 'SPI', 'TSF'];
+            //this.impactTypes = [...new Set(data.listImpactTree.map(item => item.source_ontology))];
+            this.impactTypes = ['NewImpact', 'SDG', 'SPI', 'Scorecard for Prosperity - Civic Commons'];
           //  this.impactTypes.splice(0, 0,'NewImpact');
             this.treeFramework(this.treemapdata);
       
@@ -123,7 +123,7 @@ export class TreeMapComponent implements OnInit {
     this.impactTreeData = [];
 
     impactAreaIds.forEach(x => {
-      for(var i = 0; i<frameworkQueries.length;i++){
+      for(var i = 0; i<frameworkQueries.length; i++){
         if(x.impact_area_id === frameworkQueries[i].impact_area_id){
           this.impactTreeData.push(Object.assign({}, x, frameworkQueries[i]));
         } 

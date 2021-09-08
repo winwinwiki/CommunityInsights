@@ -1,0 +1,310 @@
+{
+    "resolvers": [
+        {
+            "typeName": "Query",
+            "fieldName": "discourseTrendingTopics",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/discourseTrendingTopics",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select count(*) as counts, sentiment as sentiment,topic as topic, created_time as date from DiscourseTrendingTopics where created_time between '$ctx.args.start' and '$ctx.args.end' and topic ='$ctx.args.topic' and region='$ctx.args.region' and parent_region='$ctx.args.parent' group by created_time, sentiment order by created_time\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getDiscourse",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getDiscourse",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Discourse WHERE discourse_id=$ctx.args.discourse_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getDiscourseCount",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getDiscourseCount",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select count(*) as count from (Select d.discourse_id From Discourse d Join Source so on d.source_id = so.source_id Left join DiscourseImpactArea di on d.discourse_id = di.discourse_id Left join DiscourseTopicGraph dtt on d.discourse_id = dtt.discourse_id LEFT JOIN DiscourseSentiment ds ON d.discourse_id = ds.discourse_id LEFT JOIN ImpactTree ia ON ia.impact_area_id = di.impact_area_id LEFT JOIN DiscourseType dt ON d.discourse_id = dt.discourse_id WHERE d.created_time between '$ctx.args.start' and '$ctx.args.end' AND d.region = '$ctx.args.region' AND ia.source_ontology = source_ontology GROUP BY d.discourse_id ) as sb\"\n    ]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getImpactArea",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getImpactArea",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM ImpactArea WHERE impact_area_id=$ctx.args.impact_area_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getModelVersion",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getModelVersion",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM ModelVersion WHERE model_id=$ctx.args.model_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getPlatform",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getPlatform",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Platform WHERE platform_id=$ctx.args.platform_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getRegions",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getRegions",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Regions WHERE region='$ctx.args.region'\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getSource",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getSource",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Source WHERE source_id=$ctx.args.source_id\"]\n}",
+            "responseMappingTemplate": "#set( $output = $utils.rds.toJsonObject($ctx.result) )\n#if( $output.isEmpty() )\n  $util.error(\"Invalid response from RDS DataSource. See info for the full response.\", \"InvalidResponse\", {}, $output)\n#end\n#set( $output = $output[0] )\n#if( $output.isEmpty() )\n  #return\n#end\n$utils.toJson($output[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getThread",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getThread",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"Select d.discourse_id, d.url, d.region as region, d.content as comment, ds.sentiment, GROUP_CONCAT(DISTINCT dtt.topic) as Topics, so.platform_name, d.created_time, GROUP_CONCAT(DISTINCT di.impact_area_id) as impact_area_id, ia.source_ontology, d.isPost, d.post_id, dt.type From Discourse as d Join Source so on d.source_id = so.source_id Left join DiscourseImpactArea di on d.discourse_id = di.discourse_id Left join DiscourseTopicGraph dtt on d.discourse_id = dtt.discourse_id LEFT JOIN DiscourseSentiment ds ON d.discourse_id = ds.discourse_id LEFT JOIN ImpactTree ia ON ia.impact_area_id = di.impact_area_id LEFT JOIN DiscourseType dt ON d.discourse_id = dt.discourse_id where d.discourse_id = $ctx.args.post_id or d.post_id = $ctx.args.post_id group by d.discourse_id order by d.isPost desc\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getTodo",
+            "dataSourceName": "TodoTable",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getTodo",
+            "requestMappingTemplate": "{\n  \"version\": \"2017-02-28\",\n  \"operation\": \"GetItem\",\n  \"key\": #if( $modelObjectKey ) $util.toJson($modelObjectKey) #else {\n  \"id\": $util.dynamodb.toDynamoDBJson($ctx.args.id)\n} #end\n}",
+            "responseMappingTemplate": "$util.toJson($ctx.result)",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "getTopicsComment",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/getTopicsComment",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select topic from DiscourseTrendingTopics where discourse_id = '$ctx.args.discourse_id'\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "hashtagMaster",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/hashtagMaster",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select count(*) as counts, sentiment as sentiment, hashtag as topic, created_date as date from HashtagMaster where created_date between '$ctx.args.start' and '$ctx.args.end' and hashtag ='$ctx.args.topic' and region='$ctx.args.region' and parent_region='$ctx.args.parent' group by created_date, sentiment order by created_date\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "impactFilter",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/impactFilter",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"Select count(*) as counts, NULL as tag, source_ontology from ImpactAreaMaster where date between '$ctx.args.start' and '$ctx.args.end' and region = '$ctx.args.region' and parent_region = '$ctx.args.parent' group by source_ontology UNION Select count(*), tag, source_ontology from ImpactAreaMaster where date between '$ctx.args.start' and '$ctx.args.end' and region = '$ctx.args.region' and parent_region = '$ctx.args.parent' group by source_ontology, tag\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "levels",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/levels",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"Select tag from ImpactTree where source_ontology = '$ctx.args.source_ontology'\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listDiscourseData",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listDiscourseData",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"Select d.discourse_id, d.url, d.region as region, d.content as comment, ds.sentiment, GROUP_CONCAT(DISTINCT dtt.topic) as Topics, so.platform_name, d.created_time, GROUP_CONCAT(DISTINCT di.impact_area_id) as impact_area_id, ia.source_ontology, d.isPost, d.post_id, dt.type From Discourse d Join Source so on d.source_id = so.source_id Left join DiscourseImpactArea di on d.discourse_id = di.discourse_id Left join DiscourseTopicGraph dtt on d.discourse_id = dtt.discourse_id LEFT JOIN DiscourseSentiment ds ON d.discourse_id = ds.discourse_id LEFT JOIN ImpactTree ia ON ia.impact_area_id = di.impact_area_id LEFT JOIN DiscourseType dt ON d.discourse_id = dt.discourse_id WHERE d.created_time between '$ctx.args.start' and '$ctx.args.end' AND d.region = '$ctx.args.region' AND ia.source_ontology = source_ontology GROUP BY d.discourse_id order by d.created_time desc limit $ctx.args.limit offset $ctx.args.offset\"\n        ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listDiscourseDatabySource",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listDiscourseDatabySource",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"Select d.discourse_id, d.region as region, d.content as comment, ds.sentiment, GROUP_CONCAT(DISTINCT dtt.topic) as Topics, so.platform_name, d.created_time, GROUP_CONCAT(DISTINCT di.impact_area_id) as impact_area_id, ia.source_ontology, d.isPost, d.post_id From Discourse d Join Source so on d.source_id = so.source_id Left join DiscourseImpactArea di on d.discourse_id = di.discourse_id Left join DiscourseTopicGraph dtt on d.discourse_id = dtt.discourse_id LEFT JOIN DiscourseSentiment ds ON d.discourse_id = ds.discourse_id LEFT JOIN ImpactTree ia ON ia.impact_area_id = di.impact_area_id WHERE d.created_time between '$ctx.args.start' and '$ctx.args.end' AND d.region = '$ctx.args.region' AND ia.source_ontology = '$ctx.args.source_ontology' and ia.tag = '$ctx.args.tag' GROUP BY d.discourse_id\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listDiscourseHashtags",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listDiscourseHashtags",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"SELECT hashtag, count(*) as counts from DiscourseHashtags group by hashtag order by counts desc limit 30\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listDiscourses",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listDiscourses",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Discourse\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listImpactAreas",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listImpactAreas",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM ImpactArea\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listImpactSGD",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listImpactSGD",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select impact_area_id, source_ontology, tag, level0, (CASE WHEN level0 ='1 End Poverty' THEN '#E5243B' WHEN level0 = '2 End Hunger' THEN '#dda63a' WHEN level0='3 Good Health' THEN '#4c9f38' WHEN level0 ='4 Quality Education' THEN '#C5192D' WHEN level0 = '5 Gender Equality' THEN '#FF3A21' WHEN level0='6 Clean Water and Sanitation' THEN '#26BDE2' WHEN level0 ='7 Renewable Energy' THEN '#FCC30B' WHEN level0 = '8 Good Jobs and Econ Growth' THEN '#a21942' WHEN level0='9 Innovation and Infrastructure' THEN '#fd6925' WHEN level0 ='10 Reduced Inequalities' THEN '#dd1367' WHEN level0 = '11 Sustainable Cities and Communities' THEN '#fd9d24' WHEN level0='12 Sustainable Comsumption and Production' THEN '#BF8B2E' WHEN level0 ='13 Climate Action' THEN '#3f7e44' WHEN level0 = '14 Life Below Water' THEN '#0a97d9' WHEN level0='15 Life on Land' THEN '#56c02b' WHEN level0 = '16 Peace and Justice' THEN '#00689d' WHEN level0='17 Partnerships for the Goals' THEN '#19486a' END) as color from SDGTree\"\n        ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listImpactSPI",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listImpactSPI",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select impact_area_id, source_ontology, tag, level1, level0, (CASE WHEN level0 ='Basic Human Needs' THEN '#2194c0' WHEN level0 = 'Opportunity' THEN '#ffc000' WHEN level0='Foundations of Wellbeings' THEN '#53a948' END) as color from SPITree\"\n        ]\n  }",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listImpactTSF",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listImpactTSF",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select impact_area_id, source_ontology, tag, level1, level0, (CASE WHEN level0 ='Inclusion' THEN '#2194c0' WHEN level0 = 'Growth' THEN '#ffc000' WHEN level0='Readiness' THEN '#53a948' END) as color from TSFTree\"\n        ]}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listImpactTree",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listImpactTree",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select impact_area_id, source_ontology, tag, level0, level1, level2, (CASE WHEN level0 ='Society' THEN '#2194c0' WHEN level0 = 'Industry' THEN '#ffc000' WHEN level0='Environment' THEN '#53a948' END) as color from ImpactTree\" ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listModelVersions",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listModelVersions",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM ModelVersion\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listPlatforms",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listPlatforms",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Platform\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listRegionss",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listRegionss",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Regions\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listSources",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listSources",
+            "requestMappingTemplate": "{\n  \"version\": \"2018-05-29\",\n  \"statements\":   [\"SELECT * FROM Source\"]\n}",
+            "responseMappingTemplate": "$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listTodos",
+            "dataSourceName": "TodoTable",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listTodos",
+            "requestMappingTemplate": "#set( $limit = $util.defaultIfNull($context.args.limit, 10) )\n#set( $ListRequest = {\n  \"version\": \"2017-02-28\",\n  \"limit\": $limit\n} )\n#if( $context.args.nextToken )\n  #set( $ListRequest.nextToken = $context.args.nextToken )\n#end\n#if( $context.args.filter )\n  #set( $ListRequest.filter = $util.parseJson(\"$util.transform.toDynamoDBFilterExpression($ctx.args.filter)\") )\n#end\n#if( !$util.isNull($modelQueryExpression)\n                        && !$util.isNullOrEmpty($modelQueryExpression.expression) )\n  $util.qr($ListRequest.put(\"operation\", \"Query\"))\n  $util.qr($ListRequest.put(\"query\", $modelQueryExpression))\n  #if( !$util.isNull($ctx.args.sortDirection) && $ctx.args.sortDirection == \"DESC\" )\n    #set( $ListRequest.scanIndexForward = false )\n  #else\n    #set( $ListRequest.scanIndexForward = true )\n  #end\n#else\n  $util.qr($ListRequest.put(\"operation\", \"Scan\"))\n#end\n$util.toJson($ListRequest)",
+            "responseMappingTemplate": "$util.toJson($ctx.result)",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listTrendingHashtags",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listTrendingHashtags",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select hashtag, counts, negative, neutral, positive, start_date from ((select hashtag, count(*) as counts, sum(case when sentiment < 0 then 1 else 0 end) as negative,  sum(case when sentiment = 0 then 1 else 0 end) as neutral,  sum(case when sentiment > 0 then 1 else 0 end) as positive, min(created_date) as start_date from HashtagMaster where created_date between '$ctx.args.start' and '$ctx.args.end' and region = '$ctx.args.region' and parent_region='$ctx.args.parent' group by hashtag order by counts desc limit 100) union (select hashtag, count(*) as counts, sum(case when sentiment < 0 then 1 else 0 end) as negative,  sum(case when sentiment = 0 then 1 else 0 end) as neutral,  sum(case when sentiment > 0 then 1 else 0 end) as positive, min(created_date) as start_date from HashtagMaster where created_date between  '$ctx.args.start' and '$ctx.args.end' and region = '$ctx.args.region' and parent_region='$ctx.args.parent' and hashtag in ('CovidVaccine','NoCovidVaccine','CoronaVaccine','Vaccine','NoVaccine','antivax','MaskUpWa','maskup','wearamask','nomask','Novid','Covid19','OpenUpSchools','OpenUpWa','OpenUpKingCounty','Eviction','EvictionRelief') group by hashtag)) as A order by counts desc\" \n        ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listTrendingTopics",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listTrendingTopics",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"SELECT * from TrendingTopics\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "listTrendingTopicsMaster",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/listTrendingTopicsMaster",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"select topic, counts, negative, neutral, positive from ((select topic, count(*) as counts, sum(case when sentiment < 0 then 1 else 0 end) as negative,  sum(case when sentiment = 0 then 1 else 0 end) as neutral,  sum(case when sentiment > 0 then 1 else 0 end) as positive from DiscourseTrendingTopics where created_time between '$ctx.args.start' and '$ctx.args.end' and region='$ctx.args.region' and parent_region = '$ctx.args.parent' group by topic order by counts desc limit 100) union (select topic, count(*) as counts, sum(case when sentiment < 0 then 1 else 0 end) as negative,  sum(case when sentiment = 0 then 1 else 0 end) as neutral,  sum(case when sentiment > 0 then 1 else 0 end) as positive from DiscourseTrendingTopics where created_time between '$ctx.args.start' and '$ctx.args.end' and region='$ctx.args.region' and parent_region = '$ctx.args.parent' and topic in ('Vaccine','Antivax','Covid Vaccine','Masks','Mask','Wear a mask','Mask up','Open schools','Schools','Small business','Small businesses','Eviction','Restaurants') group by topic)) as A order by counts DESC\"\n        ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "location",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/location",
+            "requestMappingTemplate": "#**\n  select (case when level = 2 then concat(region) when level = 3 then concat(region, ' - ', parent1) when level = 4 then concat(parent1, ' - ', region,' - ', parent2) end) as location from RegionLevels order by level\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"SELECT concat(region,' - ',parent_region) as location FROM Regions where level = 3;\"\n        ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "newimpactframework",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/newimpactframework",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"Select CONCAT(level1 , ' - ' , level2) as tag from ImpactTree where source_ontology = source_ontology group by level2\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        },
+        {
+            "typeName": "Query",
+            "fieldName": "treemapMaster",
+            "dataSourceName": "newimpact_rds_DataSource",
+            "resolverArn": "arn:aws:appsync:us-west-2:749571805792:apis/saj4edhbsvckxk64pk3cqlybwu/types/Query/resolvers/treemapMaster",
+            "requestMappingTemplate": "#**\n  Select statement for a relational database data source\n*#\n{\n    \"version\": \"2018-05-29\",\n    \"statements\": [\n        \"SELECT impact_area_id, count(*) as value FROM TreeMapMaster where date between '$ctx.args.start' and '$ctx.args.end' and region='$ctx.args.region' and parent_region = '$ctx.args.parent' group by impact_area_id;\"\n    ]\n}",
+            "responseMappingTemplate": "## Raise a GraphQL field error in case of a datasource invocation error\n#if($ctx.error)\n    $utils.error($ctx.error.message, $ctx.error.type)\n#end\n\n$utils.toJson($utils.rds.toJsonObject($ctx.result)[0])",
+            "kind": "UNIT"
+        }
+    ]
+}

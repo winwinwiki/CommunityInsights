@@ -15,7 +15,8 @@ import ApolloClient, { ApolloLink } from "apollo-boost";
 
 
 
-const uri = 'https://a4kfqfeqkfgxhaad2777qxhiy4.appsync-api.us-west-2.amazonaws.com/graphql'; 
+const uri = 'https://aizd7wkjorb5bpkxb7zombwj4u.appsync-api.us-west-2.amazonaws.com/graphql';
+//const uri = 'https://a4kfqfeqkfgxhaad2777qxhiy4.appsync-api.us-west-2.amazonaws.com/graphql';
 export function createApollo(httpLink: HttpLink) {
   const http = httpLink.create({ uri });
 
@@ -23,7 +24,8 @@ export function createApollo(httpLink: HttpLink) {
     // Use the setContext method to set the HTTP headers.
     operation.setContext({
       headers: {
-        "X-Api-Key": "da2-dq52cxdnxzcx7pyuqfjdswijkm"
+        "X-Api-Key": "da2-5yw25adiabg6ven5ohrzxqphnq"
+        //"X-Api-Key": "da2-dq52cxdnxzcx7pyuqfjdswijkm"
       },
       fetch
     });

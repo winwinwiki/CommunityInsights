@@ -1,0 +1,9 @@
+#**
+  Select statement for a relational database data source
+*#
+{
+    "version": "2018-05-29",
+    "statements": [
+        "select hashtag, counts, negative, neutral, positive, start_date from ((select hashtag, count(*) as counts, sum(case when sentiment < 0 then 1 else 0 end) as negative,  sum(case when sentiment = 0 then 1 else 0 end) as neutral,  sum(case when sentiment > 0 then 1 else 0 end) as positive, min(created_date) as start_date from HashtagMaster where created_date between '$ctx.args.start' and '$ctx.args.end' and region = '$ctx.args.region' and parent_region='$ctx.args.parent' group by hashtag order by counts desc limit 100) union (select hashtag, count(*) as counts, sum(case when sentiment < 0 then 1 else 0 end) as negative,  sum(case when sentiment = 0 then 1 else 0 end) as neutral,  sum(case when sentiment > 0 then 1 else 0 end) as positive, min(created_date) as start_date from HashtagMaster where created_date between  '$ctx.args.start' and '$ctx.args.end' and region = '$ctx.args.region' and parent_region='$ctx.args.parent' and hashtag in ('CovidVaccine','NoCovidVaccine','CoronaVaccine','Vaccine','NoVaccine','antivax','MaskUpWa','maskup','wearamask','nomask','Novid','Covid19','OpenUpSchools','OpenUpWa','OpenUpKingCounty','Eviction','EvictionRelief') group by hashtag)) as A order by counts desc" 
+        ]
+}

@@ -1,0 +1,9 @@
+#set( $updateList = {} )
+#foreach( $entry in $ctx.args.updateDiscourseInput.keySet() )
+  #set( $discard = $updateList.put($entry, "'$ctx.args.updateDiscourseInput[$entry]'") )
+#end
+#set( $update = $updateList.toString().replace("{","").replace("}","") )
+{
+  "version": "2018-05-29",
+  "statements":   ["UPDATE Discourse SET $update WHERE discourse_id=$ctx.args.updateDiscourseInput.discourse_id", "SELECT * FROM Discourse WHERE discourse_id=$ctx.args.updateDiscourseInput.discourse_id"]
+}

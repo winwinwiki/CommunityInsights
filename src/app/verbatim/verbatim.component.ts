@@ -299,6 +299,77 @@ export class VerbatimComponent implements OnInit {
       });
   }
 
+  filterDiscourseData(offset) {
+    if (this.discourseDetails[offset] == 0) {
+      this.loading = true;
+      this.apollo
+        .query<any>({
+          query: gql`
+            query filterDiscourseData(
+              $start: String!,
+              $end: String!
+              $region: String!
+              $limit: Int!
+              $offset: Int!
+              $search: String!
+              $impactarea: String!
+              $source: String!
+              $sentiment: String!
+              $parent: String
+              $tag: String
+            ) {
+              filterDiscourseData(
+                start: $start
+                end: $end
+                region: $region
+                search: $search
+                offset: $offset
+                limit: $limit
+              ) {
+                Topics
+                discourse_id
+                comment
+                sentiment
+                platform_name
+                created_time
+                impact_area_id
+                isPost
+                post_id
+                url
+                type
+              }
+            }
+          `,
+          variables: {
+            start: this.start,
+            end: this.end,
+            region: this.region,
+            limit: 2000,
+            offset: offset
+          }
+        })
+        .subscribe(
+          ({ data, loading }) => {
+            var result = data && data.listDiscourseData;
+            result.forEach(function(item, index) {
+              this[offset + index] = item;
+            }, this.discourseDetails);
+            // console.log(this.discourseDetails);
+            this.filteredDiscourses = this.discourseDetails;
+            this.items = new Map<number, post>();
+            this.fetchPostFromResponse(this.discourseDetails);
+            this.populateComments(this.discourseDetails);
+            this.keys = Array.from(this.items.keys());
+          },
+          error => {}
+        )
+        .add(() => {
+          this.loading = false;
+        });
+    }
+  }
+  
+
   updateDiscourseData(offset) {
     if (this.discourseDetails[offset] == 0) {
       this.loading = true;

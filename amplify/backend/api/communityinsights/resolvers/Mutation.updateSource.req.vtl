@@ -1,0 +1,9 @@
+#set( $updateList = {} )
+#foreach( $entry in $ctx.args.updateSourceInput.keySet() )
+  #set( $discard = $updateList.put($entry, "'$ctx.args.updateSourceInput[$entry]'") )
+#end
+#set( $update = $updateList.toString().replace("{","").replace("}","") )
+{
+  "version": "2018-05-29",
+  "statements":   ["UPDATE Source SET $update WHERE source_id=$ctx.args.updateSourceInput.source_id", "SELECT * FROM Source WHERE source_id=$ctx.args.updateSourceInput.source_id"]
+}

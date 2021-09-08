@@ -34,7 +34,6 @@
     "apollo-link": "^1.2.3",
     "aws-amplify": "^2.3.0",
     "aws-appsync": "3.0.2",
-    "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
     "ngx-chips": "^2.1.0",
     "ngx-pagination": "^5.0.0",
@@ -50,6 +49,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.1.2",
+    "graphql": "^0.11.7",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
@@ -61,5 +61,8 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.18.0",
     "typescript": "~3.4.5"
+  },
+  "browser": {
+    "crypto": false
   }
 }
