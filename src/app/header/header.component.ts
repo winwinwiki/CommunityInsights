@@ -120,9 +120,10 @@ export class HeaderComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     var params = this.getQueryParams();
+    const REGION='region';
 
     // if no parameters provided, use today's date and default location
-    if (!params['fromDate'] && !params['toDate'] && !params['location']) {
+    if (!params['fromDate'] && !params['toDate'] && !params[REGION]) {
         var today = this.calendar.getToday();
         this.getToday(today, 'getinitialdate');
         this.text = this.initialDate;
@@ -131,9 +132,9 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     } else {
 
 	// Handle location
-	if (params['location']) {
+	if (params[REGION]) {
 	    // a location was provided as query string; use it
-	    this.locText = [params['location']];
+	    this.locText = [params[REGION]];
 	} else {
 	    // no location was provided; use the default
 	    this.locText = [defaultLoc];
@@ -172,7 +173,7 @@ export class HeaderComponent implements OnInit, AfterContentInit {
   }
 
   async ngOnInit() {
-    this.fromDate = this.activatedRoute.snapshot.paramMap.get("location")
+    this.fromDate = this.activatedRoute.snapshot.paramMap.get("fromDate")
     console.log(this.fromDate);
     this.apollo
     .query<any>({
@@ -242,7 +243,7 @@ export class HeaderComponent implements OnInit, AfterContentInit {
 
     var todatestring : String = this._parserFormatter.format(this.toDate)
     var fromdatestring : String = this._parserFormatter.format(this.fromDate)
-    const qs = "fromDate="+fromdatestring+"&toDate="+todatestring+"&location="+this.locText;
+    const qs = "fromDate="+fromdatestring+"&toDate="+todatestring+"&region="+this.locText;
     this.routelocation.replaceState(path, qs);
   }
 
